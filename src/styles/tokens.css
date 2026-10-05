@@ -1,0 +1,110 @@
+:root {
+  /* color */
+  --c-bg: #faf7f2;
+  --c-surface: #ffffff;
+  --c-surface-2: #f2ede4;
+  --c-ink: #1f2a24;
+  --c-ink-2: #55625a;
+  --c-line: #e3dccf;
+  --c-primary: #2f6b4f;
+  --c-primary-ink: #ffffff;
+  --c-primary-soft: #e3f0e8;
+  --c-accent: #d9573b;
+  --c-accent-soft: #fbe6df;
+  --c-warn: #a86a00;
+  --c-warn-soft: #fff3d6;
+  --c-ok: #2f6b4f;
+  --c-error: #b3261e;
+  --c-error-soft: #fbe3e1;
+
+  /* spacing */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+
+  /* type */
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --fs-sm: 0.85rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.2rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 2.2rem;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(31, 42, 36, 0.06), 0 4px 14px rgba(31, 42, 36, 0.06);
+  --tap: 44px;
+  --max-w: 1100px;
+
+  /* ---------- Meal Prep design tokens ----------
+     Used by the redesigned screens (Set up, Goals) through the .ds scope below. The legacy --c-* tokens above are
+     unchanged, so screens that haven't been redesigned look as they did. Migrate a screen by giving it class="ds". */
+
+  /* palette */
+  --mp-bg: #f7f5ef;
+  --mp-surface: #ffffff;
+  --mp-surface-muted: #f1efe7;
+  --mp-primary: #3f6b4f;
+  --mp-primary-ink: #ffffff;
+  --mp-forest: #294a37;
+  --mp-terracotta: #d96c50;
+  --mp-terracotta-deep: #bf5238; /* terracotta for fills that carry white text */
+  --mp-gold: #e3b75b;
+  --mp-sage: #e8efe7;
+  --mp-sage-strong: #9db8a5; /* sage for lines and icons on white, where #e8efe7 alone is too faint to see */
+  --mp-ink: #20241f;
+  /* #5c615a, not the brief's #71766e (~4.4:1 on cream, under the 4.5:1 body-text minimum). This shade also stays above
+     4.5:1 on the darkest pixel of the site background photos once the content-column wash is applied (see background.css). */
+  --mp-ink-muted: #5c615a;
+  --mp-border: #e3e0d7;
+  --mp-error: #b3261e;
+
+  /* nutrition accents: used on borders and icons, not on text (terracotta ~3.4:1 and gold ~1.9:1 on white are too faint for small text) */
+  --mp-macro-calories: var(--mp-primary);
+  --mp-macro-calories-soft: var(--mp-sage);
+  --mp-macro-protein: var(--mp-terracotta);
+  --mp-macro-protein-soft: #fbece7;
+  --mp-macro-carbs: var(--mp-gold);
+  --mp-macro-carbs-soft: #fbf2dc;
+  --mp-macro-fat: var(--mp-sage-strong);
+  --mp-macro-fat-soft: #edf3ee;
+
+  /* shape and depth */
+  --mp-radius-sm: 12px;
+  --mp-radius: 18px;
+  --mp-radius-lg: 20px;
+  --mp-radius-pill: 999px;
+  --mp-shadow-card: 0 1px 2px rgba(32, 36, 31, 0.04), 0 6px 18px rgba(32, 36, 31, 0.05);
+  --mp-focus-ring: 0 0 0 3px color-mix(in srgb, var(--mp-primary) 22%, white);
+
+  /* layout */
+  --mp-tap: 44px;
+  --mp-page-max: 1100px;
+  --mp-page-narrow: 960px;
+}
+
+/* .ds: switches a screen to the Meal Prep design tokens. It re-points the legacy names, so shared components
+   (buttons, alerts, inputs) pick up the new palette inside it and nowhere else. */
+.ds {
+  --c-bg: var(--mp-bg);
+  --c-surface: var(--mp-surface);
+  --c-surface-2: var(--mp-surface-muted);
+  --c-ink: var(--mp-ink);
+  --c-ink-2: var(--mp-ink-muted);
+  --c-line: var(--mp-border);
+  --c-primary: var(--mp-primary);
+  --c-primary-ink: var(--mp-primary-ink);
+  --c-primary-soft: var(--mp-sage);
+  --c-accent: var(--mp-terracotta);
+  --c-error: var(--mp-error);
+  --radius: var(--mp-radius);
+  --radius-sm: var(--mp-radius-sm);
+  --shadow: var(--mp-shadow-card);
+  color: var(--mp-ink);
+}
+body.ds-bg { background: var(--mp-bg); }

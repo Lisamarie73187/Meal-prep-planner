@@ -1,0 +1,10 @@
+node_modules
+dist
+.env.local
+.vercel
+
+# Supabase CLI local state
+supabase/.temp/
+
+# TypeScript build cache
+*.tsbuildinfo

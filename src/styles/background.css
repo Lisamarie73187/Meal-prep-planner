@@ -1,0 +1,42 @@
+/* ---------- Site background ----------
+   One backdrop for every page (rendered once in the shared layout). Both photos keep their middle empty and put the
+   food around the edges. Only the image for the current screen size is downloaded, then cached for every other page. */
+.app-backdrop {
+  position: fixed; inset: 0; z-index: -1; /* a fixed layer rather than background-attachment: fixed, which iOS ignores */
+  background: var(--mp-bg) url('../assets/backgrounds/home-mobile.jpg') center top / cover no-repeat;
+}
+@media (min-width: 768px) {
+  .app-backdrop { background-image: url('../assets/backgrounds/home-desktop.jpg'); background-position: center; }
+}
+
+/* Inner pages: text sits straight on the page, so a cream wash keeps it readable. It is strongest behind the content
+   column (the 1100px container) and eases off toward the screen edges, where the photo shows through. Colours blend
+   on screen in gamma space, so even 10% of the darkest photo pixels pulls the wash well below "90% cream": at 92% the
+   worst background pixel still gives secondary text (#5c615a) about 4.9:1, above the 4.5:1 minimum.
+   On screens narrower than the column the wash is even all the way across. */
+.app-backdrop:not(.app-backdrop--home)::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right,
+    color-mix(in srgb, var(--mp-bg) 40%, transparent) 0,
+    color-mix(in srgb, var(--mp-bg) 92%, transparent) calc(50% - 570px),
+    color-mix(in srgb, var(--mp-bg) 92%, transparent) calc(50% + 570px),
+    color-mix(in srgb, var(--mp-bg) 40%, transparent) 100%);
+}
+@media (max-width: 1180px) {
+  .app-backdrop:not(.app-backdrop--home)::after { background: color-mix(in srgb, var(--mp-bg) 92%, transparent); }
+}
+@media print { .app-backdrop { display: none; } }
+
+/* The text sits on a soft white panel so it stays readable wherever a herb or tomato lands behind it. */
+.home-hero {
+  max-width: 40rem; margin: clamp(var(--s-4), 9vh, 5rem) auto 0; padding: var(--s-6) var(--s-5);
+  text-align: center; border-radius: var(--mp-radius-lg);
+  background: rgba(255, 255, 255, 0.84); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgba(227, 224, 215, 0.9); box-shadow: var(--mp-shadow-card);
+}
+.home-hero h1 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem); }
+.home-hero .row { justify-content: center; }
+@media (max-width: 480px) {
+  .home-hero { padding: var(--s-5) var(--s-4); }
+  .home-hero .btn { width: 100%; } /* full-width buttons, easy to reach with a thumb */
+}

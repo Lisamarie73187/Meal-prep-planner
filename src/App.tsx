@@ -1,0 +1,76 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { AuthProvider } from './auth/AuthContext'
+import { RequireAdmin, RequireAuth } from './auth/guards'
+import { Layout } from './components/Layout'
+import { AdjustPage } from './pages/AdjustPage'
+import { AuthPage } from './pages/Auth'
+import { HiddenRecipes } from './pages/HiddenRecipes'
+import { Home } from './pages/Home'
+import { Inventory } from './pages/Inventory'
+import { AdminRecipes, MyRecipes } from './pages/MyRecipes'
+import { PlanChoose } from './pages/PlanChoose'
+import { PlanGoals } from './pages/PlanGoals'
+import { PlanPick } from './pages/PlanPick'
+import { PlanResults } from './pages/PlanResults'
+import { PlanReview } from './pages/PlanReview'
+import { SetupAvoid } from './pages/setup/SetupAvoid'
+import { SetupDiet } from './pages/setup/SetupDiet'
+import { SetupIngredients } from './pages/setup/SetupIngredients'
+import { SetupIndex, SetupLayout } from './pages/setup/SetupLayout'
+import { SetupMeals } from './pages/setup/SetupMeals'
+import { Plans } from './pages/Plans'
+import { Recommended } from './pages/Recommended'
+import { RecipeDetail } from './pages/RecipeDetail'
+import { RecipeEdit } from './pages/RecipeEdit'
+import { Targets } from './pages/Targets'
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="recommended" element={<Recommended />} />
+            <Route path="hidden" element={<HiddenRecipes />} />
+            <Route path="recipes/:id" element={<RecipeDetail />} />
+            <Route path="sign-in" element={<AuthPage mode="sign-in" />} />
+            <Route path="sign-up" element={<AuthPage mode="sign-up" />} />
+            {/* Planning works signed out (the plan id is "local"); saving it needs an account. */}
+            {/* Set up is a four-screen wizard. The old /plan/new address still works and lands on the first screen. */}
+            <Route path="plan/new" element={<SetupIndex />} />
+            <Route path="plan/setup" element={<SetupLayout />}>
+              <Route index element={<SetupIndex />} />
+              <Route path="meals" element={<SetupMeals />} />
+              <Route path="ingredients" element={<SetupIngredients />} />
+              <Route path="avoid" element={<SetupAvoid />} />
+              <Route path="diet" element={<SetupDiet />} />
+            </Route>
+            <Route path="plan/:id/goals" element={<PlanGoals />} />
+            <Route path="plan/:id/pick/:slot?" element={<PlanPick />} />
+            <Route path="plan/:id/choose" element={<PlanChoose />} />
+            <Route path="plan/:id/review" element={<PlanReview />} />
+            <Route path="plan/:id/results" element={<PlanResults />} />
+
+            <Route element={<RequireAuth />}>
+              <Route path="inventory" element={<Inventory />} />
+              <Route path="plans" element={<Plans />} />
+              <Route path="my-recipes" element={<MyRecipes />} />
+              <Route path="my-recipes/new" element={<RecipeEdit mode="user" isNew />} />
+              <Route path="my-recipes/:id/edit" element={<RecipeEdit mode="user" />} />
+              <Route path="recipes/:id/adjust" element={<AdjustPage />} />
+              <Route path="targets" element={<Targets />} />
+              <Route element={<RequireAdmin />}>
+                <Route path="admin/recipes" element={<AdminRecipes />} />
+                <Route path="admin/recipes/new" element={<RecipeEdit mode="admin" isNew />} />
+                <Route path="admin/recipes/:id/edit" element={<RecipeEdit mode="admin" />} />
+              </Route>
+            </Route>
+
+            <Route path="*" element={<p className="center-note">Page not found.</p>} />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}
