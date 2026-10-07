@@ -1,14 +1,30 @@
 import { useState } from 'react'
 import { Link, useOutletContext } from 'react-router-dom'
 import { IconArrowLeft, IconArrowRight, IconCheck, IconInfo } from '../../components/Icons'
+import dairyFreeImg from '../../assets/diets/dairy-free.webp'
+import glutenFreeImg from '../../assets/diets/gluten-free.webp'
+import pescatarianImg from '../../assets/diets/pescatarian.webp'
+import veganImg from '../../assets/diets/vegan.webp'
+import vegetarianImg from '../../assets/diets/vegetarian.webp'
 import { DIETS } from '../../lib/diet'
-import { setupPath, setupSummary } from '../../lib/setupDraft'
+import { SetupSummary } from '../../components/setup/SetupSummary'
+import { setupPath } from '../../lib/setupDraft'
 import type { DietKey } from '../../lib/types'
 import type { SetupCtx } from './SetupLayout'
+
+/** A photo for each option (320px WebP cut-outs; the originals are larger). Decorative: the label says what each one is. */
+const IMAGES: Record<DietKey, string> = {
+  vegetarian: vegetarianImg,
+  vegan: veganImg,
+  pescatarian: pescatarianImg,
+  dairy_free: dairyFreeImg,
+  gluten_free: glutenFreeImg,
+}
 
 const DESCRIPTIONS: Record<DietKey, string> = {
   vegetarian: 'No meat or fish',
   vegan: 'No meat, fish, dairy, eggs or honey',
+  pescatarian: 'Includes fish and seafood, no other meat',
   dairy_free: 'No milk, cheese, butter or yogurt',
   gluten_free: 'No wheat, oats or soy sauce',
 }
@@ -17,11 +33,13 @@ export function SetupDiet() {
   const { draft, update, planId, total, submit, busy, error, authLoading } = useOutletContext<SetupCtx>()
   const [infoOpen, setInfoOpen] = useState(false)
 
-  // Vegan already excludes everything Vegetarian does, so the two replace each other.
+  // Vegan, Vegetarian and Pescatarian are levels of the same choice (each includes the one before it), so picking
+  // one replaces the others. Dairy-free and gluten-free combine with any of them.
+  const LEVELS: DietKey[] = ['vegan', 'vegetarian', 'pescatarian']
   const toggle = (key: DietKey) => {
     if (draft.diets.includes(key)) return update({ diets: draft.diets.filter((d) => d !== key) })
-    const rival = key === 'vegan' ? 'vegetarian' : key === 'vegetarian' ? 'vegan' : null
-    update({ diets: [...draft.diets.filter((d) => d !== rival), key] })
+    const rivals = LEVELS.includes(key) ? LEVELS.filter((d) => d !== key) : []
+    update({ diets: [...draft.diets.filter((d) => !rivals.includes(d)), key] })
   }
 
   return (
@@ -49,6 +67,7 @@ export function SetupDiet() {
           return (
             <label key={d.key} className={`choice${on ? ' is-on' : ''}`}>
               <input type="checkbox" className="choice__input" checked={on} onChange={() => toggle(d.key)} />
+              <img className="choice__img" src={IMAGES[d.key]} alt="" width={144} height={96} decoding="async" />
               <span className="choice__mark" aria-hidden="true">{on && <IconCheck size={18} />}</span>
               <span className="choice__text">
                 <strong>{d.label}</strong>
@@ -58,27 +77,22 @@ export function SetupDiet() {
           )
         })}
       </fieldset>
-      <p className="setup-note">Vegan already means vegetarian, so choosing one switches off the other.</p>
+      <p className="setup-note">Vegan, Vegetarian and Pescatarian are different levels of the same choice, so picking one switches off the others.</p>
 
-      <div className="setup-card setup-summary">
-        <h2>Your setup</h2>
-        <ul>
-          {setupSummary(draft).map((line) => <li key={line}>{line}</li>)}
-        </ul>
-      </div>
+      <SetupSummary draft={draft} />
 
       {total === 0 && (
         <div className="alert alert-warn">Choose at least one recipe first. <Link to={setupPath('meals', planId)}>Go back to your meals</Link></div>
       )}
       {error && <div className="alert alert-error" role="alert">{error}</div>}
 
-      <div className="wizard-actions">
-        <div className="wizard-actions__secondary">
-          <Link className="btn btn-lg btn-quiet" to={setupPath('avoid', planId)}><IconArrowLeft size={20} /> Back</Link>
+      <div className="wizard-actions wizard-actions--nav">
+        <div className="wizard-nav">
+          <Link className="btn btn-lg" to={setupPath('avoid', planId)}><IconArrowLeft size={20} /> Back</Link>
+          <button type="button" className="btn btn-primary btn-lg" disabled={total === 0 || busy || authLoading} onClick={submit}>
+            {busy ? 'Saving…' : <>Continue to goals <IconArrowRight size={20} /></>}
+          </button>
         </div>
-        <button type="button" className="btn btn-primary btn-lg" disabled={total === 0 || busy || authLoading} onClick={submit}>
-          {busy ? 'Saving…' : <>Continue to goals <IconArrowRight size={20} /></>}
-        </button>
       </div>
     </section>
   )

@@ -1,29 +1,33 @@
 /* ---------- Site background ----------
-   One backdrop for every page (rendered once in the shared layout). Both photos keep their middle empty and put the
-   food around the edges. Only the image for the current screen size is downloaded, then cached for every other page. */
+   One backdrop for every page (rendered once in the shared layout). On tablets and desktops it is a photo whose middle
+   is empty, with the food around the edges. On phones it is plain cream: no photo, nothing extra to download.
+   The photo is only fetched when the screen is wide enough to use it, then cached for every other page. */
 .app-backdrop {
   position: fixed; inset: 0; z-index: -1; /* a fixed layer rather than background-attachment: fixed, which iOS ignores */
-  background: var(--mp-bg) url('../assets/backgrounds/home-mobile.jpg') center top / cover no-repeat;
+  background: var(--mp-bg);
 }
 @media (min-width: 768px) {
-  .app-backdrop { background-image: url('../assets/backgrounds/home-desktop.jpg'); background-position: center; }
+  .app-backdrop { background: var(--mp-bg) url('../assets/backgrounds/home-desktop.jpg') center / cover no-repeat; }
 }
 
-/* Inner pages: text sits straight on the page, so a cream wash keeps it readable. It is strongest behind the content
-   column (the 1100px container) and eases off toward the screen edges, where the photo shows through. Colours blend
-   on screen in gamma space, so even 10% of the darkest photo pixels pulls the wash well below "90% cream": at 92% the
-   worst background pixel still gives secondary text (#5c615a) about 4.9:1, above the 4.5:1 minimum.
+/* Inner pages: text sits straight on the page, so a cream wash sits over the photo. It is strongest behind the content
+   column (the 1100px container) and eases off toward the screen edges. The amounts are the --bg-wash-* tokens; open any
+   page with ?debug=background to see the zones. Colours blend on screen in gamma space, so the numbers are best
+   checked by measuring: secondary text (#454a43) and links (#294a37) keep at least 4.5:1 on the darkest pixel of the
+   photos at the current settings. Lower the wash and darken those two colours together, or text gets hard to read.
    On screens narrower than the column the wash is even all the way across. */
-.app-backdrop:not(.app-backdrop--home)::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to right,
-    color-mix(in srgb, var(--mp-bg) 40%, transparent) 0,
-    color-mix(in srgb, var(--mp-bg) 92%, transparent) calc(50% - 570px),
-    color-mix(in srgb, var(--mp-bg) 92%, transparent) calc(50% + 570px),
-    color-mix(in srgb, var(--mp-bg) 40%, transparent) 100%);
-}
-@media (max-width: 1180px) {
-  .app-backdrop:not(.app-backdrop--home)::after { background: color-mix(in srgb, var(--mp-bg) 92%, transparent); }
+@media (min-width: 768px) {
+  .app-backdrop:not(.app-backdrop--home)::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to right,
+      color-mix(in srgb, var(--mp-bg) var(--bg-wash-edge), transparent) 0,
+      color-mix(in srgb, var(--mp-bg) var(--bg-wash-column), transparent) calc(50% - var(--bg-column-half)),
+      color-mix(in srgb, var(--mp-bg) var(--bg-wash-column), transparent) calc(50% + var(--bg-column-half)),
+      color-mix(in srgb, var(--mp-bg) var(--bg-wash-edge), transparent) 100%);
+  }
+  @media (max-width: 1180px) {
+    .app-backdrop:not(.app-backdrop--home)::after { background: color-mix(in srgb, var(--mp-bg) var(--bg-wash-column), transparent); }
+  }
 }
 @media print { .app-backdrop { display: none; } }
 
@@ -31,7 +35,7 @@
 .home-hero {
   max-width: 40rem; margin: clamp(var(--s-4), 9vh, 5rem) auto 0; padding: var(--s-6) var(--s-5);
   text-align: center; border-radius: var(--mp-radius-lg);
-  background: rgba(255, 255, 255, 0.84); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  background: color-mix(in srgb, #fff var(--home-panel-opacity), transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   border: 1px solid rgba(227, 224, 215, 0.9); box-shadow: var(--mp-shadow-card);
 }
 .home-hero h1 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem); }
@@ -40,3 +44,14 @@
   .home-hero { padding: var(--s-5) var(--s-4); }
   .home-hero .btn { width: 100%; } /* full-width buttons, easy to reach with a thumb */
 }
+
+/* ?debug=background: marks the washed-out zones so you can see where the photo is covered (see BackgroundDebug.tsx) */
+.bg-debug-zone { position: fixed; top: 53px; bottom: 0; z-index: 30; pointer-events: none; box-sizing: border-box; }
+.bg-debug-zone--edge { background: rgba(34, 160, 90, 0.22); border: 2px dashed rgb(20, 120, 65); }
+.bg-debug-zone--column { background: rgba(225, 29, 72, 0.13); border: 2px dashed rgb(190, 18, 60); }
+.bg-debug-legend { position: fixed; left: 12px; bottom: 12px; z-index: 40; max-width: min(26rem, calc(100vw - 24px)); padding: 12px 14px; border-radius: 12px; background: #fff; border: 1px solid #999; box-shadow: 0 4px 18px rgba(0,0,0,.25); font-size: 13px; line-height: 1.45; pointer-events: none; }
+.bg-debug-legend p { margin: 0 0 6px; }
+.bg-debug-legend li { margin: 0 0 4px; }
+.bg-debug-legend ul { margin: 6px 0; padding-left: 0; list-style: none; }
+.bg-debug-swatch { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 3px; vertical-align: -1px; }
+body.bg-debug .home-hero { outline: 3px dashed rgb(190, 18, 60); outline-offset: 3px; }

@@ -2,38 +2,43 @@
    Colours, radii and shadows come from the Meal Prep design tokens (see tokens.css, scope .ds). */
 .setup { max-width: var(--mp-page-narrow); margin: 0 auto; --c-forest: var(--mp-forest); --c-gold: var(--mp-gold); }
 
-/* secondary progress: quiet on purpose, so the five-step bar above stays the main one */
-.setup-progress { margin: calc(var(--s-2) * -1) 0 var(--s-5); }
-.setup-progress__compact { margin: 0 0 var(--s-2); font-size: var(--fs-sm); color: var(--c-ink-2); }
+/* secondary progress: quiet on purpose, so the five-step bar above stays the main one.
+   Phones: a small green label with a thin bar under it. Tablet and desktop: just the label, sitting right above the page
+   title like a small heading label (no bar, so nothing competes with the five circles). */
+.setup-progress { display: flex; flex-direction: column; gap: var(--s-2); margin: calc(var(--s-2) * -1) 0 var(--s-5); }
+/* The "SETUP 1 OF 4" label: green, all caps. The soft cream glow keeps it legible where it sits over the background photo. */
+.setup-progress__label {
+  margin: 0; color: var(--setup-progress-color, #1b6139); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  text-shadow: 0 0 6px color-mix(in srgb, var(--mp-bg) 90%, transparent), 0 0 2px var(--mp-bg);
+}
 .setup-progress__bar { height: 4px; border-radius: 999px; background: var(--c-line); overflow: hidden; }
 .setup-progress__bar span { display: block; height: 100%; background: var(--c-primary); border-radius: inherit; transition: width 0.2s ease; }
-.setup-progress__list { display: none; list-style: none; margin: 0; padding: 0; gap: var(--s-5); font-size: var(--fs-sm); color: var(--c-ink-2); }
-.setup-progress__list li { display: inline-flex; align-items: center; gap: var(--s-2); }
-.setup-progress__list li + li::before { content: ''; width: 18px; height: 1px; background: var(--c-line); }
-.setup-progress__list .is-current { color: var(--c-forest); font-weight: 600; }
-.setup-progress__list a { color: inherit; }
 @media (min-width: 640px) {
-  .setup-progress { margin-top: calc(var(--s-3) * -1); }
-  .setup-progress__compact, .setup-progress__bar { display: none; }
-  .setup-progress__list { display: flex; flex-wrap: wrap; }
+  .setup-progress { margin: calc(var(--s-3) * -1) 0 var(--setup-progress-gap, 6px); }
+  .setup-progress__bar { display: none; }
 }
 
 /* page layout */
-.setup-page { display: flex; flex-direction: column; gap: var(--s-5); }
+.setup-page { display: flex; flex-direction: column; gap: var(--setup-block-gap, 12px); }
+/* the title block sits close to what it introduces */
+.setup-page > .setup-head + * { margin-top: calc(var(--setup-title-gap, 20px) - var(--setup-block-gap, 12px)); } /* the longer selector outranks components that set their own margin */
 .setup-head h1 { font-size: clamp(1.7rem, 1.2rem + 2vw, 2.4rem); margin-bottom: var(--s-2); }
+.setup-head h1:last-child { margin-bottom: 0; } /* a title with no subtitle shouldn't add extra space above the card */
 .setup-title-row { display: flex; align-items: center; gap: var(--s-2); }
 .setup-lede { font-size: 1.05rem; color: var(--c-ink-2); margin: 0; max-width: 60ch; }
 .setup-note { font-size: var(--fs-sm); color: var(--c-ink-2); margin: 0; }
 .setup-info { margin: var(--s-3) 0 0; padding: var(--s-3) var(--s-4); border-radius: var(--radius-sm); background: var(--c-primary-soft); color: var(--c-forest); font-size: var(--fs-sm); border-left: 4px solid var(--c-primary); }
-.setup-card { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--s-5); }
+.setup-card { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--setup-card-padding, 24px); }
 .setup-card > h2 { margin-bottom: var(--s-1); }
+.setup .setup-lede { font-size: var(--setup-lede-size, 0.95rem); } /* Set up only: the Goals page keeps its own size */
+.setup .setup-note { font-size: var(--setup-note-size, 0.8rem); } /* Set up only: the Goals page keeps its own size */
 .setup-card > .setup-lede { margin-bottom: var(--s-4); }
 .setup-card > * + .setup-note { margin-top: var(--s-3); }
-@media (max-width: 480px) { .setup-card { padding: var(--s-4); } }
+@media (max-width: 480px) { .setup-card { padding: var(--setup-card-padding-phone, 16px); } }
 
 /* meal rows */
 .meal-rows { list-style: none; margin: 0; padding: 0; }
-.meal-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: var(--s-3) 0; }
+.meal-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: var(--setup-row-padding, 12px) 0; }
 .meal-row + .meal-row { border-top: 1px solid var(--c-line); }
 .meal-row__icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--c-primary-soft); color: var(--c-forest); flex: none; }
 .meal-row__name { flex: 1 1 5rem; min-width: 5rem; font-size: 1.1rem; font-weight: 600; }
@@ -60,14 +65,29 @@
 .chips__input { flex: 1 1 10rem; min-width: 0; min-height: 44px; border: 0; outline: 0; background: transparent; font-size: 1rem; /* 16px: stops iOS zooming in */ }
 .chips__add { display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 var(--s-3); border-radius: 999px; border: 1.5px solid var(--c-primary); background: var(--c-primary-soft); color: var(--c-forest); font-weight: 600; cursor: pointer; }
 
-/* diet choices */
+/* diet choices: a photo on each card. Tablet and desktop show three tall cards, then two wide ones; phones show one
+   compact row per option. The photos are set by --setup-diet-image-size in tokens.css. */
 .choice-grid { border: 0; padding: 0; margin: 0; display: grid; gap: var(--s-3); grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 640px) { .choice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 640px) {
+  .choice-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .choice { grid-column: span 2; }
+  .choice:nth-of-type(n + 4) { grid-column: span 3; } /* the last two (Dairy-free, Gluten-free) are wider */
+}
 .choice { position: relative; display: flex; align-items: center; gap: var(--s-3); padding: var(--s-4); min-height: 76px; border-radius: var(--radius); background: var(--c-surface); border: 1.5px solid var(--c-line); box-shadow: var(--shadow); cursor: pointer; }
 .choice:hover { border-color: var(--c-primary); }
+.choice__img { flex: none; width: var(--setup-diet-image-size-phone, 72px); height: var(--setup-diet-image-size-phone, 72px); object-fit: contain; pointer-events: none; }
+@media (min-width: 640px) {
+  /* The photos are trimmed to the picture itself, so what you see is what is in the box. On the tall cards the photo sits
+     flush at the bottom-left of its box, which makes the distance to the label exactly --setup-diet-image-gap on every card. */
+  .choice__img { width: calc(var(--setup-diet-image-size, 96px) * 1.5); height: var(--setup-diet-image-size, 96px); object-position: left bottom; }
+  .choice:nth-of-type(-n + 3) { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: var(--setup-diet-image-gap, 12px); }
+  .choice:nth-of-type(-n + 3) .choice__mark { top: 14px; transform: none; }
+  /* the two wide cards put the photo beside the label, in a square box */
+  .choice:nth-of-type(n + 4) .choice__img { width: calc(var(--setup-diet-image-size, 96px) + 8px); height: calc(var(--setup-diet-image-size, 96px) + 8px); object-position: center; }
+}
 .choice__input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-.choice__mark { display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--c-ink-2); color: #fff; background: transparent; }
-.choice__text { display: flex; flex-direction: column; gap: 2px; }
+.choice__mark { position: absolute; top: 50%; right: 14px; transform: translateY(-50%); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--c-ink-2); color: #fff; background: transparent; }
+.choice__text { display: flex; flex-direction: column; gap: 2px; padding-right: 40px; /* keeps text clear of the circle */ }
 .choice__text small { color: var(--c-ink-2); font-size: var(--fs-sm); }
 /* selected: tinted background, heavier border AND a check mark */
 .choice.is-on { background: var(--c-primary-soft); border: 2.5px solid var(--c-forest); padding: calc(var(--s-4) - 1px); color: var(--c-forest); }
@@ -78,25 +98,63 @@
 .icon-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 0; background: transparent; color: var(--c-ink-2); cursor: pointer; padding: 0; }
 .icon-btn:hover, .icon-btn[aria-expanded='true'] { background: var(--c-primary-soft); color: var(--c-forest); }
 
-.setup-summary ul { list-style: none; margin: var(--s-2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
-.setup-summary li { padding: var(--s-1) var(--s-3); border-radius: 999px; background: var(--c-primary-soft); color: var(--c-forest); font-size: var(--fs-sm); font-weight: 600; }
+/* "Your setup": a warm outer card holding four compact summary cards. Two columns normally; four in a row only when
+   the card itself is wide enough for each label to stay on one line (a container query, so it follows the card's width
+   rather than the window's). One column on very narrow phones. The gap is --setup-summary-gap in tokens.css. */
+.setup-summary { container-type: inline-size; background: color-mix(in srgb, var(--c-surface) 84%, var(--mp-bg)); }
+.setup-summary h2 { margin-bottom: 2px; }
+.setup-summary__lede { margin: 0 0 var(--s-4); color: var(--c-ink-2); font-size: var(--fs-sm); }
+.summary-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--setup-summary-gap, 14px); }
+@container (max-width: 300px) { .summary-cards { grid-template-columns: minmax(0, 1fr); } }
+.summary-card { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 14px; border: 1px solid var(--c-line); border-radius: 14px; background: color-mix(in srgb, var(--c-surface) 70%, var(--mp-bg)); }
+.summary-card__icon { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; }
+.summary-card__icon--warm { background: var(--mp-macro-protein-soft, #fbece7); color: var(--mp-terracotta-deep, #bf5238); }
+.summary-card__icon--sage { background: var(--mp-sage); color: var(--mp-forest); }
+.summary-card__text { display: flex; flex-direction: column; gap: 1px; min-width: 0; line-height: 1.3; }
+.summary-card__text strong { font-size: 0.92rem; font-weight: 700; color: var(--c-ink); }
+.summary-card__text small { font-size: 0.78rem; color: var(--c-ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* declared after the base card rules so it wins */
+@container (min-width: 860px) {
+  .summary-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* four across leaves ~145px for text, so the icon, gap and title are a touch smaller to keep "2 pantry ingredients" on one line */
+  .summary-card { gap: 10px; padding: 14px 12px; }
+  .summary-card__icon { width: 36px; height: 36px; }
+  .summary-card__text strong { font-size: 0.88rem; }
+}
+@media (max-width: 480px) {
+  .summary-card { gap: 10px; padding: 12px; }
+  .summary-card__icon { width: 32px; height: 32px; }
+  /* phone cards are narrow, so the second line may wrap onto two lines rather than being cut off */
+  .summary-card__text small { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+}
 
 /* actions: a single row on desktop; on phones the primary button is full width and stays in thumb reach */
 .btn-lg { min-height: 52px; padding: 0 var(--s-5); font-size: 1.05rem; border-radius: var(--radius-sm); }
 .btn-quiet { border-color: transparent; background: transparent; color: var(--c-forest); }
 .btn-quiet:hover { background: var(--c-primary-soft); }
-.wizard-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin-top: var(--s-2); }
+.wizard-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); }
 .wizard-actions__secondary { display: flex; flex-wrap: wrap; gap: var(--s-2); }
-.wizard-summary { margin: 0; color: var(--c-ink-2); }
+.wizard-summary { margin: 0; color: var(--c-ink-2); align-self: center; }
 .wizard-summary strong { color: var(--c-ink); }
 @media (max-width: 639px) {
   .wizard-actions {
     position: sticky; bottom: 0; z-index: 5; flex-direction: column-reverse; align-items: stretch; gap: var(--s-2);
-    margin: var(--s-2) calc(var(--s-4) * -1) calc(var(--s-6) * -1); padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
+    margin: 0 calc(var(--s-4) * -1) calc(var(--s-6) * -1); padding: var(--s-2) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
     background: linear-gradient(to bottom, color-mix(in srgb, var(--mp-bg) 0%, transparent), var(--mp-bg) 28%);
   }
   .wizard-actions > .btn, .wizard-actions__secondary { width: 100%; }
   .wizard-actions__secondary > .btn { flex: 1 1 0; }
-  .wizard-summary { text-align: center; order: 2; }
+  .wizard-summary { text-align: center; align-self: stretch; order: 2; } /* stretch + centred text: the line sits in the middle of the screen */
 }
 
+/* Back and Continue share one line; "Skip for now" sits below them. Used by the Ingredients, Avoid and Diet screens. */
+.wizard-actions--nav { flex-direction: column; align-items: stretch; gap: var(--s-2); }
+.wizard-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.wizard-skip { align-self: flex-end; }
+@media (max-width: 639px) {
+  .wizard-actions--nav { flex-direction: column; } /* beats the mobile column-reverse: the Back/Continue row stays on top */
+  .wizard-actions--nav .wizard-nav { width: 100%; gap: var(--s-2); }
+  .wizard-nav .btn { padding: 0 var(--s-4); }
+  .wizard-nav .btn-primary { flex: 1 1 0; min-width: 0; } /* Continue takes the room Back leaves */
+  .wizard-actions--nav .wizard-skip { align-self: center; width: auto; }
+}

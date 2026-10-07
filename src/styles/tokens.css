@@ -4,7 +4,7 @@
   --c-surface: #ffffff;
   --c-surface-2: #f2ede4;
   --c-ink: #1f2a24;
-  --c-ink-2: #55625a;
+  --c-ink-2: var(--mp-ink-muted); /* secondary text sits on the site background photo, so it follows the readable-on-photo grey */
   --c-line: #e3dccf;
   --c-primary: #2f6b4f;
   --c-primary-ink: #ffffff;
@@ -49,18 +49,18 @@
   --mp-bg: #f7f5ef;
   --mp-surface: #ffffff;
   --mp-surface-muted: #f1efe7;
-  --mp-primary: #3f6b4f;
+  --mp-primary: #124425;
   --mp-primary-ink: #ffffff;
   --mp-forest: #294a37;
   --mp-terracotta: #d96c50;
-  --mp-terracotta-deep: #bf5238; /* terracotta for fills that carry white text */
+  --mp-terracotta-deep: #f06442; /* terracotta for fills that carry white text */
   --mp-gold: #e3b75b;
   --mp-sage: #e8efe7;
   --mp-sage-strong: #9db8a5; /* sage for lines and icons on white, where #e8efe7 alone is too faint to see */
   --mp-ink: #20241f;
-  /* #5c615a, not the brief's #71766e (~4.4:1 on cream, under the 4.5:1 body-text minimum). This shade also stays above
-     4.5:1 on the darkest pixel of the site background photos once the content-column wash is applied (see background.css). */
-  --mp-ink-muted: #5c615a;
+  /* #454a43, not the brief's #71766e (~4.4:1 on cream, under the 4.5:1 body-text minimum). With the photo showing through
+     at 25% behind the content, this is the lightest grey that still gives 4.5:1 on the darkest photo pixel (background.css). */
+  --mp-ink-muted: #454a43;
   --mp-border: #e3e0d7;
   --mp-error: #b3261e;
 
@@ -81,6 +81,28 @@
   --mp-radius-pill: 999px;
   --mp-shadow-card: 0 1px 2px rgba(32, 36, 31, 0.04), 0 6px 18px rgba(32, 36, 31, 0.05);
   --mp-focus-ring: 0 0 0 3px color-mix(in srgb, var(--mp-primary) 22%, white);
+
+  /* site background: how much of the photo is covered by a cream wash (higher = fainter photo).
+     See styles/background.css, and open any page with ?debug=background to see these zones on screen. */
+  --bg-wash-edge: 20%;     /* at the very left/right edge of the screen */
+  --bg-wash-column: 90%;   /* behind the content column, where the text is */
+  --bg-column-half: 570px; /* half the width of the content column (the 1100px container plus its padding) */
+  --home-panel-opacity: 84%; /* the white panel behind the home page text */
+
+  /* Set up screens: spacing you can tune. Change a number here and every Set up screen follows. */
+  --setup-block-gap: 12px;          /* space between the title block, the card and the button row */
+  --setup-title-gap: 16px;          /* space between the title (and its subtitle) and the card below it */
+  --setup-card-padding: 20px;       /* inside the white cards */
+  --setup-card-padding-phone: 16px; /* inside the white cards on phones */
+  --setup-row-padding: 12px;        /* above and below each row of the meals card */
+  --setup-summary-gap: 14px;            /* between the four "Your setup" cards */
+  --setup-diet-image-size: 96px;        /* height of the photo on each diet card (tablet and desktop); the photo box is 1.5x as wide */
+  --setup-diet-image-gap: 12px;         /* space between a photo and its label on the tall cards (tablet and desktop) */
+  --setup-diet-image-size-phone: 72px;  /* the same, on phones */
+  --setup-progress-gap: 6px;            /* space between the "SETUP 1 OF 4" label and the page title under it (tablet and desktop) */
+  --setup-progress-color: #1b6139;  /* the "1 OF 4" label under the progress circles (deep enough to read over the photo) */
+  --setup-lede-size: 0.95rem;       /* the supporting paragraph under each Set up title (1rem = 16px) */
+  --setup-note-size: 0.8rem;        /* the small grey notes under the chips and choices (the allergy note, "we'll prioritize…") */
 
   /* layout */
   --mp-tap: 44px;

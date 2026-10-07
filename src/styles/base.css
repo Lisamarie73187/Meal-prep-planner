@@ -13,7 +13,7 @@ h1 { font-size: var(--fs-xl); }
 h2 { font-size: var(--fs-lg); }
 h3 { font-size: var(--fs-base); font-family: var(--font-body); font-weight: 600; }
 p { margin: 0 0 var(--s-3); }
-a { color: var(--c-primary); }
+a { color: var(--mp-forest); } /* dark forest rather than the lighter button green: readable over the background photo */
 img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid color-mix(in srgb, var(--c-primary) 55%, white); outline-offset: 2px; }

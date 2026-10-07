@@ -2,12 +2,16 @@ import { useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { isConfigured } from '../lib/supabase'
+import { BackgroundDebug } from './BackgroundDebug'
+import { IconMenu, IconX } from './Icons'
 
 export function Layout() {
   const { session, isAdmin, signOut } = useAuth()
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
-  const onHome = useLocation().pathname === '/'
+  const loc = useLocation()
+  const onHome = loc.pathname === '/'
+  const debugBackground = new URLSearchParams(loc.search).get('debug') === 'background'
   const link = (to: string, label: string) => (
     <NavLink to={to} className="nav__link" onClick={() => setOpen(false)}>
       {label}
@@ -17,11 +21,17 @@ export function Layout() {
     <>
       {/* Decorative site background. Full strength on the home page; calmer behind the content on every other page. */}
       <div className={`app-backdrop${onHome ? ' app-backdrop--home' : ''}`} aria-hidden="true" />
+      {debugBackground && <BackgroundDebug home={onHome} />}
       <header className="nav">
         <div className="nav__inner">
           <Link to="/" className="nav__brand">Meal Prep</Link>
-          <button className="btn btn-sm nav__toggle" aria-expanded={open} onClick={() => setOpen(!open)}>Menu</button>
-          <nav className={`nav__links${open ? ' open' : ''}`} aria-label="Main">
+          <button
+            type="button" className="btn nav__toggle" aria-expanded={open} aria-controls="main-nav"
+            aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}
+          >
+            {open ? <IconX size={24} /> : <IconMenu size={24} />}
+          </button>
+          <nav id="main-nav" className={`nav__links${open ? ' open' : ''}`} aria-label="Main">
             {link('/recommended', 'Recommended')}
             {link('/plan/setup/meals', 'Plan meals')}
             {session && link('/my-recipes', 'My recipes')}

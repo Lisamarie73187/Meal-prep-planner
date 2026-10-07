@@ -59,14 +59,45 @@ export const totalRecipes = (d: SetupDraft) => Object.values(d.counts).reduce((a
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
 
-/** The "Your setup" lines at the end of setup. */
-export function setupSummary(d: SetupDraft): string[] {
-  const lines = [plural(totalRecipes(d), 'recipe', 'recipes')]
-  lines.push(d.have.length ? plural(d.have.length, 'pantry ingredient', 'pantry ingredients') : 'No pantry ingredients')
-  lines.push(d.dislikes.length ? plural(d.dislikes.length, 'food excluded', 'foods excluded') : 'No foods excluded')
-  const diets = DIETS.filter((x) => d.diets.includes(x.key)).map((x) => x.label)
-  if (diets.length) lines.push(diets.join(', '))
-  return lines
+/** First few names, then "+N more": ["turkey", "spinach", "rice", "beans"] -> "turkey, spinach +2 more". */
+export function previewNames(names: string[], max = 2): string {
+  return names.length <= max ? names.join(', ') : `${names.slice(0, max).join(', ')} +${names.length - max} more`
+}
+
+const MEAL_NOUN: Record<MealCategory, [string, string]> = {
+  breakfast: ['breakfast', 'breakfasts'], lunch: ['lunch', 'lunches'], dinner: ['dinner', 'dinners'], snack: ['snack', 'snacks'],
+}
+/** "1 lunch · 1 dinner": every meal type that has recipes, in the order of the day. */
+export function mealBreakdown(counts: Record<MealCategory, number>): string | null {
+  const parts = (['breakfast', 'lunch', 'dinner', 'snack'] as MealCategory[]).filter((c) => counts[c] > 0).map((c) => `${counts[c]} ${MEAL_NOUN[c][counts[c] === 1 ? 0 : 1]}`)
+  return parts.length ? parts.join(' · ') : null
+}
+
+export interface SummaryCard {
+  primary: string
+  /** A smaller second line, or null when there is nothing worth adding. */
+  secondary: string | null
+}
+
+/** The text for the four "Your setup" cards at the end of setup. Everything comes from the current draft. */
+export function summaryCards(d: SetupDraft): { recipes: SummaryCard; pantry: SummaryCard; excluded: SummaryCard; diets: SummaryCard } {
+  const n = totalRecipes(d)
+  const dietLabels = DIETS.filter((x) => d.diets.includes(x.key)).map((x) => x.label)
+  return {
+    recipes: { primary: plural(n, 'recipe', 'recipes'), secondary: mealBreakdown(d.counts) },
+    pantry: d.have.length
+      ? { primary: plural(d.have.length, 'pantry ingredient', 'pantry ingredients'), secondary: previewNames(d.have) }
+      : { primary: 'No pantry ingredients', secondary: null },
+    excluded: d.dislikes.length
+      ? { primary: plural(d.dislikes.length, 'food excluded', 'foods excluded'), secondary: previewNames(d.dislikes) }
+      : { primary: 'No foods excluded', secondary: null },
+    // One or two diets read as "Pescatarian · Dairy-free". Three would not fit on one line, so they become a count plus names.
+    diets: dietLabels.length === 0
+      ? { primary: 'No dietary preferences', secondary: null }
+      : dietLabels.length <= 2
+        ? { primary: dietLabels.join(' · '), secondary: null }
+        : { primary: `${dietLabels.length} dietary preferences`, secondary: previewNames(dietLabels) },
+  }
 }
 
 // ---- keep the draft across reloads (this tab only)

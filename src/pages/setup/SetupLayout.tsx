@@ -101,7 +101,7 @@ function SetupWizard({ planId }: { planId: string | null }) {
   return (
     <div className="setup ds">
       <Stepper current={0} planId={planId ?? undefined} />
-      <SetupProgress step={step} planId={planId} />
+      <SetupProgress step={step} />
       <Outlet context={ctx} />
     </div>
   )

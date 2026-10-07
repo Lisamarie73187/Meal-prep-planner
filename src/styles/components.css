@@ -8,9 +8,15 @@
 .nav__link.active { background: var(--c-primary-soft); color: var(--c-primary); }
 .nav .nav__toggle { display: none; } /* .nav prefix: .btn is declared later and would otherwise win */
 @media (max-width: 760px) {
-  .nav__inner { flex-wrap: wrap; }
-  .nav .nav__toggle { display: inline-flex; }
-  .nav__links { display: none; width: 100%; flex-direction: column; }
+  /* Phones: the name sits in the middle and a hamburger on the right. Three columns keep the name truly centred
+     even though the left one is empty; the link list, when open, spans the full width underneath. */
+  .nav__inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: var(--s-2); }
+  .nav__brand { grid-column: 2; margin: 0; justify-self: center; }
+  .nav .nav__toggle {
+    display: inline-grid; place-items: center; grid-column: 3; justify-self: end;
+    width: var(--tap); height: var(--tap); min-height: var(--tap); padding: 0; border-radius: var(--radius-sm); /* icon only, 44px target */
+  }
+  .nav__links { display: none; grid-column: 1 / -1; width: 100%; flex-direction: column; }
   .nav__links.open { display: flex; }
   .nav__link { padding: var(--s-3); font-size: var(--fs-base); }
 }

@@ -18,12 +18,12 @@ export function SetupIngredients() {
         <p className="setup-note">We'll prioritize recipes using these ingredients when possible. Press Enter or type a comma to add each one.</p>
       </div>
 
-      <div className="wizard-actions">
-        <div className="wizard-actions__secondary">
-          <Link className="btn btn-lg btn-quiet" to={setupPath('meals', planId)}><IconArrowLeft size={20} /> Back</Link>
-          {draft.have.length === 0 && <Link className="btn btn-lg btn-quiet" to={setupPath('avoid', planId)}>Skip for now</Link>}
+      <div className="wizard-actions wizard-actions--nav">
+        <div className="wizard-nav">
+          <Link className="btn btn-lg" to={setupPath('meals', planId)}><IconArrowLeft size={20} /> Back</Link>
+          <Link className="btn btn-primary btn-lg" to={setupPath('avoid', planId)}>Continue <IconArrowRight size={20} /></Link>
         </div>
-        <Link className="btn btn-primary btn-lg" to={setupPath('avoid', planId)}>Continue <IconArrowRight size={20} /></Link>
+        {draft.have.length === 0 && <Link className="btn btn-lg btn-quiet wizard-skip" to={setupPath('avoid', planId)}>Skip for now</Link>}
       </div>
     </section>
   )

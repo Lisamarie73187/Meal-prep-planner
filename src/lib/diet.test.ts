@@ -7,13 +7,24 @@ const recipe = (...tags: IngredientTag[][]) =>
 
 describe('recipeFitsDiets', () => {
   it('allows everything with no diet', () => expect(recipeFitsDiets(recipe(['meat']), [])).toBe(true))
-  it('vegetarian rejects meat but allows dairy and egg', () => {
+  it('vegetarian rejects meat and fish but allows dairy and egg', () => {
     expect(recipeFitsDiets(recipe(['meat']), ['vegetarian'])).toBe(false)
+    expect(recipeFitsDiets(recipe(['fish']), ['vegetarian'])).toBe(false)
     expect(recipeFitsDiets(recipe(['dairy'], ['egg']), ['vegetarian'])).toBe(true)
   })
-  it('vegan rejects meat, dairy, egg and other animal products', () => {
-    for (const t of ['meat', 'dairy', 'egg', 'animal'] as const) expect(recipeFitsDiets(recipe([t]), ['vegan'])).toBe(false)
+  it('vegan rejects meat, fish, dairy, egg and other animal products', () => {
+    for (const t of ['meat', 'fish', 'dairy', 'egg', 'animal'] as const) expect(recipeFitsDiets(recipe([t]), ['vegan'])).toBe(false)
     expect(recipeFitsDiets(recipe([], []), ['vegan'])).toBe(true)
+  })
+  it('pescatarian allows fish, dairy and egg but rejects meat and poultry', () => {
+    expect(recipeFitsDiets(recipe(['fish'], ['dairy'], ['egg']), ['pescatarian'])).toBe(true)
+    expect(recipeFitsDiets(recipe(['meat']), ['pescatarian'])).toBe(false)
+    expect(recipeFitsDiets(recipe(['fish'], ['meat']), ['pescatarian'])).toBe(false) // one meat ingredient is enough
+    expect(recipeFitsDiets(recipe([], []), ['pescatarian'])).toBe(true)
+  })
+  it('pescatarian combines with dairy-free and gluten-free', () => {
+    expect(recipeFitsDiets(recipe(['fish'], ['dairy']), ['pescatarian', 'dairy_free'])).toBe(false)
+    expect(recipeFitsDiets(recipe(['fish']), ['pescatarian', 'dairy_free', 'gluten_free'])).toBe(true)
   })
   it('dairy-free and gluten-free each reject only their own tag', () => {
     expect(recipeFitsDiets(recipe(['dairy']), ['dairy_free'])).toBe(false)
@@ -32,7 +43,12 @@ describe('recipeFitsDiets', () => {
 describe('guessContains', () => {
   it.each([
     ['Chicken breast', ['meat']],
-    ['Canned tuna', ['meat']],
+    ['Canned tuna', ['fish']],
+    ['Salmon fillet', ['fish']],
+    ['Shrimp', ['fish']],
+    ['Ground beef', ['meat']],
+    ['Chicken broth', ['meat']],
+    ['Fish stock', ['meat', 'fish']],
     ['Cheddar cheese', ['dairy']],
     ['Greek yogurt', ['dairy']],
     ['Butter', ['dairy']],
@@ -43,7 +59,7 @@ describe('guessContains', () => {
     ['Mac and cheese pasta', ['dairy', 'gluten']],
   ])('%s -> %j', (name, tags) => expect(guessContains(name)).toEqual(tags))
 
-  it.each(['Almond milk', 'Coconut cream', 'Peanut butter', 'Almond butter', 'Butternut squash', 'Rice', 'Spinach', 'Cream of tartar'])(
+  it.each(['Vegetable broth', 'Mushroom stock', 'Almond milk', 'Coconut cream', 'Peanut butter', 'Almond butter', 'Butternut squash', 'Rice', 'Spinach', 'Cream of tartar'])(
     '%s has nothing to flag', (name) => expect(guessContains(name)).toEqual([]),
   )
   // Oats are flagged as gluten (usually cross-contaminated), so oat milk is too, but it is still not dairy.

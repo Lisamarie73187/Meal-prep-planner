@@ -38,3 +38,12 @@ export const IconPencil = (p: P) => (<Icon {...p}><path d="M4 20l1-4L16.500 4.50
 export const IconChevronDown = (p: P) => (<Icon {...p}><path d="M6 9l6 6 6-6" /></Icon>)
 export const IconPie = (p: P) => (<Icon {...p}><path d="M12 3a9 9 0 1 0 9 9h-9z" /><path d="M15 3.500A9 9 0 0 1 20.500 9H15z" /></Icon>)
 export const IconBars = (p: P) => (<Icon {...p}><path d="M5 20V12M12 20V5M19 20v-5" /></Icon>)
+export const IconMenu = (p: P) => (<Icon {...p}><path d="M4 7h16M4 12h16M4 17h16" /></Icon>)
+export const IconUtensils = (p: P) => (<Icon {...p}><path d="M6 3v8a2 2 0 0 0 2 2v8M10 3v8a2 2 0 0 1-2 2M8 3v8M18 3c-2 1.500-3 4-3 7 0 1.500 1 2.500 3 2.500V21" /></Icon>)
+/** A filled disc with a white minus: "left out". Takes its colour from the surrounding text colour. */
+export const IconMinusCircle = ({ size = 20 }: P) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="12" r="10" fill="currentColor" />
+    <path d="M7 12h10" stroke="#fff" strokeWidth={2.400} strokeLinecap="round" />
+  </svg>
+)

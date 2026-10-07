@@ -26,7 +26,7 @@ export const NUTRIENT_UNIT: Record<Nutrient, string> = {
 }
 
 /** What an ingredient contains, for diet filters. Missing/empty means nothing to flag. */
-export type IngredientTag = 'meat' | 'dairy' | 'egg' | 'gluten' | 'animal'
+export type IngredientTag = 'meat' | 'fish' | 'dairy' | 'egg' | 'gluten' | 'animal'
 
 /** Nutrition values are per 1 base unit (1 g, 1 ml or 1 each). */
 export interface Ingredient extends Nutrition {
@@ -119,7 +119,7 @@ export interface RecipeSnapshot {
   ingredients: { ingredient: Ingredient; amount: number }[]
 }
 
-export type DietKey = 'vegetarian' | 'vegan' | 'dairy_free' | 'gluten_free'
+export type DietKey = 'vegetarian' | 'vegan' | 'pescatarian' | 'dairy_free' | 'gluten_free'
 
 /** What the user told us on the first screen. */
 export interface PlanPreferences {

@@ -1,14 +1,17 @@
 import type { DietKey, Ingredient, IngredientTag, Recipe } from './types'
 
 export const DIETS: { key: DietKey; label: string; avoids: IngredientTag[] }[] = [
-  { key: 'vegetarian', label: 'Vegetarian', avoids: ['meat'] },
-  { key: 'vegan', label: 'Vegan', avoids: ['meat', 'dairy', 'egg', 'animal'] },
+  // Meat and poultry carry 'meat'; fish and shellfish carry their own 'fish' tag so pescatarian can allow them.
+  { key: 'vegetarian', label: 'Vegetarian', avoids: ['meat', 'fish'] },
+  { key: 'vegan', label: 'Vegan', avoids: ['meat', 'fish', 'dairy', 'egg', 'animal'] },
+  { key: 'pescatarian', label: 'Pescatarian', avoids: ['meat'] },
   { key: 'dairy_free', label: 'Dairy-free', avoids: ['dairy'] },
   { key: 'gluten_free', label: 'Gluten-free', avoids: ['gluten'] },
 ]
 
 export const TAG_LABEL: Record<IngredientTag, string> = {
-  meat: 'Meat or fish',
+  meat: 'Meat or poultry',
+  fish: 'Fish or shellfish',
   dairy: 'Dairy',
   egg: 'Egg',
   gluten: 'Gluten',
@@ -34,7 +37,9 @@ export function offendingIngredients(recipe: Pick<Recipe, 'recipe_ingredients'>,
 }
 
 const RULES: [IngredientTag, RegExp][] = [
-  ['meat', /\b(chicken|beef|turkey|pork|bacon|ham|sausage|steak|lamb|veal|duck|salmon|tuna|shrimp|prawns?|fish|cod|tilapia|trout|anchov(y|ies)|crab|lobster|scallops?|jerky|pepperoni|salami|broth|stock)\b/i],
+  // broth and stock are meat-based unless they say otherwise ("vegetable broth")
+  ['meat', /\b(chicken|beef|turkey|pork|bacon|ham|sausage|steak|lamb|veal|duck|jerky|pepperoni|salami)\b|(?<!vegetable |veggie |mushroom |vegan |plant )\b(broth|stock)\b/i],
+  ['fish', /\b(salmon|tuna|shrimp|prawns?|fish|cod|tilapia|trout|halibut|sardines?|anchov(y|ies)|crab|lobster|scallops?|mussels?|clams?|oysters?|seafood|squid|calamari)\b/i],
   ['dairy', /\b(cheese|yogh?urt|cream|whey|ghee|milk|buttermilk|kefir|paneer|ricotta|mozzarella|parmesan|feta|cheddar)\b/i],
   ['dairy', /(?<!peanut |almond |nut |cashew |sunflower |seed |apple )\bbutter\b/i],
   ['egg', /\beggs?\b|\bmayo(nnaise)?\b/i],
