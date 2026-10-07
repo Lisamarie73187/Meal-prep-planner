@@ -303,9 +303,12 @@ for (const [name, cat, servings, prep, ings, steps] of R) {
   out += `\n) as v(iname, amount, pos)\njoin ingredients i on i.name = v.iname and i.owner_id is null\njoin recipes r on r.name = ${q(name)} and r.owner_id is null;\n\n`
 }
 // Diet tags live in the migration (single source of truth); append them so a fresh database matches.
-const migration = readFileSync('supabase/migrations/0005_diet_and_preferences.sql', 'utf8')
-const tags = migration.split('-- diet tags start')[1].split('-- diet tags end')[0].replace(/^[^\n]*\n/, '')
-out += `\n-- diet tags\n${tags.trim()}\n`
+// Later migrations refine the tags (0008 moves fish from 'meat' to 'fish'), so apply them in order.
+for (const file of ['0005_diet_and_preferences.sql', '0008_fish_tag.sql']) {
+  const migration = readFileSync(`supabase/migrations/${file}`, 'utf8')
+  const tags = migration.split('-- diet tags start')[1].split('-- diet tags end')[0].replace(/^[^\n]*\n/, '')
+  out += `\n-- diet tags (${file})\n${tags.trim()}\n`
+}
 writeFileSync('supabase/seed.sql', out)
 const names = new Set(I.map((x) => x[0]))
 for (const r of R) for (const [iname] of r[4]) if (!names.has(iname)) throw new Error('Unknown ingredient ' + iname + ' in ' + r[0])

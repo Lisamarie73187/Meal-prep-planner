@@ -397,7 +397,7 @@ join ingredients i on i.name = v.iname and i.owner_id is null
 join recipes r on r.name = 'Crispy Roasted Chickpeas' and r.owner_id is null;
 
 
--- diet tags
+-- diet tags (0005_diet_and_preferences.sql)
 update ingredients set contains = array['meat'] where owner_id is null and name in
   ('Canned tuna (in water)', 'Chicken breast', 'Ground beef (90% lean)', 'Ground turkey (93% lean)', 'Salmon fillet', 'Shrimp', 'Chicken broth');
 update ingredients set contains = array['dairy'] where owner_id is null and name in
@@ -407,3 +407,7 @@ update ingredients set contains = array['animal'] where owner_id is null and nam
 -- Oats are flagged because they are usually cross-contaminated unless labelled gluten-free.
 update ingredients set contains = array['gluten'] where owner_id is null and name in
   ('Whole-wheat bread slice', 'Whole-wheat pasta (dry)', 'Whole-wheat tortilla', 'Soy sauce', 'Rolled oats', 'Granola');
+
+-- diet tags (0008_fish_tag.sql)
+update ingredients set contains = array['fish'] where owner_id is null and name in
+  ('Salmon fillet', 'Shrimp', 'Canned tuna (in water)');

@@ -15,8 +15,9 @@ React + TypeScript + Vite + React Router, plain CSS, Supabase (Postgres, Auth, S
    5. `supabase/migrations/0005_diet_and_preferences.sql` (diet flags on ingredients, per-plan preferences)
    6. `supabase/migrations/0006_hidden_recipes.sql` ("Never show again" lists, private per person)
    7. `supabase/migrations/0007_more_recipes.sql` (records the second recipe batch in history; does nothing until the base seed exists, so on a fresh project it is a no-op)
-   8. `supabase/seed.sql` (run once: 62 ingredients, 24 recommended recipes, with diet flags)
-   9. `supabase/seed-more.sql` (17 more ingredients, 23 more recipes: plant-based, gluten-free and dairy-free options; safe to re-run)
+   8. `supabase/migrations/0008_fish_tag.sql` (a separate "fish" tag so the Pescatarian diet can allow fish but not meat)
+   9. `supabase/seed.sql` (run once: 62 ingredients, 24 recommended recipes, with diet flags)
+   10. `supabase/seed-more.sql` (17 more ingredients, 23 more recipes: plant-based, gluten-free and dairy-free options; safe to re-run)
 4. **Auth:** for local testing, turn off Authentication → Providers → Email → "Confirm email" (leave it on in production).
 5. **Run:** `npm install && npm run dev`.
 6. **Make yourself admin** (after signing up in the app):
