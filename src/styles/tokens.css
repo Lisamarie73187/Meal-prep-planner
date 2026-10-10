@@ -73,6 +73,14 @@
   --mp-macro-carbs-soft: #fbf2dc;
   --mp-macro-fat: var(--mp-sage-strong);
   --mp-macro-fat-soft: #edf3ee;
+  /* the round icon behind each nutrition card: a stronger version of the card's own tint */
+  --mp-macro-calories-tint: #d3e4d7;
+  --mp-macro-protein-tint: #f6d2c9;
+  --mp-macro-carbs-tint: #f4e1aa;
+  --mp-macro-fat-tint: #d2e4d6;
+  --donut-size: 150px;
+  --donut-size-phone: 130px;
+  --donut-remaining: #dde8df;
 
   /* shape and depth */
   --mp-radius-sm: 12px;
@@ -103,6 +111,10 @@
   --setup-progress-color: #1b6139;  /* the "1 OF 4" label under the progress circles (deep enough to read over the photo) */
   --setup-lede-size: 0.95rem;       /* the supporting paragraph under each Set up title (1rem = 16px) */
   --setup-note-size: 0.8rem;        /* the small grey notes under the chips and choices (the allergy note, "we'll prioritize…") */
+
+  /* Goals screen: text sizes inside the three cards (Plan summary, Daily targets, How your targets are split) */
+  --goals-small-size: 0.95rem;  /* supporting text: the summary chips, descriptions, units, labels, "30% of your day" */
+  --goals-body-size: 1.05rem;   /* main text: target names, the split table and the meal cards (1rem = 16px) */
 
   /* layout */
   --mp-tap: 44px;

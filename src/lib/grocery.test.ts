@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { applyInventory, deductInventory, groupBySection, planNeeds, planTotals } from './grocery'
+import { applyInventory, deductInventory, groceryText, groupBySection, planNeeds, planTotals } from './grocery'
 import type { PlanLine } from './types'
 import { chicken, mk, rice } from './testData'
 
@@ -43,5 +43,14 @@ describe('grocery', () => {
     expect(t.total.calories).toBeCloseTo(330)
     expect(t.perMeal.calories).toBeCloseTo(165)
     expect(t.meals).toBe(2)
+  })
+  it('writes the buy list as plain text, by store section, leaving out what you already have', () => {
+    const r = applyInventory(planNeeds(lines), [{ ingredient: rice, amount: 1000 }])
+    const text = groceryText(r, 'My plan')
+    const sections = groupBySection(r.toBuy)
+    expect(text.split('\n')[0]).toBe('My plan')
+    expect(text).toContain(`${sections[0].section[0].toUpperCase()}${sections[0].section.slice(1)}\n• Chicken — `)
+    expect(text).not.toContain('Rice')
+    expect(groceryText(applyInventory([], []), 'Empty')).toBe('Empty')
   })
 })

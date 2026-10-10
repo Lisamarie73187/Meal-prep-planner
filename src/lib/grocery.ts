@@ -1,5 +1,6 @@
 import { SECTIONS } from './types'
 import type { Ingredient, InventoryItem, MealCategory, Nutrition, PlanLine, StoreSection } from './types'
+import { formatAmount } from './units'
 import { addNutrition, ingredientNutrition, scaleNutrition, zero } from './nutrition'
 
 /** Same-named ingredients (e.g. recommended and a user's own copy) combine on one line. */
@@ -133,4 +134,15 @@ export function mealsByCategory(lines: PlanLine[]): Record<MealCategory, number>
   const out: Record<MealCategory, number> = { breakfast: 0, lunch: 0, dinner: 0, snack: 0 }
   for (const l of lines) out[l.category] += l.meals
   return out
+}
+
+/**
+ * The shopping list as plain text for pasting or sharing into a notes app: the title, then one block per store
+ * section with a "• item — amount" line each. Only what still needs buying (not what you already have).
+ */
+export function groceryText(result: GroceryResult, title: string): string {
+  const blocks = groupBySection(result.toBuy).map(
+    (g) => [g.section[0].toUpperCase() + g.section.slice(1), ...g.lines.map((l) => `• ${l.ingredient.name} — ${formatAmount(l.buy, l.ingredient, 'up').text}`)].join('\n'),
+  )
+  return [title, ...blocks].join('\n\n')
 }

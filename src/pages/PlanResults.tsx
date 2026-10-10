@@ -101,7 +101,7 @@ export function PlanResults() {
           <button key={k} role="tab" aria-selected={tab === k} className="tab" onClick={() => setTab(k)}>{label}</button>
         ))}
       </div>
-      <div hidden={tab !== 'grocery'} className="print-show"><h2 className="print-only">Grocery list</h2><GroceryList planId={id!} result={result} /></div>
+      <div hidden={tab !== 'grocery'} className="print-show"><h2 className="print-only">Grocery list</h2><GroceryList planId={id!} result={result} title={`${plan.name} – grocery list`} /></div>
       <div hidden={tab !== 'recipes'} className="print-show print-break"><h2 className="print-only">Recipes</h2><ScaledRecipes lines={lines} /></div>
       <div hidden={tab !== 'portions'}><PortionGuide lines={lines} /></div>
       <p className="no-print"><Link to={`/plan/${id}/review`}>← Back to review</Link></p>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { groupBySection } from '../lib/grocery'
+import { groceryText, groupBySection } from '../lib/grocery'
 import type { BuyLine, GroceryResult } from '../lib/grocery'
 import { formatAmount } from '../lib/units'
 
@@ -22,14 +22,53 @@ function useChecked(planId: string) {
   return { checked, toggle }
 }
 
-export function GroceryList({ planId, result }: { planId: string; result: GroceryResult }) {
+/** Copy text to the clipboard, falling back to a hidden textarea where the async API isn't available. */
+async function copyText(text: string) {
+  try {
+    await navigator.clipboard.writeText(text)
+    return
+  } catch { /* fall through */ }
+  const ta = document.createElement('textarea')
+  ta.value = text
+  ta.style.position = 'fixed'
+  ta.style.opacity = '0'
+  document.body.appendChild(ta)
+  ta.select()
+  const ok = document.execCommand('copy')
+  ta.remove()
+  if (!ok) throw new Error('copy failed')
+}
+
+export function GroceryList({ planId, result, title = 'Grocery list' }: { planId: string; result: GroceryResult; title?: string }) {
   const { checked, toggle } = useChecked(planId)
+  const [note, setNote] = useState<string | null>(null)
+  const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
+  const text = groceryText(result, title)
+
+  const share = async () => {
+    try {
+      await navigator.share({ title, text })
+      setNote(null)
+    } catch (e) {
+      if ((e as Error).name !== 'AbortError') setNote("Couldn't open sharing. Use Copy and paste it into Notes.")
+    }
+  }
+  const copy = async () => {
+    try { await copyText(text); setNote('Copied. Paste it into a new note.') } catch { setNote("Couldn't copy. Select the list and copy it by hand.") }
+  }
   const groups = groupBySection(result.toBuy)
   const covered = groupBySection(result.covered)
 
   return (
     <div className="stack">
       {result.toBuy.length === 0 && <div className="alert alert-ok">You already have everything for this plan.</div>}
+      {result.toBuy.length > 0 && (
+        <div className="row no-print">
+          {canShare && <button className="btn" onClick={share}>Share to Notes…</button>}
+          <button className="btn" onClick={copy}>Copy list</button>
+          <span className="muted small" role="status">{note ?? (canShare ? 'Share opens your device\'s share sheet, where Notes is listed.' : 'Copy the list, then paste it into Apple Notes.')}</span>
+        </div>
+      )}
       {groups.map((g) => (
         <section key={g.section} className="grocery-section recipe-block">
           <h3>{g.section}</h3>
