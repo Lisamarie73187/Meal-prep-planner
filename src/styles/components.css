@@ -138,6 +138,9 @@
 .hero h1 { font-size: var(--fs-2xl); }
 .auth-card { max-width: 420px; margin: var(--s-6) auto; }
 .photo-preview { width: 100%; max-width: 280px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius-sm); }
+.photo-btn { cursor: pointer; }
+.photo-btn:focus-within { outline: 2px solid var(--c-accent, #1b6139); outline-offset: 2px; }
+.photo-btn.is-disabled { opacity: 0.55; pointer-events: none; }
 .steps-list { padding-left: var(--s-5); }
 .steps-list li { margin-bottom: var(--s-2); }
 .link-plain { color: inherit; text-decoration: none; }

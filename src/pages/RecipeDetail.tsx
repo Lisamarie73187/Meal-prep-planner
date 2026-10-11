@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { NutritionRow } from '../components/NutritionRow'
-import { deleteRecipe, fetchRecipe } from '../lib/api'
+import { PhotoPicker } from '../components/PhotoPicker'
+import { deleteRecipe, fetchRecipe, setRecipePhoto, uploadPhoto } from '../lib/api'
 import { perServingAmounts, perServingNutrition } from '../lib/nutrition'
 import { photoUrl } from '../lib/supabase'
 import { useAsync } from '../lib/useAsync'
@@ -12,11 +14,13 @@ export function RecipeDetail() {
   const { userId, isAdmin } = useAuth()
   const navigate = useNavigate()
   const { data: r, error, loading } = useAsync(() => fetchRecipe(id!), [id])
+  // undefined = show the saved photo; a string or null = what you just set here
+  const [photo, setPhoto] = useState<string | null | undefined>(undefined)
   if (loading) return <p className="muted">Loading…</p>
   if (error || !r) return <div className="alert alert-error">{error ?? 'Recipe not found'}</div>
 
   const per = perServingAmounts(r)
-  const img = photoUrl(r.photo_path)
+  const img = photoUrl(photo === undefined ? r.photo_path : photo)
   const own = r.owner_id !== null && r.owner_id === userId
   const manage = own || (r.owner_id === null && isAdmin)
   const editPath = r.owner_id === null ? `/admin/recipes/${r.id}/edit` : `/my-recipes/${r.id}/edit`
@@ -38,6 +42,19 @@ export function RecipeDetail() {
         </div>
       </div>
       {img && <img className="photo-preview" src={img} alt="" />}
+      {manage && userId && (
+        <div className="no-print">
+          <PhotoPicker
+            hasPhoto={!!img}
+            onFile={async (f) => {
+              const path = await uploadPhoto(f, r.owner_id === null ? 'recommended' : userId)
+              await setRecipePhoto(r.id, path)
+              setPhoto(path)
+            }}
+            onRemove={async () => { await setRecipePhoto(r.id, null); setPhoto(null) }}
+          />
+        </div>
+      )}
       <p className="muted">{r.category} · ⏱ {r.prep_minutes} min · {r.servings} servings {r.copied_from && '· adjusted copy of another recipe'}</p>
       <div className="card stack">
         <h2>Per serving</h2>

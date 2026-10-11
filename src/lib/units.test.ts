@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { formatAmount, formatNumber, formatPortion, fromBase, roundBase, toBase, unitsFor } from './units'
-import { chicken, egg, oil, rice } from './testData'
+import { formatAmount, formatBuy, formatNumber, formatPortion, fromBase, roundBase, toBase, unitsFor } from './units'
+import { chicken, egg, mk, oil, rice } from './testData'
 
 describe('units', () => {
   it('converts cups and ml consistently for liquids', () => {
@@ -36,5 +36,29 @@ describe('units', () => {
   it('adds a cup hint for dry ingredients', () => {
     expect(formatPortion(190, rice)).toBe('190 g (≈ 1 cup)')
     expect(formatPortion(150, chicken)).toBe('150 g')
+  })
+})
+
+describe('formatBuy', () => {
+  const named = (name: string, base_unit: 'g' | 'ml' = 'g') => mk({ name, base_unit })
+  it('gives a whole-item count for things you buy by the piece, with the weight as a hint', () => {
+    expect(formatBuy(300, named('Bell pepper'))).toEqual({ text: '2', hint: '≈ 300 g' })
+    expect(formatBuy(540, named('Chicken breast')).text).toBe('3')
+    expect(formatBuy(500, named('Sweet potato')).text).toBe('3')
+  })
+  it('rounds up so you never buy short, but not for a gram or two over', () => {
+    expect(formatBuy(40, named('Bell pepper')).text).toBe('1')
+    expect(formatBuy(190, named('Onion')).text).toBe('2')
+    expect(formatBuy(152, named('Onion')).text).toBe('1')
+  })
+  it('adds a noun where the name would not read right after a number', () => {
+    expect(formatBuy(90, named('Lemon juice', 'ml')).text).toBe('2 lemons')
+    expect(formatBuy(40, named('Lemon juice', 'ml')).text).toBe('1 lemon')
+    expect(formatBuy(600, named('Broccoli')).text).toBe('2 heads')
+  })
+  it('keeps a measured amount for anything without a typical size, or in a different unit', () => {
+    expect(formatBuy(200, named('Spinach'))).toEqual({ text: '200 g' })
+    expect(formatBuy(6, egg).text).toBe('6')
+    expect(formatBuy(300, named('Bell pepper', 'ml')).hint).toBeUndefined()
   })
 })

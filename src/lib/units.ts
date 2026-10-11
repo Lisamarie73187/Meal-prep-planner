@@ -135,3 +135,50 @@ export function formatPortion(baseAmount: number, ing: UnitInfo): string {
   const cups = Math.max(0.25, step(ml / ML_PER_CUP, 0.25, 'nearest'))
   return `${main.text} (≈ ${formatNumber(cups)} cup${cups > 1 ? 's' : ''})`
 }
+
+/**
+ * Typical size of one item, for ingredients you buy by the piece but that are stored by weight or volume.
+ * `noun` is only for when the item's name wouldn't read right after a number ("2 lemons" for lemon juice).
+ */
+const ITEM_SIZE: Record<string, { unit: 'g' | 'ml'; size: number; noun?: string }> = {
+  'bell pepper': { unit: 'g', size: 150 },
+  onion: { unit: 'g', size: 150 },
+  carrot: { unit: 'g', size: 70 },
+  tomato: { unit: 'g', size: 125 },
+  zucchini: { unit: 'g', size: 200 },
+  cucumber: { unit: 'g', size: 300 },
+  avocado: { unit: 'g', size: 150 },
+  'sweet potato': { unit: 'g', size: 200 },
+  broccoli: { unit: 'g', size: 300, noun: 'head' },
+  eggplant: { unit: 'g', size: 400 },
+  'chicken breast': { unit: 'g', size: 180 },
+  'salmon fillet': { unit: 'g', size: 150 },
+  'lemon juice': { unit: 'ml', size: 45, noun: 'lemon' },
+}
+
+/** Grams (or ml) in `count` of a counted item such as a bell pepper, or null when there is no typical size. */
+export function itemToBase(name: string, count: number, base_unit: 'g' | 'ml' | 'each'): number | null {
+  const item = ITEM_SIZE[name.trim().toLowerCase()]
+  return item && item.unit === base_unit ? count * item.size : null
+}
+
+export interface BuyAmount {
+  /** What to write on the list: "2" (the name is already on the line), "2 lemons", or "300 g" when it can't be counted. */
+  text: string
+  /** The weight or volume behind a count, e.g. "≈ 300 g"; absent when text is already a measure. */
+  hint?: string
+}
+
+/**
+ * How much to buy, as a person would say it: a whole-item count where there's a typical size (2 bell peppers),
+ * otherwise the usual measured amount rounded up. Counts round up so you never come home short.
+ */
+export function formatBuy(baseAmount: number, ing: Pick<Ingredient, 'name' | 'base_unit' | 'density_g_per_ml'>): BuyAmount {
+  const item = ITEM_SIZE[ing.name.trim().toLowerCase()]
+  if (item && item.unit === ing.base_unit) {
+    const count = Math.max(1, Math.ceil(baseAmount / item.size - 0.05))
+    const text = item.noun ? `${count} ${item.noun}${count === 1 ? '' : 's'}` : String(count)
+    return { text, hint: `≈ ${formatAmount(baseAmount, ing, 'up').text}` }
+  }
+  return { text: formatAmount(baseAmount, ing, 'up').text }
+}

@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { fetchIngredients, saveRecipe, uploadPhoto } from '../lib/api'
 import { perServingNutrition } from '../lib/nutrition'
+import type { RecipeDraft } from '../lib/parseRecipe'
 import { photoUrl } from '../lib/supabase'
 import { CATEGORIES } from '../lib/types'
 import type { Ingredient, MealCategory, Recipe } from '../lib/types'
@@ -10,6 +11,7 @@ import { useAsync } from '../lib/useAsync'
 import { AmountInput } from './AmountInput'
 import { IngredientPicker } from './IngredientPicker'
 import { NutritionRow } from './NutritionRow'
+import { PhotoPicker } from './PhotoPicker'
 
 interface Row {
   ingredient: Ingredient
@@ -22,23 +24,26 @@ interface Props {
   /** 'admin' saves to the recommended table; 'user' saves to My recipes. */
   mode: 'user' | 'admin'
   existing?: Recipe
+  /** Starts a new recipe from text that was read by AI. */
+  draft?: RecipeDraft
 }
 
-export function RecipeForm({ mode, existing }: Props) {
+export function RecipeForm({ mode, existing, draft }: Props) {
   const { userId } = useAuth()
   const navigate = useNavigate()
   const from = useLocation().state as { returnTo?: string; category?: MealCategory } | null
   const ings = useAsync(fetchIngredients, [])
   const [extra, setExtra] = useState<Ingredient[]>([])
-  const [name, setName] = useState(existing?.name ?? '')
-  const [category, setCategory] = useState<MealCategory>(existing?.category ?? from?.category ?? 'lunch')
-  const [servings, setServings] = useState(existing?.servings ?? 4)
-  const [prep, setPrep] = useState(existing?.prep_minutes ?? 20)
+  const [name, setName] = useState(existing?.name ?? draft?.name ?? '')
+  const [category, setCategory] = useState<MealCategory>(existing?.category ?? draft?.category ?? from?.category ?? 'lunch')
+  const [servings, setServings] = useState(existing?.servings ?? draft?.servings ?? 4)
+  const [prep, setPrep] = useState(existing?.prep_minutes ?? draft?.prep_minutes ?? 20)
   const [photoPath] = useState(existing?.photo_path ?? null)
-  const [file, setFile] = useState<File | null>(null)
-  const [steps, setSteps] = useState((existing?.instructions ?? []).join('\n'))
+  const [file, setFile] = useState<File | null>(draft?.photo ?? null)
+  const [photoRemoved, setPhotoRemoved] = useState(false)
+  const [steps, setSteps] = useState((existing?.instructions ?? draft?.steps ?? []).join('\n'))
   const [rows, setRows] = useState<Row[]>(
-    () => existing?.recipe_ingredients.map((r) => ({ ingredient: r.ingredient, amount: r.amount, display_unit: r.display_unit })) ?? [],
+    () => existing?.recipe_ingredients.map((r) => ({ ingredient: r.ingredient, amount: r.amount, display_unit: r.display_unit })) ?? draft?.rows ?? [],
   )
   const [error, setError] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
@@ -59,7 +64,7 @@ export function RecipeForm({ mode, existing }: Props) {
     setSaving(true)
     setError(null)
     try {
-      let path = photoPath
+      let path = photoRemoved ? null : photoPath
       if (file) path = await uploadPhoto(file, mode === 'admin' ? 'recommended' : userId)
       await saveRecipe(
         {
@@ -78,10 +83,13 @@ export function RecipeForm({ mode, existing }: Props) {
     }
   }
 
-  const preview = file ? URL.createObjectURL(file) : photoUrl(photoPath)
+  const localPreview = useMemo(() => (file ? URL.createObjectURL(file) : null), [file])
+  useEffect(() => () => { if (localPreview) URL.revokeObjectURL(localPreview) }, [localPreview])
+  const preview = localPreview ?? (photoRemoved ? null : photoUrl(photoPath))
 
   return (
     <form className="stack" onSubmit={submit}>
+      {draft && <DraftNotice draft={draft} />}
       <div className="card form-grid">
         <div className="field">
           <label htmlFor="rf-name">Name</label>
@@ -102,9 +110,13 @@ export function RecipeForm({ mode, existing }: Props) {
           <input id="rf-prep" className="input" type="number" min="0" value={prep} onChange={(e) => setPrep(parseInt(e.target.value) || 0)} />
         </div>
         <div className="field">
-          <label htmlFor="rf-photo">Photo</label>
-          <input id="rf-photo" className="input" type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
+          <span className="label">Photo</span>
           {preview && <img className="photo-preview" src={preview} alt="Recipe preview" />}
+          <PhotoPicker
+            hasPhoto={!!preview}
+            onFile={(f) => { setFile(f); setPhotoRemoved(false) }}
+            onRemove={() => { setFile(null); setPhotoRemoved(true) }}
+          />
         </div>
       </div>
 
@@ -146,5 +158,19 @@ export function RecipeForm({ mode, existing }: Props) {
         <button type="button" className="btn" onClick={() => navigate(back)}>Cancel</button>
       </div>
     </form>
+  )
+}
+
+/** What AI couldn't be sure of, so nothing slips into a saved recipe unchecked. */
+function DraftNotice({ draft }: { draft: RecipeDraft }) {
+  return (
+    <div className="alert alert-warn stack-sm" role="status">
+      <strong>Read from your text. Please check it before saving.</strong>
+      {draft.unmatched.length > 0 && (
+        <div>Not in your ingredient list yet: <strong>{draft.unmatched.join(', ')}</strong>. Add each with the ingredient search below (you can create it there).</div>
+      )}
+      {draft.closeMatches.length > 0 && <div>Matched loosely, make sure these are right: {draft.closeMatches.join('; ')}.</div>}
+      {draft.needsAmount.length > 0 && <div>Fill in the amount for: <strong>{draft.needsAmount.join(', ')}</strong>.</div>}
+    </div>
   )
 }

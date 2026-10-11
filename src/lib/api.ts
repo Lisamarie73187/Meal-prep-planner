@@ -257,3 +257,8 @@ export function buildLines(items: PlanItemRow[], recipes: Map<string, Recipe>): 
   }
   return lines
 }
+
+/** Point a recipe at a new photo, or at none. The old file is left in storage: adjusted copies may still use it. */
+export async function setRecipePhoto(id: string, photoPath: string | null) {
+  check(await supabase.from('recipes').update({ photo_path: photoPath, updated_at: new Date().toISOString() }).eq('id', id))
+}

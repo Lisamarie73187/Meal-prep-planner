@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { groceryText, groupBySection } from '../lib/grocery'
 import type { BuyLine, GroceryResult } from '../lib/grocery'
-import { formatAmount } from '../lib/units'
+import { formatAmount, formatBuy } from '../lib/units'
 
 const storeKey = (planId: string) => `meal-prep:grocery:${planId}`
 
@@ -77,9 +77,10 @@ export function GroceryList({ planId, result, title = 'Grocery list' }: { planId
               <input type="checkbox" checked={checked.has(l.key)} onChange={() => toggle(l.key)} />
               <span>
                 <span className="name">{l.ingredient.name}</span>
+                {formatBuy(l.buy, l.ingredient).hint && <span className="note"> · {formatBuy(l.buy, l.ingredient).hint}</span>}
                 {l.have > 0 && <span className="note"> · need {formatAmount(l.needed, l.ingredient).text}, have {formatAmount(l.have, l.ingredient).text}</span>}
               </span>
-              <span className="qty">{formatAmount(l.buy, l.ingredient, 'up').text}</span>
+              <span className="qty">{formatBuy(l.buy, l.ingredient).text}</span>
             </label>
           ))}
         </section>
