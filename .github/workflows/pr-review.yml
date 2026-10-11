@@ -1,0 +1,52 @@
+name: PR review
+
+# Runs a Claude code review when a pull request is opened (or reopened / taken out of draft).
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+concurrency:
+  group: pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Review pull request #${{ github.event.pull_request.number }} in ${{ github.repository }}.
+            Read CLAUDE.md first and judge the change against it. Look at the full diff, not just the summary.
+
+            Check, in this order:
+            1. Bugs and logic errors, including edge cases and error handling.
+            2. Safety of saved data: database changes must be additive, never destructive; nothing should re-run
+               supabase/seed*.sql; ingredient amounts stay in base units; recommended recipes (owner_id null) can only be
+               changed by admins, and non-admins get their own copy.
+            3. Security: secrets or keys in code or logs, only the anon key in the browser (VITE_ variables), RLS and storage
+               policies, input validation, anything an unsigned or non-admin person could do that they shouldn't.
+            4. Design rules: colors, sizes and spacing come from tokens in src/styles/tokens.css; new CSS class names are
+               prefixed; works at 320-390px and on wide screens with no sideways scrolling; labels, keyboard use,
+               visible focus.
+            5. Tests: pure logic in src/lib has a *.test.ts beside it. Run `npx tsc -b`, `npx vitest run` and `npm run build`
+               and report any failures with the output.
+
+            Write the review as plain, short language with no jargon. Lead with a one-line verdict (ok to merge /
+            needs changes), then list problems most serious first, each with the file and line and a suggested fix.
+            Leave out style nitpicks. Say what you could not check. Post inline comments on specific lines for real
+            problems and one summary comment.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(npx tsc -b),Bash(npx vitest run),Bash(npm ci),Bash(npm run build),Read,Grep,Glob"
