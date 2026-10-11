@@ -1,4 +1,5 @@
 import { Link, useOutletContext } from 'react-router-dom'
+import { useAuth } from '../../auth/AuthContext'
 import { ChipInput } from '../../components/ChipInput'
 import { IconArrowLeft, IconArrowRight } from '../../components/Icons'
 import { setupPath } from '../../lib/setupDraft'
@@ -6,6 +7,7 @@ import type { SetupCtx } from './SetupLayout'
 
 export function SetupIngredients() {
   const { draft, update, planId } = useOutletContext<SetupCtx>()
+  const { session } = useAuth()
   return (
     <section className="setup-page" aria-labelledby="setup-title">
       <header className="setup-head">
@@ -16,6 +18,11 @@ export function SetupIngredients() {
       <div className="setup-card">
         <ChipInput id="have" label="Ingredients you have" values={draft.have} onChange={(have) => update({ have })} placeholder="Add an ingredient..." />
         <p className="setup-note">We'll prioritize recipes using these ingredients when possible. Press Enter or type a comma to add each one.</p>
+        {session && (
+          <p className="setup-note">
+            Want your grocery list to subtract what you have? <Link to="/inventory">Manage your pantry amounts</Link> (your plan is saved here).
+          </p>
+        )}
       </div>
 
       <div className="wizard-actions wizard-actions--nav">

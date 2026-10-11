@@ -262,3 +262,25 @@ export function buildLines(items: PlanItemRow[], recipes: Map<string, Recipe>): 
 export async function setRecipePhoto(id: string, photoPath: string | null) {
   check(await supabase.from('recipes').update({ photo_path: photoPath, updated_at: new Date().toISOString() }).eq('id', id))
 }
+
+/** Change an ingredient. Only its owner (or an admin, for shared ones) is allowed; the database enforces that. */
+export async function updateIngredient(id: string, patch: Partial<NewIngredient>): Promise<Ingredient> {
+  return check(await supabase.from('ingredients').update(patch).eq('id', id).select().single()) as unknown as Ingredient
+}
+
+/** Recipes (that you can see) which use this ingredient, by name. */
+export async function recipesUsingIngredient(id: string): Promise<string[]> {
+  const rows = check(await supabase.from('recipe_ingredients').select('recipe:recipes(name)').eq('ingredient_id', id)) as unknown as { recipe: { name: string } | null }[]
+  return [...new Set(rows.map((r) => r.recipe?.name).filter((n): n is string => !!n))].sort()
+}
+
+/** Delete an ingredient. The database refuses while any recipe or pantry still uses it (foreign key 23503). */
+export async function deleteIngredient(id: string) {
+  const { error } = await supabase.from('ingredients').delete().eq('id', id)
+  if (error) {
+    if ((error as { code?: string }).code === '23503' || /foreign key/i.test(error.message)) {
+      throw new Error("It can't be deleted because a recipe or someone's pantry still uses it.")
+    }
+    throw new Error(error.message)
+  }
+}

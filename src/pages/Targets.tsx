@@ -2,22 +2,27 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { updateProfile } from '../lib/api'
+import { TargetHelper } from '../components/TargetHelper'
 import { DEFAULT_SPLIT, mealTargets, round, splitOf } from '../lib/nutrition'
+import { useTargetInputs } from '../lib/useTargetInputs'
 import { CATEGORIES, NUTRIENTS, NUTRIENT_LABEL, NUTRIENT_UNIT } from '../lib/types'
 import type { Nutrient } from '../lib/types'
 
+const BLANK: Record<Nutrient, string> = { calories: '', protein: '', carbs: '', fat: '', fiber: '', sugar: '' }
+
 export function Targets() {
   const { profile, userId, refreshProfile } = useAuth()
-  const [vals, setVals] = useState<Record<Nutrient, string>>({ calories: '', protein: '', carbs: '', fat: '', fiber: '', sugar: '' })
+  const { inputs: vals, change, reset, fill } = useTargetInputs(BLANK)
   const [split, setSplit] = useState<Record<string, string>>({})
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null)
   const returnTo = (useLocation().state as { returnTo?: string } | null)?.returnTo
 
   useEffect(() => {
     if (!profile) return
-    setVals(Object.fromEntries(NUTRIENTS.map((n) => [n, profile[`target_${n}`] != null ? String(profile[`target_${n}`]) : ''])) as Record<Nutrient, string>)
+    reset(Object.fromEntries(NUTRIENTS.map((n) => [n, profile[`target_${n}`] != null ? String(profile[`target_${n}`]) : ''])) as Record<Nutrient, string>)
     const s = splitOf(profile)
     setSplit(Object.fromEntries(CATEGORIES.map((c) => [c, String(round(s[c] * 100))])))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profile])
 
   const pct = CATEGORIES.map((c) => parseFloat(split[c]) || 0)
@@ -48,13 +53,15 @@ export function Targets() {
     <form className="stack" onSubmit={save}>
       <h1>Macro targets</h1>
       {returnTo?.startsWith('/') && !returnTo.startsWith('//') && <p><Link to={returnTo}>← Back to my plan</Link></p>}
+      <TargetHelper onApply={(s) => { fill({ calories: String(s.calories), protein: String(s.protein), carbs: String(s.carbs), fat: String(s.fat) }); setMsg({ ok: true, text: 'Suggested targets are filled in below. Press Save targets to keep them.' }) }} />
       <div className="card stack">
         <h2>Daily targets</h2>
+        <p className="muted small">Calories and macros work together: change protein, carbs or fat and calories update; change calories and the macros follow.</p>
         <div className="form-grid">
           {NUTRIENTS.map((n) => (
             <div className="field" key={n}>
               <label htmlFor={`t-${n}`}>{NUTRIENT_LABEL[n]} ({NUTRIENT_UNIT[n]})</label>
-              <input id={`t-${n}`} className="input" type="number" min="0" step="any" value={vals[n]} onChange={(e) => setVals({ ...vals, [n]: e.target.value })} />
+              <input id={`t-${n}`} className="input" type="number" min="0" step="any" value={vals[n]} onChange={(e) => change(n, e.target.value)} />
             </div>
           ))}
         </div>

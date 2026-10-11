@@ -32,11 +32,13 @@ export function RecipeDetail() {
         <div className="row no-print">
           {userId && <Link className="btn btn-primary" to={`/recipes/${r.id}/adjust`}>Adjust to my macros</Link>}
           {manage && <Link className="btn" to={editPath}>Edit</Link>}
+          {/* Shared recipe, not an admin: editing makes your own copy in My recipes. */}
+          {userId && r.owner_id === null && !isAdmin && <Link className="btn" to={`/recipes/${r.id}/edit`} title="Your changes are saved as your own copy in My recipes">Edit my copy</Link>}
           {manage && (
             <button className="btn btn-danger" onClick={async () => {
               if (!confirm('Delete this recipe?')) return
               await deleteRecipe(r.id)
-              navigate(r.owner_id === null ? '/admin/recipes' : '/my-recipes')
+              navigate(r.owner_id === null ? '/admin/recipes' : '/recipes?tab=mine')
             }}>Delete</button>
           )}
         </div>

@@ -8,3 +8,4 @@ supabase/.temp/
 
 # TypeScript build cache
 *.tsbuildinfo
+recipe-photos/

@@ -11,7 +11,7 @@ export function Home() {
         </p>
         <div className="row">
           <Link className="btn btn-primary" to="/plan/setup/meals">Plan meals</Link>
-          <Link className="btn" to="/recommended">Browse recommended recipes</Link>
+          <Link className="btn" to="/recipes">Browse recipes</Link>
         </div>
       </section>
     </>

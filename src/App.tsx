@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './auth/AuthContext'
 import { RequireAdmin, RequireAuth } from './auth/guards'
 import { Layout } from './components/Layout'
@@ -7,7 +7,7 @@ import { AuthPage } from './pages/Auth'
 import { HiddenRecipes } from './pages/HiddenRecipes'
 import { Home } from './pages/Home'
 import { Inventory } from './pages/Inventory'
-import { AdminRecipes, MyRecipes } from './pages/MyRecipes'
+import { AdminRecipes } from './pages/MyRecipes'
 import { PlanChoose } from './pages/PlanChoose'
 import { PlanGoals } from './pages/PlanGoals'
 import { PlanPick } from './pages/PlanPick'
@@ -19,7 +19,8 @@ import { SetupIngredients } from './pages/setup/SetupIngredients'
 import { SetupIndex, SetupLayout } from './pages/setup/SetupLayout'
 import { SetupMeals } from './pages/setup/SetupMeals'
 import { Plans } from './pages/Plans'
-import { Recommended } from './pages/Recommended'
+import { AdminIngredients } from './pages/AdminIngredients'
+import { Recipes } from './pages/Recipes'
 import { RecipeDetail } from './pages/RecipeDetail'
 import { RecipeEdit } from './pages/RecipeEdit'
 import { Targets } from './pages/Targets'
@@ -31,7 +32,8 @@ export function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="recommended" element={<Recommended />} />
+            <Route path="recipes" element={<Recipes />} />
+            <Route path="recommended" element={<Navigate to="/recipes" replace />} />
             <Route path="hidden" element={<HiddenRecipes />} />
             <Route path="recipes/:id" element={<RecipeDetail />} />
             <Route path="sign-in" element={<AuthPage mode="sign-in" />} />
@@ -55,13 +57,15 @@ export function App() {
             <Route element={<RequireAuth />}>
               <Route path="inventory" element={<Inventory />} />
               <Route path="plans" element={<Plans />} />
-              <Route path="my-recipes" element={<MyRecipes />} />
+              <Route path="my-recipes" element={<Navigate to="/recipes?tab=mine" replace />} />
               <Route path="my-recipes/new" element={<RecipeEdit mode="user" isNew />} />
               <Route path="my-recipes/:id/edit" element={<RecipeEdit mode="user" />} />
               <Route path="recipes/:id/adjust" element={<AdjustPage />} />
+              <Route path="recipes/:id/edit" element={<RecipeEdit mode="user" copy />} />
               <Route path="targets" element={<Targets />} />
               <Route element={<RequireAdmin />}>
                 <Route path="admin/recipes" element={<AdminRecipes />} />
+                <Route path="admin/ingredients" element={<AdminIngredients />} />
                 <Route path="admin/recipes/new" element={<RecipeEdit mode="admin" isNew />} />
                 <Route path="admin/recipes/:id/edit" element={<RecipeEdit mode="admin" />} />
               </Route>

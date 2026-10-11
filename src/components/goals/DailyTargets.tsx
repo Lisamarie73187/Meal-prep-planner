@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../auth/AuthContext'
 import { updateProfile } from '../../lib/api'
+import { useTargetInputs } from '../../lib/useTargetInputs'
 import { calorieMismatch, fmtAmount, inputsToPatch, PRIMARY_TARGETS, SECONDARY_TARGETS, targetsToInputs } from '../../lib/goals'
 import { NUTRIENT_LABEL, NUTRIENT_UNIT } from '../../lib/types'
 import type { Nutrient, Nutrition, Profile } from '../../lib/types'
@@ -20,7 +21,7 @@ const unitOf = (n: Nutrient) => NUTRIENT_UNIT[n]
 export function DailyTargets({ daily, planId }: { daily: Partial<Nutrition>; planId: string }) {
   const { userId, refreshProfile } = useAuth()
   const [editing, setEditing] = useState(false)
-  const [inputs, setInputs] = useState(() => targetsToInputs(daily))
+  const { inputs, change, reset } = useTargetInputs(targetsToInputs(daily))
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<{ text: string; field?: Nutrient } | null>(null)
   const [saved, setSaved] = useState(false)
@@ -28,7 +29,7 @@ export function DailyTargets({ daily, planId }: { daily: Partial<Nutrition>; pla
   const hasAny = [...PRIMARY_TARGETS, ...SECONDARY_TARGETS].some((n) => daily[n] != null)
   const mismatch = calorieMismatch(daily)
 
-  const open = () => { setInputs(targetsToInputs(daily)); setError(null); setSaved(false); setEditing(true) }
+  const open = () => { reset(targetsToInputs(daily)); setError(null); setSaved(false); setEditing(true) }
   const save = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!userId) return
@@ -74,12 +75,12 @@ export function DailyTargets({ daily, planId }: { daily: Partial<Nutrition>; pla
                 <input
                   id={`t-${n}`} className="input" type="number" inputMode="decimal" min={0} step="any" value={inputs[n]}
                   aria-invalid={error?.field === n} aria-describedby={error?.field === n ? 'target-error' : undefined}
-                  onChange={(e) => setInputs({ ...inputs, [n]: e.target.value })}
+                  onChange={(e) => change(n, e.target.value)}
                 />
               </div>
             ))}
           </div>
-          <p className="setup-note">Leave a box empty to skip that target. Fiber and sugar are optional.</p>
+          <p className="setup-note">Calories and macros update each other as you type. Leave a box empty to skip that target. Fiber and sugar are optional.</p>
           {error && <div id="target-error" className="alert alert-error" role="alert">{error.text}</div>}
           <div className="target-form__actions">
             <button type="button" className="btn btn-lg" onClick={() => setEditing(false)}>Cancel</button>

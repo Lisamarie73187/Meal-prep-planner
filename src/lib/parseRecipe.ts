@@ -1,7 +1,7 @@
 import { supabase } from './supabase'
 import { CATEGORIES } from './types'
 import type { Ingredient, MealCategory } from './types'
-import { itemToBase, toBase, UNITS } from './units'
+import { canSizeOf, itemToBase, toBase, UNITS, unitsFor } from './units'
 
 export interface ParsedRecipe {
   name: string
@@ -29,6 +29,8 @@ export interface RecipeDraft {
   rows: DraftRow[]
   /** Ingredients with no match in the catalogue: add them with the ingredient search. */
   unmatched: string[]
+  /** The same ingredients with their amounts, so they can be added to the recipe once they exist. */
+  unmatchedItems: ParsedRecipe['ingredients']
   /** "<parsed> → <catalogue name>" for matches that were only close, and names whose amount needs filling in. */
   closeMatches: string[]
   needsAmount: string[]
@@ -96,23 +98,37 @@ function toBaseAmount(amount: number, unit: string, ing: Ingredient): number | n
   try { return toBase(amount, unit, ing) } catch { return null }
 }
 
+/** Plain water has no nutrition, so it never needs to be an ingredient. */
+const isWater = (name: string) => /^(ice |cold |hot |warm |boiling |lukewarm )?water$/.test(name.trim().toLowerCase())
+
+/** One recipe row for a parsed ingredient and the ingredient it is, with the amount converted. `known` is false when it couldn't be. */
+export function rowFor(p: ParsedRecipe['ingredients'][number], ingredient: Ingredient): { row: DraftRow; known: boolean } {
+  // "1 each" of a canned food can only mean a can
+  const unit = p.unit === 'each' && ingredient.base_unit !== 'each' && !itemToBase(ingredient.name, 1, ingredient.base_unit) && canSizeOf(ingredient) ? 'can' : p.unit
+  const base = toBaseAmount(p.amount, unit, ingredient)
+  return { row: { ingredient, amount: base ?? 0, display_unit: unitsFor(ingredient).includes(unit) ? unit : null }, known: base !== null }
+}
+
 export function buildDraft(parsed: ParsedRecipe, catalogue: Ingredient[]): RecipeDraft {
   const rows: DraftRow[] = []
   const unmatched: string[] = []
+  const unmatchedItems: ParsedRecipe['ingredients'] = []
   const closeMatches: string[] = []
   const needsAmount: string[] = []
   for (const p of parsed.ingredients) {
+    if (isWater(p.name)) continue
     const m = matchIngredient(p.name, catalogue)
-    if (!m) { unmatched.push(p.name); continue }
-    const base = toBaseAmount(p.amount, p.unit, m.ingredient)
+    if (!m) { unmatched.push(p.name); unmatchedItems.push(p); continue }
+    const { row: made, known } = rowFor(p, m.ingredient)
+    const base = known ? made.amount : null
     const existing = rows.find((r) => r.ingredient.id === m.ingredient.id)
     if (m.kind === 'close' && !existing) closeMatches.push(`${p.name} → ${m.ingredient.name}`)
-    if (existing) { existing.amount += base ?? 0 } else rows.push({ ingredient: m.ingredient, amount: base ?? 0, display_unit: null })
+    if (existing) { existing.amount += base ?? 0 } else rows.push(made)
     if (base === null) needsAmount.push(m.ingredient.name)
   }
   return {
     name: parsed.name, category: parsed.category, servings: parsed.servings, prep_minutes: parsed.prep_minutes,
-    steps: parsed.steps, rows, unmatched, closeMatches, needsAmount,
+    steps: parsed.steps, rows, unmatched, unmatchedItems, closeMatches, needsAmount,
   }
 }
 

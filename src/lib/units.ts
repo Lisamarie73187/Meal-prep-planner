@@ -19,23 +19,54 @@ export const UNITS: Record<string, UnitDef> = {
   'fl oz': { kind: 'volume', factor: 29.5735 },
   cup: { kind: 'volume', factor: 236.588 },
   each: { kind: 'count', factor: 1 },
+  can: { kind: 'count', factor: 1 }, // how much a can holds depends on the food: see CAN_SIZE
 }
 
-type UnitInfo = Pick<Ingredient, 'base_unit' | 'density_g_per_ml'>
+type UnitInfo = Pick<Ingredient, 'base_unit' | 'density_g_per_ml'> & { name?: string; store_section?: string }
+
+/** What one standard can holds, for the canned foods in the ingredient list (beans are the drained amount of a 15 oz can). */
+const CAN_SIZE: Record<string, { unit: 'g' | 'ml'; size: number }> = {
+  'black beans (canned, drained)': { unit: 'g', size: 255 },
+  'kidney beans (canned, drained)': { unit: 'g', size: 255 },
+  'chickpeas (canned, drained)': { unit: 'g', size: 245 },
+  'canned diced tomatoes': { unit: 'g', size: 411 }, // 14.5 oz
+  'canned coconut milk': { unit: 'ml', size: 400 }, // 13.5 fl oz
+  'canned tuna (in water)': { unit: 'g', size: 112 }, // 5 oz can, drained
+}
+
+/** Grams or ml in one can of this ingredient, or null when it isn't a canned food we know the size of. */
+export function canSizeOf(ing: { name?: string; base_unit: string }): number | null {
+  if (!ing.name) return null
+  const can = CAN_SIZE[ing.name.trim().toLowerCase()]
+  return can && can.unit === ing.base_unit ? can.size : null
+}
+
+/** Typical size of one item (a bell pepper is about 150 g), when the ingredient is one you count but is stored by weight or volume. */
+function itemSizeOf(ing: UnitInfo): number | null {
+  if (!ing.name || ing.base_unit === 'each') return null
+  const item = ITEM_SIZE[ing.name.trim().toLowerCase()]
+  return item && item.unit === ing.base_unit ? item.size : null
+}
 
 /** Units an ingredient can be entered in. Cross-kind (weight <-> volume) needs a density. */
 export function unitsFor(ing: UnitInfo): string[] {
   if (ing.base_unit === 'each') return ['each']
   const mass = ['g', 'kg', 'oz', 'lb']
   const vol = ['ml', 'l', 'tsp', 'tbsp', 'fl oz', 'cup']
-  if (ing.base_unit === 'g') return ing.density_g_per_ml ? [...mass, ...vol] : mass
-  return ing.density_g_per_ml ? [...vol, ...mass] : vol
+  const list = ing.base_unit === 'g' ? (ing.density_g_per_ml ? [...mass, ...vol] : mass) : ing.density_g_per_ml ? [...vol, ...mass] : vol
+  const counted = itemSizeOf(ing) ? [...list, 'each'] : list
+  return canSizeOf(ing) ? [...counted, 'can'] : counted
 }
 
 export function toBase(amount: number, unit: string, ing: UnitInfo): number {
   const u = UNITS[unit]
   if (!u) throw new Error(`Unknown unit ${unit}`)
-  if (u.kind === 'count') return amount
+  if (unit === 'can') {
+    const can = canSizeOf(ing)
+    if (!can) throw new Error('No can size known for this ingredient')
+    return amount * can
+  }
+  if (u.kind === 'count') return amount * (itemSizeOf(ing) ?? 1)
   const raw = amount * u.factor
   if (u.kind === 'mass' && ing.base_unit === 'g') return raw
   if (u.kind === 'volume' && ing.base_unit === 'ml') return raw
@@ -47,7 +78,8 @@ export function toBase(amount: number, unit: string, ing: UnitInfo): number {
 export function fromBase(baseAmount: number, unit: string, ing: UnitInfo): number {
   const u = UNITS[unit]
   if (!u) throw new Error(`Unknown unit ${unit}`)
-  if (u.kind === 'count') return baseAmount
+  if (unit === 'can') return baseAmount / (canSizeOf(ing) ?? 1)
+  if (u.kind === 'count') return baseAmount / (itemSizeOf(ing) ?? 1)
   let raw = baseAmount
   if (u.kind === 'mass' && ing.base_unit === 'ml') raw = baseAmount * (ing.density_g_per_ml ?? NaN)
   if (u.kind === 'volume' && ing.base_unit === 'g') raw = baseAmount / (ing.density_g_per_ml ?? NaN)
@@ -67,6 +99,7 @@ function volumeMl(baseAmount: number, ing: UnitInfo): number | null {
 /** The friendliest unit for an amount: 48 tbsp -> cup, 1200 g -> kg, 6 g of spice -> tsp. */
 export function pickDisplayUnit(baseAmount: number, ing: UnitInfo): string {
   if (ing.base_unit === 'each') return 'each'
+  if (ing.base_unit === 'g' && ing.store_section === 'meat') return 'oz' // meat is bought and cooked by the ounce
   const ml = volumeMl(baseAmount, ing)
   if (ing.base_unit === 'ml') {
     if (baseAmount < 14) return 'tsp'
@@ -86,6 +119,7 @@ function roundValue(v: number, unit: string, mode: RoundMode): number {
     case 'tsp': return Math.max(0.25, step(v, 0.25, mode))
     case 'tbsp': return Math.max(0.5, step(v, 0.5, mode))
     case 'cup': return Math.max(0.25, step(v, 0.25, mode))
+    case 'oz': return mode === 'up' ? Math.ceil(v - 1e-9) : Math.max(0.25, step(v, 0.25, 'nearest'))
     case 'l': return step(v, 0.1, mode)
     case 'kg': return step(v, mode === 'up' ? 0.1 : 0.05, mode)
     default: // g
@@ -174,6 +208,11 @@ export interface BuyAmount {
  * otherwise the usual measured amount rounded up. Counts round up so you never come home short.
  */
 export function formatBuy(baseAmount: number, ing: Pick<Ingredient, 'name' | 'base_unit' | 'density_g_per_ml'>): BuyAmount {
+  const can = canSizeOf(ing)
+  if (can) {
+    const count = Math.max(1, Math.ceil(baseAmount / can - 0.05))
+    return { text: `${count} ${count === 1 ? 'can' : 'cans'}`, hint: `≈ ${formatAmount(baseAmount, ing).text}` }
+  }
   const item = ITEM_SIZE[ing.name.trim().toLowerCase()]
   if (item && item.unit === ing.base_unit) {
     const count = Math.max(1, Math.ceil(baseAmount / item.size - 0.05))
@@ -181,4 +220,41 @@ export function formatBuy(baseAmount: number, ing: Pick<Ingredient, 'name' | 'ba
     return { text, hint: `≈ ${formatAmount(baseAmount, ing, 'up').text}` }
   }
   return { text: formatAmount(baseAmount, ing, 'up').text }
+}
+
+export interface UnitBasis {
+  /** How the ingredient is stored: grams, millilitres or a count. */
+  base: 'g' | 'ml' | 'each'
+  /** The amount the nutrition numbers are written for: per 100 g / 100 ml like a label, otherwise per 1 of the unit. */
+  per: number
+  /** That amount in the stored unit (1 cup = 236.588 ml), to turn the numbers into per-gram or per-ml values. */
+  perBase: number
+  /** "100 g", "1 cup". */
+  label: string
+}
+
+/** What a chosen measuring unit means for a new ingredient: how it is stored and what its nutrition numbers are "per". */
+export function unitBasis(unit: string): UnitBasis {
+  const def = UNITS[unit]
+  const base = def.kind === 'mass' ? 'g' : def.kind === 'volume' ? 'ml' : 'each'
+  const per = unit === 'g' || unit === 'ml' ? 100 : 1
+  return { base, per, perBase: per * def.factor, label: `${per} ${unit}` }
+}
+
+/**
+ * Rewrites nutrition numbers written "per 100 g" so they read "per 1 cup" (or any other unit), keeping them the same food.
+ * Weight to weight and volume to volume are exact. Weight to volume needs the density (grams per ml).
+ * Returns null when it can't be done: no density for weight <-> volume, or either side is a count ("each").
+ */
+export function convertPerAmount(values: number[], fromUnit: string, toUnit: string, densityGPerMl: number | null): number[] | null {
+  const from = unitBasis(fromUnit)
+  const to = unitBasis(toUnit)
+  if (from.base === 'each' || to.base === 'each') return fromUnit === toUnit ? values : null
+  // numbers per one gram (or ml), then across g <-> ml with the density, then per the new amount
+  let ratio = to.perBase / from.perBase
+  if (from.base !== to.base) {
+    if (!(densityGPerMl && densityGPerMl > 0)) return null
+    ratio *= from.base === 'g' ? densityGPerMl : 1 / densityGPerMl
+  }
+  return values.map((v) => v * ratio)
 }

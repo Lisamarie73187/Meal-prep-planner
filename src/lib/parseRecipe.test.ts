@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { buildDraft, matchIngredient, normalizeParsed } from './parseRecipe'
+import { buildDraft, matchIngredient, normalizeParsed, rowFor } from './parseRecipe'
 import { mk } from './testData'
 
 const cat = [
+  mk({ id: 'beans', name: 'Black beans (canned, drained)' }),
+  mk({ id: 'tom', name: 'Canned diced tomatoes' }),
   mk({ id: 'chk', name: 'Chicken breast' }),
   mk({ id: 'turk', name: 'Ground turkey (93% lean)' }),
   mk({ id: 'oil', name: 'Olive oil', base_unit: 'ml' }),
@@ -70,6 +72,15 @@ describe('buildDraft', () => {
     expect(amount('bell')).toBe(300) // 2 peppers x 150 g
     expect(amount('rice')).toBeCloseTo(236.588 * 0.78, 1)
   })
+  it('remembers the unit the recipe was written in, when it suits the ingredient', () => {
+    const unit = (id: string) => d.rows.find((r) => r.ingredient.id === id)?.display_unit
+    expect(unit('oil')).toBe('tbsp')
+    expect(unit('bell')).toBe('each') // 2 bell peppers, not 300 g
+    expect(unit('egg')).toBe('each')
+    expect(unit('rice')).toBe('cup')
+    expect(unit('chk')).toBe('lb')
+    expect(unit('almond')).toBe('cup')
+  })
   it('adds up the same ingredient listed twice', () => {
     expect(d.rows.filter((r) => r.ingredient.id === 'oil')).toHaveLength(1)
     expect(amount('oil')).toBeCloseTo(3 * 14.7868, 2)
@@ -82,5 +93,54 @@ describe('buildDraft', () => {
     const w = buildDraft(normalizeParsed({ name: 'x', ingredients: [{ name: 'chicken breast', amount: 1, unit: 'cup' }], steps: [] }), cat)
     expect(w.rows[0].amount).toBe(0)
     expect(w.needsAmount).toEqual(['Chicken breast'])
+  })
+})
+
+describe('missing ingredients', () => {
+  const parsed = normalizeParsed({
+    name: 'Stew', steps: ['Cook.'],
+    ingredients: [
+      { name: 'cilantro', amount: 0.5, unit: 'cup' }, { name: 'turmeric', amount: 1, unit: 'tsp' },
+      { name: 'water', amount: 2, unit: 'cup' }, { name: 'Cold Water', amount: 1, unit: 'cup' }, { name: 'bell pepper', amount: 1, unit: 'each' },
+    ],
+  })
+  const d = buildDraft(parsed, cat)
+  it('keeps the amounts of ingredients that need adding', () => {
+    expect(d.unmatched).toEqual(['cilantro', 'turmeric'])
+    expect(d.unmatchedItems).toEqual([{ name: 'cilantro', amount: 0.5, unit: 'cup' }, { name: 'turmeric', amount: 1, unit: 'tsp' }])
+  })
+  it('never treats plain water as an ingredient', () => {
+    expect(d.unmatched.join()).not.toMatch(/water/i)
+    expect(d.rows).toHaveLength(1)
+  })
+  it('builds a recipe row for a newly added ingredient in the unit it was written in', () => {
+    const turmeric = mk({ id: 'tur', name: 'Turmeric', density_g_per_ml: 0.6 })
+    const { row, known } = rowFor({ name: 'turmeric', amount: 1, unit: 'tsp' }, turmeric)
+    expect(known).toBe(true)
+    expect(row.display_unit).toBe('tsp')
+    expect(row.amount).toBeCloseTo(4.92892 * 0.6, 3)
+    const noDensity = rowFor({ name: 'x', amount: 1, unit: 'cup' }, mk({ id: 'x', name: 'Mystery' }))
+    expect(noDensity.known).toBe(false)
+    expect(noDensity.row.amount).toBe(0)
+  })
+})
+
+describe('cans in recipes', () => {
+  const parsed = normalizeParsed({
+    name: 'Chili', steps: ['Simmer.'],
+    ingredients: [{ name: 'black beans', amount: 2, unit: 'can' }, { name: 'canned diced tomatoes', amount: 1, unit: 'each' }, { name: 'bell pepper', amount: 1, unit: 'each' }],
+  })
+  const d = buildDraft(parsed, cat)
+  const row = (id: string) => d.rows.find((r) => r.ingredient.id === id)!
+  it('reads "2 can" as two cans of drained beans', () => {
+    expect(row('beans')).toMatchObject({ amount: 510, display_unit: 'can' })
+  })
+  it('treats "1 each" of a canned food as a can, but still counts bell peppers as pieces', () => {
+    expect(row('tom')).toMatchObject({ amount: 411, display_unit: 'can' })
+    expect(row('bell')).toMatchObject({ amount: 150, display_unit: 'each' })
+    expect(d.needsAmount).toEqual([])
+  })
+  it('accepts can as a unit from the AI', () => {
+    expect(parsed.ingredients[0].unit).toBe('can')
   })
 })

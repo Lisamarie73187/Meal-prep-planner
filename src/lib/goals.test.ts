@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { calorieMismatch, donutSegments, fmtAmount, impliedCalories, inputsToPatch, macroShares, targetsToInputs } from './goals'
+import { calorieMismatch, DEFAULT_RATIO, donutSegments, fmtAmount, impliedCalories, inputsToPatch, linkTargets, macroRatio, macroShares, targetsToInputs } from './goals'
 
 describe('fmtAmount', () => {
   it('uses thousands separators and at most one decimal', () => {
@@ -78,5 +78,44 @@ describe('donutSegments', () => {
     const one = donutSegments({ protein: 100, carbs: 0, fat: 0, remaining: 0 }, 40, 2)
     expect(one).toHaveLength(1)
     expect(one[0].dash).toBeCloseTo(2 * Math.PI * 40)
+  })
+})
+
+describe('linking calories and macros', () => {
+  const blank = targetsToInputs({})
+  it('works out calories once protein, carbs and fat are all in', () => {
+    // 120 g protein + 90 g carbs + 70 g fat = 480 + 360 + 630
+    let t = linkTargets(blank, DEFAULT_RATIO, 'protein', '120')
+    expect(t.calories).toBe('') // not enough yet
+    t = linkTargets(t, DEFAULT_RATIO, 'carbs', '90')
+    expect(t.calories).toBe('')
+    t = linkTargets(t, DEFAULT_RATIO, 'fat', '70')
+    expect(t.calories).toBe('1470')
+  })
+  it('updates calories again when a macro changes, and leaves them alone while a box is blank', () => {
+    const full = targetsToInputs({ calories: 1470, protein: 120, carbs: 90, fat: 70 })
+    expect(linkTargets(full, DEFAULT_RATIO, 'carbs', '100').calories).toBe('1510')
+    expect(linkTargets(full, DEFAULT_RATIO, 'carbs', '').calories).toBe('1470')
+    expect(linkTargets(full, DEFAULT_RATIO, 'carbs', 'abc').calories).toBe('1470')
+  })
+  it('spreads typed calories over the macros using the given ratio', () => {
+    const t = linkTargets(blank, DEFAULT_RATIO, 'calories', '1500')
+    expect(t).toMatchObject({ calories: '1500', protein: '113', carbs: '150', fat: '50' })
+  })
+  it('keeps your own ratio when calories change', () => {
+    const ratio = macroRatio(targetsToInputs({ protein: 120, carbs: 90, fat: 70 }))!
+    expect(ratio.protein + ratio.carbs + ratio.fat).toBeCloseTo(1)
+    const t = linkTargets(targetsToInputs({ calories: 1470, protein: 120, carbs: 90, fat: 70 }), ratio, 'calories', '2205')
+    expect(t).toMatchObject({ protein: '180', carbs: '135', fat: '105' }) // 1.5x everything
+  })
+  it('does not rescale from a half-typed calorie number, and never touches fiber or sugar', () => {
+    const start = { ...targetsToInputs({ protein: 120, carbs: 90, fat: 70, fiber: 25, sugar: 40 }), calories: '' }
+    expect(linkTargets(start, DEFAULT_RATIO, 'calories', '')).toMatchObject({ protein: '120', carbs: '90', fat: '70' })
+    expect(linkTargets(start, DEFAULT_RATIO, 'calories', '0')).toMatchObject({ protein: '120' })
+    expect(linkTargets(start, DEFAULT_RATIO, 'calories', '2000')).toMatchObject({ fiber: '25', sugar: '40' })
+  })
+  it('macroRatio needs all three macros', () => {
+    expect(macroRatio(targetsToInputs({ protein: 120, carbs: 90 }))).toBeNull()
+    expect(macroRatio(targetsToInputs({ protein: 0, carbs: 0, fat: 0 }))).toBeNull()
   })
 })

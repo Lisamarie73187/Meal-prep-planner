@@ -12,8 +12,11 @@ export function Layout() {
   const loc = useLocation()
   const onHome = loc.pathname === '/'
   const debugBackground = new URLSearchParams(loc.search).get('debug') === 'background'
-  const link = (to: string, label: string) => (
-    <NavLink to={to} className="nav__link" onClick={() => setOpen(false)}>
+  const link = (to: string, label: string, alsoActiveOn: string[] = []) => (
+    <NavLink
+      to={to} onClick={() => setOpen(false)}
+      className={({ isActive }) => `nav__link${isActive || alsoActiveOn.some((p) => loc.pathname.startsWith(p)) ? ' active' : ''}`}
+    >
       {label}
     </NavLink>
   )
@@ -32,13 +35,11 @@ export function Layout() {
             {open ? <IconX size={24} /> : <IconMenu size={24} />}
           </button>
           <nav id="main-nav" className={`nav__links${open ? ' open' : ''}`} aria-label="Main">
-            {link('/recommended', 'Recommended')}
+            {link('/recipes', 'Recipes', ['/my-recipes'])}
             {link('/plan/setup/meals', 'Plan meals')}
-            {session && link('/my-recipes', 'My recipes')}
-            {session && link('/inventory', 'What I have')}
             {session && link('/targets', 'Targets')}
             {session && link('/plans', 'Past plans')}
-            {isAdmin && link('/admin/recipes', 'Admin')}
+            {isAdmin && link('/admin/recipes', 'Admin', ['/admin'])}
             {session ? (
               <button className="btn btn-sm btn-ghost" onClick={async () => { await signOut(); navigate('/') }}>Sign out</button>
             ) : (

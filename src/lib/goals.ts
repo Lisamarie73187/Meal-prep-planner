@@ -84,3 +84,49 @@ export function donutSegments(shares: MacroShares, radius: number, gap: number) 
     return seg
   })
 }
+
+export type MacroKey = 'protein' | 'carbs' | 'fat'
+/** Share of calories from each macro. */
+export type MacroRatio = Record<MacroKey, number>
+/** Used to spread a calorie number over the macros when there are none to copy (30% protein, 40% carbs, 30% fat). */
+export const DEFAULT_RATIO: MacroRatio = { protein: 0.3, carbs: 0.4, fat: 0.3 }
+
+const KCAL_PER_G: Record<MacroKey, number> = { protein: 4, carbs: 4, fat: 9 }
+const MACROS: MacroKey[] = ['protein', 'carbs', 'fat']
+
+const asNumber = (s: string): number | null => {
+  const t = s.trim()
+  if (t === '') return null
+  const v = Number(t)
+  return Number.isFinite(v) && v >= 0 ? v : null
+}
+
+/** The calorie split of the macros typed so far, or null until all three are numbers. */
+export function macroRatio(inputs: Record<Nutrient, string>): MacroRatio | null {
+  const g = MACROS.map((m) => asNumber(inputs[m]))
+  if (g.some((v) => v == null)) return null
+  const kcal = MACROS.map((m, i) => g[i]! * KCAL_PER_G[m])
+  const total = kcal.reduce((a, b) => a + b, 0)
+  if (!(total > 0)) return null
+  return { protein: kcal[0] / total, carbs: kcal[1] / total, fat: kcal[2] / total }
+}
+
+/**
+ * Keeps calories and macros in step as one box is edited (the editor works on text):
+ * - a macro changed and all three are filled in -> calories become 4/4/9 x the grams;
+ * - calories changed to a positive number -> the macros are spread over those calories by `ratio`.
+ * Anything half-typed or blank leaves the other boxes alone. Fiber and sugar are never touched.
+ */
+export function linkTargets(inputs: Record<Nutrient, string>, ratio: MacroRatio, edited: Nutrient, value: string): Record<Nutrient, string> {
+  const next = { ...inputs, [edited]: value }
+  if (edited === 'calories') {
+    const c = asNumber(value)
+    if (c == null || c <= 0) return next
+    for (const m of MACROS) next[m] = String(Math.round((c * ratio[m]) / KCAL_PER_G[m]))
+    return next
+  }
+  if ((MACROS as string[]).includes(edited) && macroRatio(next)) {
+    next.calories = String(Math.round(MACROS.reduce((sum, m) => sum + asNumber(next[m])! * KCAL_PER_G[m], 0)))
+  }
+  return next
+}
