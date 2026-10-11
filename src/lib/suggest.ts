@@ -30,6 +30,10 @@ export interface Suggestion {
   uses: string[]
 }
 
+/** Lunch and dinner are often the same kind of meal, so a recipe for one is a first-choice match for the other. */
+export const sameMealType = (a: MealCategory, b: MealCategory) =>
+  a === b || (['lunch', 'dinner'].includes(a) && ['lunch', 'dinner'].includes(b))
+
 const MACROS = ['calories', 'protein', 'carbs', 'fat'] as const
 
 function missOf(n: Nutrition, target: Partial<Nutrition>): number | null {
@@ -38,7 +42,7 @@ function missOf(n: Nutrition, target: Partial<Nutrition>): number | null {
 }
 
 /**
- * Best candidates first. Diet and dislikes remove recipes; then recipes made for this meal come first,
+ * Best candidates first. Diet and dislikes remove recipes; then recipes made for this meal (lunch and dinner count as one) come first,
  * and within that the best match for your macro target, nudged up for using what you have.
  * With `fit`, each recipe is ranked by how close its portions can be adjusted to the target.
  */
@@ -54,7 +58,7 @@ export function suggest(
       const fitted = fit?.changed ? fit : null
       const miss = missOf(fitted ? fitted.nutrition : nutrition, target)
       const uses = recipeMatch(recipe, have).terms
-      const score = (miss ?? 0) - 0.25 * Math.min(uses.length, 3) + (recipe.category === slot ? 0 : 1)
+      const score = (miss ?? 0) - 0.25 * Math.min(uses.length, 3) + (sameMealType(recipe.category, slot) ? 0 : 1)
       return { s: { recipe, nutrition, fitted, miss, uses }, score }
     })
     .sort((a, b) => a.score - b.score || a.s.recipe.name.localeCompare(b.s.recipe.name))

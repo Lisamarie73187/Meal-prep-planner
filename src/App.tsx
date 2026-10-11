@@ -8,7 +8,6 @@ import { HiddenRecipes } from './pages/HiddenRecipes'
 import { Home } from './pages/Home'
 import { Inventory } from './pages/Inventory'
 import { AdminRecipes } from './pages/MyRecipes'
-import { PlanChoose } from './pages/PlanChoose'
 import { PlanGoals } from './pages/PlanGoals'
 import { PlanPick } from './pages/PlanPick'
 import { PlanResults } from './pages/PlanResults'
@@ -50,7 +49,6 @@ export function App() {
             </Route>
             <Route path="plan/:id/goals" element={<PlanGoals />} />
             <Route path="plan/:id/pick/:slot?" element={<PlanPick />} />
-            <Route path="plan/:id/choose" element={<PlanChoose />} />
             <Route path="plan/:id/review" element={<PlanReview />} />
             <Route path="plan/:id/results" element={<PlanResults />} />
 

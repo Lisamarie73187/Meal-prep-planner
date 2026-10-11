@@ -43,6 +43,13 @@ describe('suggest', () => {
   it('can offer other meal types so any recipe is available', () => {
     expect(suggest([wrongMeal], 'dinner', target, prefs()).map((s) => s.recipe.name)).toEqual(['Perfect breakfast'])
   })
+  it('treats lunch and dinner recipes as equally good matches for each other', () => {
+    const lunch = recipe('Good lunch', 'lunch', { cal: 500, protein: 40 })
+    const dinner = recipe('Okay dinner', 'dinner', { cal: 600, protein: 30 })
+    const breakfast = recipe('Perfect breakfast', 'breakfast', { cal: 500, protein: 40 })
+    expect(suggest([breakfast, dinner, lunch], 'dinner', target, prefs()).map((s) => s.recipe.name)).toEqual(['Good lunch', 'Okay dinner', 'Perfect breakfast'])
+    expect(suggest([breakfast, dinner, lunch], 'lunch', target, prefs()).map((s) => s.recipe.name)).toEqual(['Good lunch', 'Okay dinner', 'Perfect breakfast'])
+  })
   it('prefers recipes that use what you have when fit is similar', () => {
     const a = recipe('A', 'dinner', { cal: 500, protein: 40, ings: [['Beef', []]] })
     const b = recipe('B', 'dinner', { cal: 505, protein: 40, ings: [['Turkey', []]] })

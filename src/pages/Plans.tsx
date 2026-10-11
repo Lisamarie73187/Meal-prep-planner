@@ -24,7 +24,7 @@ export function Plans() {
           </div>
           <div className="row">
             <span className={`badge ${p.status === 'confirmed' ? 'badge-ok' : 'badge-warn'}`}>{p.status}</span>
-            <Link className="btn btn-sm" to={p.status === 'confirmed' ? `/plan/${p.id}/results` : `/plan/${p.id}/choose`}>{p.status === 'confirmed' ? 'Open list' : 'Continue'}</Link>
+            <Link className="btn btn-sm" to={p.status === 'confirmed' ? `/plan/${p.id}/results` : `/plan/${p.id}/pick`}>{p.status === 'confirmed' ? 'Open list' : 'Continue'}</Link>
             <button className="btn btn-sm btn-danger" onClick={async () => { if (confirm('Delete this plan?')) { await deletePlan(p.id); reload() } }}>Delete</button>
           </div>
         </div>

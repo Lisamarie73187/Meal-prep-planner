@@ -7,7 +7,7 @@ import { fetchPlan, fetchRecipes, replacePlanItems } from '../lib/api'
 import { DIETS } from '../lib/diet'
 import { mealTargets, round } from '../lib/nutrition'
 import { parseHave, recipeMatch } from '../lib/have'
-import { prefsOf, suggest } from '../lib/suggest'
+import { prefsOf, sameMealType, suggest } from '../lib/suggest'
 import type { Suggestion } from '../lib/suggest'
 import { CATEGORIES, NUTRIENT_LABEL } from '../lib/types'
 import type { Amounts, MealCategory, Nutrition } from '../lib/types'
@@ -34,6 +34,7 @@ export function PlanPick() {
   const { profile, loading: authLoading } = useAuth()
   const navigate = useNavigate()
   const [page, setPage] = useState(0)
+  const [browsing, setBrowsing] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
   const [fit, setFit] = useState(true)
@@ -46,7 +47,7 @@ export function PlanPick() {
 
   // The same component serves every meal screen, so reset per-screen state when the meal changes.
   // (Without clearing `busy`, the buttons stayed disabled after the first pick.)
-  useEffect(() => { setPage(0); setBusy(false); setError(null); setJustHidden(null) }, [slot])
+  useEffect(() => { setPage(0); setBrowsing(false); setBusy(false); setError(null); setJustHidden(null) }, [slot])
 
   const plan = planQ.data?.plan
   const recipes = recipesQ.data
@@ -90,7 +91,9 @@ export function PlanPick() {
   const pages = Math.max(1, Math.ceil(ranked.length / PER_PAGE))
   const start = (page % pages) * PER_PAGE
   const pinned = ranked.filter((s) => chosenIds.has(s.recipe.id))
-  const options = [...pinned, ...ranked.slice(start, start + PER_PAGE).filter((s) => !chosenIds.has(s.recipe.id))].slice(0, Math.max(PER_PAGE, pinned.length))
+  const options = browsing
+    ? ranked // "Browse all recipes": the whole ranked list, right here
+    : [...pinned, ...ranked.slice(start, start + PER_PAGE).filter((s) => !chosenIds.has(s.recipe.id))].slice(0, Math.max(PER_PAGE, pinned.length))
 
   /** Show the new picks at once, save them, and optionally move on to the next meal type. */
   const apply = async (list: Chosen[], advance = false) => {
@@ -171,7 +174,7 @@ export function PlanPick() {
               actions={
                 <div className="stack-sm" style={{ flexBasis: '100%' }}>
                   {s.uses.length > 0 && <div className="small">Uses your {s.uses.join(', ')}</div>}
-                  {s.recipe.category !== current && <div className="row"><span className="badge">a {s.recipe.category} recipe</span></div>}
+                  {!sameMealType(s.recipe.category, current) && <div className="row"><span className="badge">a {s.recipe.category} recipe</span></div>}
                   {hasMacros && <div className="muted small">{targetLine(s.fitted?.nutrition ?? s.nutrition)}</div>}
                   {s.fitted && !s.fitted.allMet && <div className="muted small">Closest this recipe can get to all four targets.</div>}
                   {c && need > 1 ? (
@@ -210,8 +213,12 @@ export function PlanPick() {
 
       <div className="sticky-bar">
         <div className="row">
-          {ranked.length > PER_PAGE && <button className="btn" onClick={() => setPage((page + 1) % pages)}>Show different options</button>}
-          <Link className="btn btn-ghost" to={`/plan/${id}/choose`}>Browse all recipes</Link>
+          {!browsing && ranked.length > PER_PAGE && <button className="btn" onClick={() => setPage((page + 1) % pages)}>Show different options</button>}
+          {ranked.length > PER_PAGE && (
+            <button className="btn btn-ghost" aria-pressed={browsing} onClick={() => setBrowsing(!browsing)}>
+              {browsing ? `Show fewer recipes` : `Browse all recipes (${ranked.length})`}
+            </button>
+          )}
           {hidden.size > 0 && <Link className="btn btn-ghost" to="/hidden">Hidden recipes ({hidden.size})</Link>}
         </div>
         <div className="row">
