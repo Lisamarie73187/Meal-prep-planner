@@ -7,7 +7,7 @@
 -- (only where it was missing). Amounts already saved in recipes are not changed.
 
 insert into ingredients (owner_id, name, base_unit, store_section, density_g_per_ml, calories, protein, carbs, fat, fiber, sugar, contains)
-select null, v.name, v.base_unit, v.store_section, v.density, v.calories, v.protein, v.carbs, v.fat, v.fiber, v.sugar, v.contains
+select null, v.name, v.base_unit::base_unit, v.store_section::store_section, v.density, v.calories, v.protein, v.carbs, v.fat, v.fiber, v.sugar, v.contains
 from (values
   ('Cilantro', 'g', 'produce', 0.07, 0.23, 0.021, 0.037, 0.005, 0.028, 0.009, '{}'::text[]),
   ('Parsley', 'g', 'produce', 0.25, 0.36, 0.03, 0.063, 0.008, 0.033, 0.009, '{}'::text[]),
