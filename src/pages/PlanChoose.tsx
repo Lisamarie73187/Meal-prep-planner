@@ -58,7 +58,7 @@ export function PlanChoose() {
     return { plan, recipes }
   }, [id])
 
-  const recipes = data.data?.recipes ?? []
+  const recipes = useMemo(() => data.data?.recipes ?? [], [data.data])
   const byId = useMemo(() => new Map(recipes.map((r) => [r.id, r])), [recipes])
   const counts = data.data?.plan.counts
 

@@ -12,7 +12,7 @@ it. Database changes should be additive.
 - **Talk short and plain, no jargon.** Lead with what changed and what you need from me. Technical detail only if I ask.
 - **Git: only when I ask.** Never commit or push on your own. When I do say "commit and push", it goes to `main`.
   Committing images is fine.
-- **Before saying a change is done, run** `npx tsc -b`, `npx vitest run` and `npm run build`, and fix what they find.
+- **Before saying a change is done, run** `npx tsc -b`, `npx vitest run`, `npm run lint` and `npm run build`, and fix what they find.
   **Say clearly what you did not test** (anything needing my real login, or that would change live data).
 - Report failures honestly, with the output. Don't call something working that you didn't check.
 
@@ -70,7 +70,12 @@ yourself.
 - **Recipe photos:** bucket `recipe-photos` is public; the `recommended/` folder is admin-only. Bulk upload is
   `node scripts/upload-recipe-photos.mjs <category> [--upload]` with pictures in `recipe-photos/<category>/` named after
   the recipe (dry run by default). Don't delete storage files when replacing a photo; adjusted copies may share the path.
-- Commands: `npm run dev`, `npx tsc -b`, `npx vitest run`, `npm run build`.
+- Commands: `npm run dev`, `npx tsc -b`, `npx vitest run`, `npm run lint`, `npm run build`.
+- **Lint:** ESLint (`eslint.config.js`) with React hook rules and jsx-a11y accessibility rules. Keep it at 0 errors. The 12
+  `react-hooks/set-state-in-effect` warnings are known and advisory.
+- **TypeScript 6 and 7 side by side (on purpose):** `typescript` in package.json is the TS 6 API package
+  (`@typescript/typescript6`) because typescript-eslint doesn't support TS 7 yet; `tsc` is TypeScript 7 via the
+  `@typescript/native` alias. Don't "fix" this to a plain `typescript@7` or lint breaks.
 
 ## Code layout
 

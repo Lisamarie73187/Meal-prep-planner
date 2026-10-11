@@ -62,7 +62,7 @@
 .tab { border: 0; background: transparent; min-height: 38px; padding: 0 var(--s-4); border-radius: 6px; cursor: pointer; font-weight: 600; color: var(--c-ink-2); }
 .recipes-switch, .recipes-cats { display: flex; flex-wrap: wrap; width: fit-content; max-width: 100%; }
 .recipes-switch .tab { min-height: 42px; }
-.tab[aria-selected='true'] { background: var(--c-surface); color: var(--c-primary); box-shadow: var(--shadow); }
+.tab[aria-selected='true'], .tab[aria-pressed='true'] { background: var(--c-surface); color: var(--c-primary); box-shadow: var(--shadow); }
 
 /* ---------- stepper ----------
    Numbered circles joined by a line. The line into a step is green once that step is done or current. */
