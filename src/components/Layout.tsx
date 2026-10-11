@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import { useAuth } from '../auth/AuthContext'
 import { isConfigured } from '../lib/supabase'
 import { BackgroundDebug } from './BackgroundDebug'
+import { ErrorBoundary } from './ErrorBoundary'
 import { IconMenu, IconX } from './Icons'
 
 export function Layout() {
@@ -57,7 +58,9 @@ export function Layout() {
         </div>
       )}
       <main className="container">
-        <Outlet />
+        <ErrorBoundary key={loc.pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
     </>
   )
