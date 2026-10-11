@@ -9,3 +9,7 @@ supabase/.temp/
 # TypeScript build cache
 *.tsbuildinfo
 recipe-photos/
+
+# Claude Code: local state and other working copies
+.claude/.last-check-pass
+.claude/worktrees/

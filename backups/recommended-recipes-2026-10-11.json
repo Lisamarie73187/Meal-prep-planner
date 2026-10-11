@@ -1,0 +1,4826 @@
+[
+ {
+  "id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Banana Protein Pancakes",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 25,
+  "photo_path": null,
+  "instructions": [
+   "Blend oats, bananas, eggs, protein powder and milk until smooth.",
+   "Melt a little butter in a nonstick pan over medium heat.",
+   "Cook 1/4-cup scoops of batter 2 minutes per side.",
+   "Cool completely and stack with parchment between layers. Reheat in a toaster."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "440f09a6-02b9-48a0-8f57-1b484c46529f",
+    "amount": 4,
+    "position": 1,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Banana"
+    },
+    "display_unit": "each",
+    "ingredient_id": "52978a60-4041-4277-afa4-263dce62b836"
+   },
+   {
+    "id": "cf6b4463-5514-415b-8f85-d1c5203100db",
+    "amount": 4,
+    "position": 2,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "4cec50d6-57c7-4f2e-ad23-d292b1f03cde",
+    "amount": 15,
+    "position": 5,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "92c18130-ab2f-4515-8f91-9afdc33efec6"
+   },
+   {
+    "id": "b3dc87a8-f21f-4de0-9168-b26a1bb9288c",
+    "amount": 120,
+    "position": 4,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Milk (2%)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "9f4e7349-b1b2-4eef-936b-9b669c74f29f"
+   },
+   {
+    "id": "ae94f6e5-a20c-4ad8-aad1-eab27d5661aa",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Rolled oats"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7d0a8d5-1c9d-4696-b3fe-af7d3c7a3f69"
+   },
+   {
+    "id": "b4e4b8a3-45d3-4920-aa76-8f9efda8773f",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "7dee87b8-9d7d-4131-b276-5c043e2c57f9",
+    "ingredient": {
+     "name": "Protein powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "4600610d-69b1-4502-ae09-b8bca1b13674"
+   }
+  ]
+ },
+ {
+  "id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Berry Overnight Oats",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 10,
+  "photo_path": null,
+  "instructions": [
+   "Stir oats, almond milk, yogurt, chia and honey together in a large bowl.",
+   "Divide between 4 jars or containers.",
+   "Top each with blueberries, seal, and refrigerate at least 6 hours or overnight.",
+   "Eat cold, or microwave 60 seconds."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "5fa2a6f4-6b1f-4618-9171-2f729a1cb7c5",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Blueberries"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ce8e5da6-008c-4624-bc94-35d71a74e394"
+   },
+   {
+    "id": "16a35c3e-2e2e-4301-89e3-6e20f95253af",
+    "amount": 240,
+    "position": 2,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Plain nonfat Greek yogurt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a2956f5d-7828-4bec-a863-f2c40e9fcaeb"
+   },
+   {
+    "id": "19509584-0a06-4b28-86e4-129e8cccbf12",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Unsweetened almond milk"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "0b217a48-8288-48e9-8433-e2c855955497"
+   },
+   {
+    "id": "0b924f3c-a5d3-4415-8d39-60c0291581b0",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Rolled oats"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7d0a8d5-1c9d-4696-b3fe-af7d3c7a3f69"
+   },
+   {
+    "id": "389df497-1e75-48d8-9e8d-7bc9dacfb790",
+    "amount": 40,
+    "position": 5,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "72d46c8d-caf6-4f9c-8638-d96c2073926e",
+    "amount": 40,
+    "position": 3,
+    "recipe_id": "4b8643fc-fc2d-4bf0-8718-ee43b22ceaf4",
+    "ingredient": {
+     "name": "Chia seeds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d20a6a96-635e-44d4-8b59-68673df4e677"
+   }
+  ]
+ },
+ {
+  "id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chocolate Chia Pudding",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 10,
+  "photo_path": null,
+  "instructions": [
+   "Whisk almond milk, cocoa and maple syrup until smooth, then whisk in the chia seeds.",
+   "Divide between 4 jars and refrigerate at least 4 hours or overnight; stir once after 30 minutes.",
+   "Top with sliced banana, strawberries and a spoonful of almond butter when serving."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "3958f736-eadb-482c-a31d-2ed9435f139d",
+    "amount": 2,
+    "position": 5,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Banana"
+    },
+    "display_unit": "each",
+    "ingredient_id": "52978a60-4041-4277-afa4-263dce62b836"
+   },
+   {
+    "id": "9c72bad4-e2e2-4d04-96ff-8e824d8f08c6",
+    "amount": 200,
+    "position": 6,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Strawberries"
+    },
+    "display_unit": "g",
+    "ingredient_id": "0012a7df-2ea0-449d-a7c4-411c827fd0b7"
+   },
+   {
+    "id": "cca6f458-74dd-4d46-bacd-0b3a496fc557",
+    "amount": 800,
+    "position": 1,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Unsweetened almond milk"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "0b217a48-8288-48e9-8433-e2c855955497"
+   },
+   {
+    "id": "4c704eb6-46a6-49de-b039-90baa04e33c7",
+    "amount": 60,
+    "position": 4,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Almond butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "43bbb028-1791-47e2-bcf5-65af0c0d9993"
+   },
+   {
+    "id": "1009c899-c4e8-4f26-8037-f463eceaf10b",
+    "amount": 120,
+    "position": 0,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Chia seeds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d20a6a96-635e-44d4-8b59-68673df4e677"
+   },
+   {
+    "id": "9089e0ed-b3a7-4cfb-9563-60c769f8805b",
+    "amount": 20,
+    "position": 2,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Cocoa powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "19187808-316f-4d6f-9bbf-18d84366d2ae"
+   },
+   {
+    "id": "a7637e49-8bee-4d7a-9934-2b7af0920236",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "19d70ea3-fc93-49b4-a688-2b16321754fb",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   }
+  ]
+ },
+ {
+  "id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Freezer Breakfast Burritos",
+  "category": "breakfast",
+  "servings": 6,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Dice onion and pepper and cook in a skillet 5 minutes.",
+   "Add beaten eggs and scramble until just set.",
+   "Stir in black beans and salsa; remove from heat.",
+   "Fill tortillas with the mixture and cheese; roll up tightly.",
+   "Wrap each in foil. Refrigerate 4 days or freeze up to 2 months. Reheat 90 seconds in the microwave."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "f3a11bd8-a598-499f-a78d-7c841d74d2e4",
+    "amount": 150,
+    "position": 4,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "ae208019-3662-4489-8324-75b7d40b62f6",
+    "amount": 80,
+    "position": 6,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "4c542e80-3c31-47ad-8ef8-bfe77b32e927",
+    "amount": 8,
+    "position": 1,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "2e767a07-1844-49c5-9b76-63b095362768",
+    "amount": 120,
+    "position": 3,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Cheddar cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8da29130-518d-4753-9e8b-9894b4357a84"
+   },
+   {
+    "id": "9ca74aee-872e-400f-97eb-1cdb421a1f0b",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "0e716f07-2307-4da7-b9e1-cf6a92573910",
+    "amount": 6,
+    "position": 0,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Whole-wheat tortilla"
+    },
+    "display_unit": "each",
+    "ingredient_id": "7595792e-16ea-4116-93dd-fb1c1c629d54"
+   },
+   {
+    "id": "dd514e02-7aa4-4b7c-8eac-7e929eecf9fa",
+    "amount": 120,
+    "position": 5,
+    "recipe_id": "36370b73-bd69-44b8-8879-e89dc5f65360",
+    "ingredient": {
+     "name": "Salsa"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7ddd2e7a-4870-4653-9076-6d2e7579408c"
+   }
+  ]
+ },
+ {
+  "id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Greek Yogurt Parfait Jars",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 10,
+  "photo_path": null,
+  "instructions": [
+   "Slice the strawberries and roughly chop the almonds.",
+   "Layer yogurt and strawberries in 4 jars; drizzle with honey.",
+   "Keep granola and almonds in a separate bag and add just before eating to keep them crunchy."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "3fdfe3ae-ef14-457f-9bf3-ccfbdd2cca2a",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+    "ingredient": {
+     "name": "Strawberries"
+    },
+    "display_unit": "g",
+    "ingredient_id": "0012a7df-2ea0-449d-a7c4-411c827fd0b7"
+   },
+   {
+    "id": "343778ec-555c-4744-9f83-dbc5b55bb04f",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+    "ingredient": {
+     "name": "Plain nonfat Greek yogurt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a2956f5d-7828-4bec-a863-f2c40e9fcaeb"
+   },
+   {
+    "id": "e7547865-5494-4c09-96db-44c3c65f5de5",
+    "amount": 30,
+    "position": 3,
+    "recipe_id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "5835ffa3-f341-4b66-9a29-e0c12d5b39c1",
+    "amount": 40,
+    "position": 4,
+    "recipe_id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+    "ingredient": {
+     "name": "Almonds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "f3e67f74-1eef-42b9-820a-40aee4074192"
+   },
+   {
+    "id": "5faad8b1-a0a1-4a57-8218-2719b8a6df19",
+    "amount": 120,
+    "position": 1,
+    "recipe_id": "a4fcf4d4-d3cc-47d2-bd43-803c13076924",
+    "ingredient": {
+     "name": "Granola"
+    },
+    "display_unit": "g",
+    "ingredient_id": "1abedca3-f166-4664-b3c4-7056fd49a39a"
+   }
+  ]
+ },
+ {
+  "id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Peanut Butter Banana Oat Bake",
+  "category": "breakfast",
+  "servings": 6,
+  "prep_minutes": 40,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 180\u00b0C / 350\u00b0F and grease a baking dish.",
+   "Mash the bananas and stir in almond milk, peanut butter, maple syrup and chia seeds.",
+   "Mix in the oats, pour into the dish and bake 30 minutes until set.",
+   "Cut into 6 portions. Keeps 5 days; reheat 60 seconds in the microwave."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "efca0df0-f43c-4e10-8a31-656beed5c6d4",
+    "amount": 3,
+    "position": 1,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Banana"
+    },
+    "display_unit": "each",
+    "ingredient_id": "52978a60-4041-4277-afa4-263dce62b836"
+   },
+   {
+    "id": "5e8a8438-ca1f-465a-b7e5-ee25939b6927",
+    "amount": 600,
+    "position": 2,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Unsweetened almond milk"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "0b217a48-8288-48e9-8433-e2c855955497"
+   },
+   {
+    "id": "5285daa5-60b2-4c57-98d4-d614e88766d0",
+    "amount": 120,
+    "position": 3,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Peanut butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "c2617289-971a-4b49-bc04-fd62b8b6b6b2"
+   },
+   {
+    "id": "fb47a88f-2ec0-4a02-b12c-9195f56af6f0",
+    "amount": 30,
+    "position": 5,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Chia seeds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d20a6a96-635e-44d4-8b59-68673df4e677"
+   },
+   {
+    "id": "8c691ff7-536e-40aa-993c-78c8939ea1c6",
+    "amount": 300,
+    "position": 0,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Gluten-free rolled oats"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e82edb57-b59b-4d83-9dd0-0c2e578c9e02"
+   },
+   {
+    "id": "adbe1cb1-07b0-4ae1-8b58-c546ff141731",
+    "amount": 60,
+    "position": 4,
+    "recipe_id": "9a04521e-d3ce-48b5-a109-aeb0ed1b84ef",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   }
+  ]
+ },
+ {
+  "id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Sweet Potato & Black Bean Breakfast Hash",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Dice sweet potato small and saut\u00e9 in olive oil 12 minutes until tender.",
+   "Add onion, pepper, cumin and chili powder; cook 5 minutes.",
+   "Stir in black beans until hot.",
+   "Divide into containers; add salsa and sliced avocado just before eating."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "333caccf-e0ca-4554-8773-dab03bba4dbd",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "6913f4fb-adf1-44f2-8a79-b65a560bb6f4",
+    "amount": 100,
+    "position": 3,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "d10b71db-afcf-4c9d-ab7b-4e84e1dba1a4",
+    "amount": 800,
+    "position": 0,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "d38a48bb-5e2f-4d7c-9ef9-b535d472150f",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "1c1177c8-4f6a-4224-a249-9042973d036a",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "1cd1a807-5cd7-44cf-a394-c204c69a1698",
+    "amount": 30,
+    "position": 5,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "9bf4b3fc-94f8-4803-96c7-a83f1bc746c4",
+    "amount": 120,
+    "position": 8,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Salsa"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7ddd2e7a-4870-4653-9076-6d2e7579408c"
+   },
+   {
+    "id": "b9bf643f-33a2-40a5-abeb-652a21aca91b",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "b5687713-f1d6-4dcf-b809-1e622e2a2b9c",
+    "amount": 6,
+    "position": 6,
+    "recipe_id": "ffc6146d-fe25-4b22-bbfc-bfdfe9b9fa8f",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   }
+  ]
+ },
+ {
+  "id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Sweet Potato Spinach Egg Bake",
+  "category": "breakfast",
+  "servings": 6,
+  "prep_minutes": 45,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 190\u00b0C / 375\u00b0F. Thinly slice the sweet potato and roast 15 minutes.",
+   "Saut\u00e9 onion, pepper and mushrooms in olive oil; add spinach until wilted.",
+   "Layer sweet potato and vegetables in a baking dish. Pour over the whisked eggs and salt.",
+   "Bake 25 minutes until set. Cut into 6 portions."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "21cd5939-94cb-4e9f-a51d-856f8b528fbe",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "261bef9b-77cd-4853-95d0-11970e5ddb6e",
+    "amount": 150,
+    "position": 5,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "18893887-94d8-4359-90e9-fffc3f94b977",
+    "amount": 100,
+    "position": 4,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "f00153b2-0459-4858-9016-eb3f9fd9c086",
+    "amount": 500,
+    "position": 1,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "e0fc160a-02e9-40f9-964b-2ae61dc58ade",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "5a2087e2-6c55-4e4b-9c3f-65e75ecfd31f",
+    "amount": 3,
+    "position": 7,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   },
+   {
+    "id": "7d8085c5-0225-4333-884f-145b37e0622a",
+    "amount": 12,
+    "position": 0,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "481570b9-4c4f-4fa1-8a48-a6b968e835e5",
+    "amount": 300,
+    "position": 3,
+    "recipe_id": "20b26080-099e-47cb-ba8e-289d8da269dd",
+    "ingredient": {
+     "name": "Mushrooms"
+    },
+    "display_unit": "g",
+    "ingredient_id": "32a198f9-a486-4402-a42a-cc90a3be041c"
+   }
+  ]
+ },
+ {
+  "id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Sweet Potato Turkey Hash",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Dice sweet potato small and saut\u00e9 in olive oil 12 minutes until tender.",
+   "Add onion, pepper, turkey and paprika; cook until the turkey is browned.",
+   "Fold in spinach until wilted.",
+   "Fry or poach the eggs separately and add one to each container when serving."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "a0182fb6-1a71-4197-b722-f8c2acc568db",
+    "amount": 120,
+    "position": 4,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "737bcfc1-2846-4db7-8754-94b2fc28e763",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "9af16917-698e-4c5b-bf46-eed4eaefec04",
+    "amount": 100,
+    "position": 3,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "cc32c245-60d9-4bd2-8014-b816eee56366",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "75cce754-e11f-48e5-8964-eaa4342d48b7",
+    "amount": 400,
+    "position": 1,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Ground turkey (93% lean)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8b1de5b3-13e0-43af-9710-3dad43220b7b"
+   },
+   {
+    "id": "fb7d8e7d-a2e6-440e-9d19-d4cab9da30bd",
+    "amount": 4,
+    "position": 6,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "23ad5de0-cfed-47b5-8ee9-f9086ece31ee",
+    "amount": 30,
+    "position": 5,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "4b4019a7-29fe-401b-af65-44c02c045364",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "04e8c24c-4363-4b4d-b73c-4ec43e5fdec1",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   }
+  ]
+ },
+ {
+  "id": "762b0527-60af-4b31-930c-5c75bbf89902",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Tofu Veggie Scramble",
+  "category": "breakfast",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Dice the sweet potato small and roast at 200\u00b0C / 400\u00b0F for 25 minutes.",
+   "Saut\u00e9 onion, pepper and mushrooms in olive oil 6 minutes.",
+   "Crumble in the tofu with cumin, paprika and salt; cook 8 minutes until golden.",
+   "Fold in spinach until wilted. Divide with the roasted sweet potato."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "f73c9ee6-81b9-42d9-9067-dd8fe81d5bbe",
+    "amount": 120,
+    "position": 1,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "aaa70234-5daa-4dec-8212-e12cb36328cb",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "e4d6612f-7bee-4666-b684-5e39ca146c63",
+    "amount": 100,
+    "position": 3,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "c0372ae1-df45-44e4-bf56-6f6a621b8768",
+    "amount": 400,
+    "position": 5,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "1647f397-3643-45d5-8d53-8edfd756c97a",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "e94b55c8-e921-4c4d-8012-4de0371f16fd",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "6f6f8891-d7da-4485-b80d-5a4b7998782c",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   },
+   {
+    "id": "c9df2637-cdec-4c4f-a898-a10d16aed51f",
+    "amount": 3,
+    "position": 9,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   },
+   {
+    "id": "713ffae9-ff5e-4fa3-b67d-ca0782f3576b",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Firm tofu"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6c8fcc78-430e-4326-ae90-2642f7a8a342"
+   },
+   {
+    "id": "e9e04284-30c8-432d-8107-b4280acce752",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "762b0527-60af-4b31-930c-5c75bbf89902",
+    "ingredient": {
+     "name": "Mushrooms"
+    },
+    "display_unit": "g",
+    "ingredient_id": "32a198f9-a486-4402-a42a-cc90a3be041c"
+   }
+  ]
+ },
+ {
+  "id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Veggie Egg Muffins",
+  "category": "breakfast",
+  "servings": 6,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 190\u00b0C / 375\u00b0F and grease a 12-cup muffin tin.",
+   "Saut\u00e9 onion and pepper in olive oil 4 minutes, add spinach until wilted.",
+   "Whisk eggs and milk, stir in vegetables and feta.",
+   "Pour into the tin and bake 20 minutes until set.",
+   "Cool, then store. Per container: 2 muffins."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "bc90e0f0-9a9d-4b79-9067-63cf56a56373",
+    "amount": 120,
+    "position": 1,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "24cbfc03-fb7e-473a-92a4-3237d85a963b",
+    "amount": 150,
+    "position": 2,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "3935b80f-513e-46d6-b5bd-75e8ee03d593",
+    "amount": 80,
+    "position": 3,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "7ce79b00-4331-4470-9cab-b8c0de078891",
+    "amount": 12,
+    "position": 0,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "c6d16bb3-b039-4bc4-b089-751d63c46768",
+    "amount": 90,
+    "position": 4,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Feta cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a69b4c94-0dc0-474c-8abd-312a1718a2fb"
+   },
+   {
+    "id": "27bebd2b-98a9-470e-aae0-2f857d08534c",
+    "amount": 60,
+    "position": 5,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Milk (2%)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "9f4e7349-b1b2-4eef-936b-9b669c74f29f"
+   },
+   {
+    "id": "c965d399-9542-441d-a892-6f90a0a126ff",
+    "amount": 15,
+    "position": 6,
+    "recipe_id": "8cd4e8ca-d1d4-4bea-99d9-68d63fc3d90e",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   }
+  ]
+ },
+ {
+  "id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Black Bean Quinoa Salad",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "photo_path": null,
+  "instructions": [
+   "Cook quinoa (amount is dry weight) and cool. Thaw the corn.",
+   "Whisk olive oil, lemon juice and cumin for the dressing.",
+   "Dice pepper, tomato and onion; toss everything except the avocado with the dressing.",
+   "Divide into containers and add diced avocado just before eating."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "9ecd4f87-fa55-4f9a-808c-0675262f1cd0",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "1fff9095-bf2a-4554-b6ff-79d2f7d85c01",
+    "amount": 60,
+    "position": 9,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "c73639dd-2ade-40a8-b25a-91a8940edbf7",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "f072d2fe-ce34-4496-9e44-118e4fe2a7ce",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "41be2b7f-ef1d-4861-a779-9e5318e9b6b4",
+    "amount": 60,
+    "position": 6,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "0b984be5-12c3-4f11-839b-fe2aa236b989",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Quinoa (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "56d44239-4b08-4fff-aab5-cb1467d73f3b"
+   },
+   {
+    "id": "a9ebe12b-f817-46fe-b8e6-6226d16cc186",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "a902c1f6-3100-40fd-b92c-6a1aa41f6166",
+    "amount": 45,
+    "position": 7,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "61f1894d-a083-437d-b7bc-46278ed81c90",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "05aed96f-c9c7-4f4e-a559-83be19f0350e",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "7e5ecd9b-eb2a-40f9-9fd3-9605cc233ef0",
+    "ingredient": {
+     "name": "Frozen corn"
+    },
+    "display_unit": "g",
+    "ingredient_id": "879fe9b5-ead3-49db-bda0-866bd2055200"
+   }
+  ]
+ },
+ {
+  "id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chicken Burrito Bowls",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice according to the package (amount listed is dry weight).",
+   "Season chicken with cumin and chili powder; cook in olive oil 6 minutes per side. Rest, then slice.",
+   "Saut\u00e9 diced pepper 4 minutes.",
+   "Build each container: rice, beans, chicken, pepper. Add salsa and avocado just before eating."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "b4d1b042-007b-4ed1-b09c-6933b812226a",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "234729a5-2f0a-4a2f-9d10-5a71cc8f9e54",
+    "amount": 160,
+    "position": 4,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "28c62c9e-e7d0-4b64-a31f-594d94bb7f1d",
+    "amount": 500,
+    "position": 0,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Chicken breast"
+    },
+    "display_unit": "g",
+    "ingredient_id": "77b62907-b62c-4674-b2cd-3ee8898ded5e"
+   },
+   {
+    "id": "351f0bbc-ab2d-4465-8cb5-db59a273786e",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "244984b3-946f-45dd-b7b3-08b30bc88522",
+    "amount": 240,
+    "position": 2,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "1a72f503-0657-4304-9fbb-daf00c20c5ce",
+    "amount": 15,
+    "position": 8,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "6e8a6ed5-f381-4a4d-a152-090df4ec172e",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Salsa"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7ddd2e7a-4870-4653-9076-6d2e7579408c"
+   },
+   {
+    "id": "809069c4-0938-4692-9c81-bebf998c8690",
+    "amount": 6,
+    "position": 7,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "44f548f1-b1c0-4fad-91bb-6ba28bccfc3f",
+    "amount": 6,
+    "position": 6,
+    "recipe_id": "0db5d079-c720-4dc3-a802-047d5b5ff899",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   }
+  ]
+ },
+ {
+  "id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chicken Teriyaki Stir-Fry Bowls",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight).",
+   "Slice chicken and sear in olive oil until cooked through.",
+   "Add garlic and vegetables; cook 5 minutes.",
+   "Stir in soy sauce and honey until glossy. Serve over rice."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "1c47336b-37c0-4613-ade9-5fa8e6a094f4",
+    "amount": 4,
+    "position": 5,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "fae5ea71-a406-4666-abda-7bad7e827ca0",
+    "amount": 500,
+    "position": 0,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Chicken breast"
+    },
+    "display_unit": "g",
+    "ingredient_id": "77b62907-b62c-4674-b2cd-3ee8898ded5e"
+   },
+   {
+    "id": "43f9ef52-e45f-4870-bc94-a3499567ed13",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "6e9084aa-4282-4252-96d5-c8d56e99fcf7",
+    "amount": 15,
+    "position": 6,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "a6de2cce-d123-42dc-ad3b-f59dc361e0ac",
+    "amount": 40,
+    "position": 4,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "7aa4f136-76f1-416f-8ff6-b6cf10f3c333",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Soy sauce"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "d8ec4ae3-4031-4b04-8bc7-62ea3c78ea78"
+   },
+   {
+    "id": "13e834fa-b4ec-4edf-b4b6-a313d3a04f41",
+    "amount": 600,
+    "position": 2,
+    "recipe_id": "3eafcfb4-10f2-401a-8f07-e4a0d57e592f",
+    "ingredient": {
+     "name": "Frozen stir-fry vegetables"
+    },
+    "display_unit": "g",
+    "ingredient_id": "26a7844d-c219-43e0-be99-d214ef8a0cbf"
+   }
+  ]
+ },
+ {
+  "id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chickpea Curry Rice Bowls",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight).",
+   "Saut\u00e9 onion, ginger and garlic in olive oil 5 minutes; stir in curry powder 1 minute.",
+   "Add tomatoes, coconut milk and chickpeas; simmer 15 minutes.",
+   "Stir in spinach until wilted and serve over rice."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "bbb455e4-5af1-4939-99f4-d24cabfc9ad5",
+    "amount": 120,
+    "position": 8,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "ad89c018-6052-4077-be4b-8601900ba494",
+    "amount": 150,
+    "position": 4,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "ef4fe51a-52e4-4b16-a01e-41e406643fb9",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "5dba8a22-c027-40b3-9c01-edb3c041a074",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "7fec9de5-709d-42d2-bb6a-927f75432d60",
+    "amount": 480,
+    "position": 0,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Chickpeas (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "be90bf20-a83a-46a0-b774-5b62ad1d1306"
+   },
+   {
+    "id": "6946d112-ba7a-425f-9eb5-af3f30563cc8",
+    "amount": 15,
+    "position": 9,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "69d1d93e-6426-46c6-8d7e-940597b1a638",
+    "amount": 400,
+    "position": 3,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "59979ab0-19d4-4ecd-97ac-2a06f9b3e9bf",
+    "amount": 15,
+    "position": 6,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "20335f96-bfc0-4700-bdb5-a9a4dfa8688b",
+    "amount": 12,
+    "position": 5,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Curry powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6b098228-9c84-4805-8a69-1760d0718acf"
+   },
+   {
+    "id": "c293432f-3e0c-4525-91b1-3fad098ac72b",
+    "amount": 400,
+    "position": 2,
+    "recipe_id": "d77b9cb4-04e6-4d8e-9210-2723fe609826",
+    "ingredient": {
+     "name": "Canned coconut milk"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "442c6bce-5c30-4292-9732-1aed9310b671"
+   }
+  ]
+ },
+ {
+  "id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Greek Chicken Pasta Salad",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook pasta (amount is dry weight), rinse under cold water.",
+   "Cook chicken in a pan, then dice.",
+   "Mix yogurt, olive oil and lemon juice into a dressing.",
+   "Toss everything together with diced cucumber and tomato; top with feta."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "07df97a2-b405-4873-b0f0-60ae826b79b4",
+    "amount": 300,
+    "position": 3,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "c73c4603-0cfa-4a48-bb33-439fbb447516",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "ca335621-9a29-4f84-9b20-a274deb82295",
+    "amount": 30,
+    "position": 7,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "30dce44a-6370-42f0-9429-8ea094144994",
+    "amount": 400,
+    "position": 0,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Chicken breast"
+    },
+    "display_unit": "g",
+    "ingredient_id": "77b62907-b62c-4674-b2cd-3ee8898ded5e"
+   },
+   {
+    "id": "d469dc08-ffff-4e5a-b106-8d8851603407",
+    "amount": 120,
+    "position": 5,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Plain nonfat Greek yogurt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a2956f5d-7828-4bec-a863-f2c40e9fcaeb"
+   },
+   {
+    "id": "ac229add-958c-49cb-9172-dabbd746a82d",
+    "amount": 90,
+    "position": 4,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Feta cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a69b4c94-0dc0-474c-8abd-312a1718a2fb"
+   },
+   {
+    "id": "4fced53b-e64f-41d7-a45f-57646c5c6089",
+    "amount": 240,
+    "position": 1,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Whole-wheat pasta (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e4b6f2f3-ffd2-4813-ab37-068a96ec7ac1"
+   },
+   {
+    "id": "754d0c79-234e-4d39-b93b-30c2dfa06efe",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "5115d6c2-3860-4b85-bd10-8b49ce73871f",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   }
+  ]
+ },
+ {
+  "id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Greek Lentil Salad Jars",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook lentils (amount is dry weight) until just tender; drain and cool.",
+   "Whisk olive oil and lemon juice for the dressing.",
+   "Layer dressing, lentils, diced cucumber, tomato and onion, spinach and crumbled feta in jars."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "553b99fa-76fe-46f1-8ffe-7b8078845ddb",
+    "amount": 100,
+    "position": 5,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "14706940-0854-468b-896a-85606652234b",
+    "amount": 60,
+    "position": 4,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "9fa8e104-58cf-4914-beb3-6ca87f29ef13",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "14eb56f0-a660-4c79-b3f7-989788cdd4b4",
+    "amount": 300,
+    "position": 1,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "89203e53-3173-41f8-946d-a952c7729752",
+    "amount": 45,
+    "position": 7,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "d3c10434-4c1f-4c85-9e72-7bcd1ed3ddc4",
+    "amount": 200,
+    "position": 0,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Lentils (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d2713ea4-d2e3-41bc-b2e0-a9aeb35cc9cc"
+   },
+   {
+    "id": "80ba4151-0dfd-4788-a593-1ab3fbc5a116",
+    "amount": 45,
+    "position": 6,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "f20fafcd-2389-4210-9a50-c0fcbf482f0e",
+    "amount": 100,
+    "position": 3,
+    "recipe_id": "8a71021c-16f0-47ae-b047-f31045df28bc",
+    "ingredient": {
+     "name": "Feta cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a69b4c94-0dc0-474c-8abd-312a1718a2fb"
+   }
+  ]
+ },
+ {
+  "id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Lentil Soup with Toast",
+  "category": "lunch",
+  "servings": 6,
+  "prep_minutes": 45,
+  "photo_path": null,
+  "instructions": [
+   "Saut\u00e9 onion, carrot and garlic in olive oil 6 minutes.",
+   "Add lentils, tomatoes, broth and cumin; simmer 30 minutes.",
+   "Stir in spinach for the last 2 minutes.",
+   "Portion into containers; sprinkle with parmesan. Pack a slice of toast with each."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "92663734-b2ed-4cf8-9154-0e286cb27eec",
+    "amount": 150,
+    "position": 5,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "ce76cfce-6f99-4392-a5c6-c4972035999d",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "ce31bb14-4ad9-4169-af3a-035c8df73aa5",
+    "amount": 300,
+    "position": 1,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "3ac107e5-461f-4e99-90a2-addb4f75f5ae",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "0a49f183-41f5-4ccd-96f0-ac93077c5243",
+    "amount": 30,
+    "position": 9,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Parmesan cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "20b0156a-71b8-4122-bf15-4fb7518ae9ec"
+   },
+   {
+    "id": "5571b781-ee56-4735-b77b-e40e44ce88cc",
+    "amount": 300,
+    "position": 0,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Lentils (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d2713ea4-d2e3-41bc-b2e0-a9aeb35cc9cc"
+   },
+   {
+    "id": "5425cc8d-1413-472b-81dd-fe0f55ab9571",
+    "amount": 6,
+    "position": 10,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Whole-wheat bread slice"
+    },
+    "display_unit": "each",
+    "ingredient_id": "a38b9245-72d1-499a-8f73-5531e2e18ad6"
+   },
+   {
+    "id": "27ddcd8c-bc23-487b-b01d-83cfe0527b4c",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "ebdf9647-23f5-40c4-9d24-dc4964c9b1e0",
+    "amount": 800,
+    "position": 3,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "d424b6f8-0747-40a4-ac0a-a6d84380496b",
+    "amount": 1500,
+    "position": 4,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Chicken broth"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "29106a2e-0f7e-411b-acb9-8db9d9b0bc7e"
+   },
+   {
+    "id": "f03f3baa-5042-4f17-81ea-522343259ee9",
+    "amount": 6,
+    "position": 7,
+    "recipe_id": "b3dbf55a-3fe2-4a91-9dca-a73a79a58023",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   }
+  ]
+ },
+ {
+  "id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Mediterranean Quinoa Jars",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "photo_path": null,
+  "instructions": [
+   "Cook quinoa (amount is dry weight) and cool.",
+   "Whisk olive oil and lemon juice for the dressing.",
+   "Dice cucumber, tomato and onion.",
+   "Layer dressing, chickpeas, vegetables, quinoa and feta in jars. Shake or stir to serve."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "900b5a7d-f239-439c-9754-191fd0dc98cd",
+    "amount": 80,
+    "position": 6,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "a0cb1024-e59d-4126-b63e-b7242762c92f",
+    "amount": 300,
+    "position": 3,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "1df52412-73bc-4576-ab52-fe9ce2800fbf",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "7fa28d4e-d525-4366-8a6e-baf59a68b7a4",
+    "amount": 60,
+    "position": 7,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "95f16af9-3fb4-4b33-9595-e99829b7c4a8",
+    "amount": 120,
+    "position": 4,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Feta cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a69b4c94-0dc0-474c-8abd-312a1718a2fb"
+   },
+   {
+    "id": "a739fea2-b4dd-4176-a38c-eb5183a0452f",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Quinoa (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "56d44239-4b08-4fff-aab5-cb1467d73f3b"
+   },
+   {
+    "id": "c779e445-e42b-4325-a553-26a3e69baba5",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Chickpeas (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "be90bf20-a83a-46a0-b774-5b62ad1d1306"
+   },
+   {
+    "id": "c3976abb-90ce-4a2d-bd2b-4fd8b4d5cecf",
+    "amount": 60,
+    "position": 5,
+    "recipe_id": "cb0a7bc5-182a-46fd-b70a-dbe08dc1dd21",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   }
+  ]
+ },
+ {
+  "id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Peanut Noodle Bowls with Tofu",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cube the tofu and bake at 200\u00b0C / 400\u00b0F for 25 minutes until firm.",
+   "Cook the rice noodles per the package and rinse in cold water.",
+   "Whisk peanut butter, tamari, lemon juice, maple syrup, garlic and ginger with a few spoons of warm water.",
+   "Toss noodles with sauce; top with tofu, shredded carrot and sliced cucumber."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "44cff164-df3f-43ab-b476-dd9cc6ac2ee6",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "92e5eebb-b96a-4f9b-adba-d5720aa38c7d",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "c4d3f60c-c899-4305-8e7b-82f23ac6904f",
+    "amount": 2,
+    "position": 8,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "78506bdf-79a0-4198-ad69-1a47abceeb30",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "7ebc2d42-2132-4a95-803b-3a82e169104e",
+    "amount": 100,
+    "position": 2,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Peanut butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "c2617289-971a-4b49-bc04-fd62b8b6b6b2"
+   },
+   {
+    "id": "35a7f14f-dea7-4d04-9e20-58cd2b931392",
+    "amount": 10,
+    "position": 9,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "8842d35d-27bb-4ba6-bcf3-7e869eb115ef",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Tamari (gluten-free soy sauce)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "867c40c5-ca8c-498c-9e08-4c11110768b1"
+   },
+   {
+    "id": "d15eb7ff-fef9-48e0-82be-56cd51b9036e",
+    "amount": 20,
+    "position": 7,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   },
+   {
+    "id": "c924caac-09a6-4eb9-ba54-3107f05416f2",
+    "amount": 500,
+    "position": 1,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Firm tofu"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6c8fcc78-430e-4326-ae90-2642f7a8a342"
+   },
+   {
+    "id": "19460076-a7b6-45f3-af09-968d454fef06",
+    "amount": 200,
+    "position": 0,
+    "recipe_id": "b3361242-e173-43ae-a0eb-c6c6dbde59ac",
+    "ingredient": {
+     "name": "Rice noodles (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "85afc978-9612-4adc-8cb6-dc66d83cb559"
+   }
+  ]
+ },
+ {
+  "id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Sweet Potato Black Bean Tacos",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "photo_path": null,
+  "instructions": [
+   "Dice sweet potato, toss with olive oil, cumin and chili powder, and roast at 200\u00b0C / 400\u00b0F for 25 minutes.",
+   "Warm the black beans with a splash of water.",
+   "Keep tortillas, filling, salsa and avocado (tossed in lemon juice) separate; assemble 2 tacos per serving."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "b4381dd4-071b-4154-9fc1-ccd74c2d01c9",
+    "amount": 60,
+    "position": 5,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "01e7c387-cc93-4b72-a8a4-8b9019e5328c",
+    "amount": 600,
+    "position": 1,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "4b6781fc-6f5e-4215-9551-666ccc266697",
+    "amount": 160,
+    "position": 3,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "b5462d97-3e70-4017-b485-98f7a2d46967",
+    "amount": 30,
+    "position": 9,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "b155f76f-33bd-42d2-a7f8-c827aa98974f",
+    "amount": 360,
+    "position": 2,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "04244410-9413-4144-baa1-0916767ecb9b",
+    "amount": 15,
+    "position": 8,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "9f8cbde9-7b64-4fd2-b537-72297af49ff3",
+    "amount": 160,
+    "position": 4,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Salsa"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7ddd2e7a-4870-4653-9076-6d2e7579408c"
+   },
+   {
+    "id": "e69aea67-3ace-46b9-9c0c-db0ab27cc0e8",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "3b68cd08-0f9a-447e-a607-320ae38a8e7d",
+    "amount": 4,
+    "position": 6,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "a2699ee4-4ba1-47d3-b190-2de2071b8c00",
+    "amount": 8,
+    "position": 0,
+    "recipe_id": "b665bfe8-7277-4127-999c-ce364029a7e7",
+    "ingredient": {
+     "name": "Corn tortilla"
+    },
+    "display_unit": "each",
+    "ingredient_id": "419d7855-6c3b-46c3-b68b-e28279f83420"
+   }
+  ]
+ },
+ {
+  "id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Tofu Fried Rice Bowls",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight) and cool; day-old rice works best.",
+   "Crumble tofu and fry in olive oil 8 minutes until golden.",
+   "Add vegetables, ginger and garlic; cook 5 minutes.",
+   "Stir in rice and tamari and fry 3 more minutes."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "8e5a40aa-acf2-4b4a-aac1-24f66a6fa616",
+    "amount": 3,
+    "position": 5,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "574f2655-59a2-4e3d-a8fd-04ba5d942d73",
+    "amount": 200,
+    "position": 0,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "376de589-8a16-4462-8a69-8fd6e01e3e5a",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "9e9cd186-5a4f-4d73-8671-689546719f78",
+    "amount": 400,
+    "position": 2,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Frozen stir-fry vegetables"
+    },
+    "display_unit": "g",
+    "ingredient_id": "26a7844d-c219-43e0-be99-d214ef8a0cbf"
+   },
+   {
+    "id": "e594b58b-447a-4cbf-a4d3-78813cd27a65",
+    "amount": 10,
+    "position": 4,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "1f99cb8e-868a-42f9-8f92-30409eb126cb",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Tamari (gluten-free soy sauce)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "867c40c5-ca8c-498c-9e08-4c11110768b1"
+   },
+   {
+    "id": "8c68acd4-5d89-473d-bf11-d309d252b3db",
+    "amount": 500,
+    "position": 1,
+    "recipe_id": "5e7dc9e2-642e-4bc1-9441-e62fc741e018",
+    "ingredient": {
+     "name": "Firm tofu"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6c8fcc78-430e-4326-ae90-2642f7a8a342"
+   }
+  ]
+ },
+ {
+  "id": "2bb616b5-0155-4bb8-ac18-014263865976",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Tuna Chickpea Wraps",
+  "category": "lunch",
+  "servings": 4,
+  "prep_minutes": 15,
+  "photo_path": null,
+  "instructions": [
+   "Drain tuna; mash with chickpeas, yogurt, lemon juice and finely diced onion.",
+   "Fill tortillas with spinach, cucumber slices and the tuna mix.",
+   "Roll tightly and wrap in foil. Keeps 3 days."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "bb1233b4-0a81-461f-aa62-75f19d3d7954",
+    "amount": 60,
+    "position": 5,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "ab616ea0-7823-4db1-baa2-59e5178ee2d2",
+    "amount": 60,
+    "position": 7,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "162a600d-4f0c-4a99-bc84-00750ea4d0e0",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "c11189d7-50df-49a1-a9b3-073f5be6cc5b",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "863b3b9f-39d9-4dee-b2bf-c2854617f3ec",
+    "amount": 480,
+    "position": 0,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Canned tuna (in water)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "09eb3cf4-92f7-4246-bffa-7edbc84d06c7"
+   },
+   {
+    "id": "f0e15ffe-8b54-481d-afb7-51359687bfaf",
+    "amount": 120,
+    "position": 2,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Plain nonfat Greek yogurt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a2956f5d-7828-4bec-a863-f2c40e9fcaeb"
+   },
+   {
+    "id": "9cdb6565-437b-4c13-bb5b-211887c77a1f",
+    "amount": 240,
+    "position": 1,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Chickpeas (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "be90bf20-a83a-46a0-b774-5b62ad1d1306"
+   },
+   {
+    "id": "df38606e-9db9-418c-8de2-a1456c175c0e",
+    "amount": 4,
+    "position": 3,
+    "recipe_id": "2bb616b5-0155-4bb8-ac18-014263865976",
+    "ingredient": {
+     "name": "Whole-wheat tortilla"
+    },
+    "display_unit": "each",
+    "ingredient_id": "7595792e-16ea-4116-93dd-fb1c1c629d54"
+   }
+  ]
+ },
+ {
+  "id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Beef & Broccoli Rice Bowls",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight).",
+   "Brown the beef with garlic in olive oil; drain excess fat.",
+   "Add broccoli florets and a splash of water; cover 4 minutes.",
+   "Stir in soy sauce and honey. Serve over rice."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "9494e857-e835-4045-be7b-9aa79e417dcd",
+    "amount": 600,
+    "position": 1,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Broccoli"
+    },
+    "display_unit": "g",
+    "ingredient_id": "96d063a2-4f73-4d7f-86ec-ddc27d801aef"
+   },
+   {
+    "id": "5dc3797b-41ff-4af0-b18d-35dc86d8bb49",
+    "amount": 4,
+    "position": 5,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "a522cdbb-08b8-479f-98df-43d3b9d8c046",
+    "amount": 500,
+    "position": 0,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Ground beef (90% lean)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "88813f79-63d4-4369-b839-79fdd3db0eaa"
+   },
+   {
+    "id": "7cfc2b2e-1ee8-4124-9b7d-26b80a35422b",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "7e091b4c-af87-405b-94bb-d92fc94db749",
+    "amount": 15,
+    "position": 6,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "aab69c8e-4447-476c-b1a3-074808cffd04",
+    "amount": 30,
+    "position": 4,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "8dbccfee-79e5-4058-842d-9f48d0d80cd8",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "dca954cd-7834-4b3f-a2e0-62d0d28656c5",
+    "ingredient": {
+     "name": "Soy sauce"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "d8ec4ae3-4031-4b04-8bc7-62ea3c78ea78"
+   }
+  ]
+ },
+ {
+  "id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chicken Fajita Sheet Pan",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 220\u00b0C / 425\u00b0F.",
+   "Slice chicken, peppers and onion; toss with oil, chili powder and cumin.",
+   "Roast on a sheet pan 20 minutes.",
+   "Serve with warmed tortillas and a spoon of yogurt."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "e329d505-3016-4a2d-8bec-06092d1efc83",
+    "amount": 500,
+    "position": 1,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "0b835a65-cc0a-4d11-8e04-b04cda9e5e7a",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "651e741e-b94f-439e-bbfd-9e7a76ea8b38",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Chicken breast"
+    },
+    "display_unit": "g",
+    "ingredient_id": "77b62907-b62c-4674-b2cd-3ee8898ded5e"
+   },
+   {
+    "id": "a102bcf4-9fe1-4851-a074-d6ae125fb312",
+    "amount": 120,
+    "position": 7,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Plain nonfat Greek yogurt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a2956f5d-7828-4bec-a863-f2c40e9fcaeb"
+   },
+   {
+    "id": "1648b1b1-7459-4511-bf2a-f984d4d525dd",
+    "amount": 6,
+    "position": 3,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Whole-wheat tortilla"
+    },
+    "display_unit": "each",
+    "ingredient_id": "7595792e-16ea-4116-93dd-fb1c1c629d54"
+   },
+   {
+    "id": "68057064-99ad-46a5-98d6-32a1d6e8f8af",
+    "amount": 30,
+    "position": 4,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "30c8f92a-a1aa-42b2-af0d-0e1757107bda",
+    "amount": 8,
+    "position": 5,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "319eadbd-7c14-4cc2-bde0-7571ca303c34",
+    "amount": 6,
+    "position": 6,
+    "recipe_id": "85306335-52b6-4003-8f1b-e29caaa237a0",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   }
+  ]
+ },
+ {
+  "id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Chickpea Eggplant Stew over Quinoa",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "photo_path": null,
+  "instructions": [
+   "Cube the eggplant and brown in olive oil 8 minutes.",
+   "Add onion, garlic and spices for 3 minutes, then tomatoes and chickpeas.",
+   "Simmer 20 minutes; stir in spinach.",
+   "Cook quinoa (dry weight) and portion the stew over it."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "513d9a9a-af24-481c-9382-bee1bad50bf1",
+    "amount": 100,
+    "position": 9,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "9c05d501-bc4b-4245-838e-aceb54463569",
+    "amount": 150,
+    "position": 3,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "21319c1f-e618-4680-bd8e-c18d65b07c4f",
+    "amount": 4,
+    "position": 4,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "dddd82ba-1925-4fe4-a042-d5ac07eddf18",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Quinoa (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "56d44239-4b08-4fff-aab5-cb1467d73f3b"
+   },
+   {
+    "id": "fc2db0bd-a961-4c1d-9214-a97ae7888334",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Chickpeas (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "be90bf20-a83a-46a0-b774-5b62ad1d1306"
+   },
+   {
+    "id": "bc718086-5865-46b1-b66d-953bfe45e26c",
+    "amount": 45,
+    "position": 6,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "6d916502-e6ac-45ea-8bd7-56b954f521a2",
+    "amount": 600,
+    "position": 2,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "76cb7fdd-0ca8-4c11-8a94-06e81c95c7f1",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "671bbcec-7148-42d5-94b7-33c8e23c5df0",
+    "amount": 6,
+    "position": 7,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   },
+   {
+    "id": "fff60f12-e6cf-4a5e-8ccf-63de1aef3d68",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "2b1af1a4-a84c-4ae7-ac45-2c6b84423399",
+    "ingredient": {
+     "name": "Eggplant"
+    },
+    "display_unit": "g",
+    "ingredient_id": "959a335c-a571-42d3-b081-bedaa0053e92"
+   }
+  ]
+ },
+ {
+  "id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Coconut Lentil Curry with Rice",
+  "category": "dinner",
+  "servings": 6,
+  "prep_minutes": 45,
+  "photo_path": null,
+  "instructions": [
+   "Saut\u00e9 onion, carrot, ginger and garlic in olive oil 6 minutes; stir in curry powder.",
+   "Add lentils (dry weight), tomatoes, coconut milk and broth; simmer 25 minutes until the lentils are soft.",
+   "Stir in spinach. Cook rice separately (dry weight) and portion the curry over it."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "4c66273c-f4c4-4163-9929-c0bfff639830",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "43403f86-69c3-47bc-a8bf-52d09d7e8533",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "094133c9-0bff-46fa-ac9d-c9d03768b88e",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "c9818e65-f78c-4e82-98a5-f2a55d7f76cd",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "24c8efa8-b383-41fe-8a6d-aab5a2638d1a",
+    "amount": 240,
+    "position": 9,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "076d1a7b-bb2c-4b0f-8ec1-999f28949fdf",
+    "amount": 300,
+    "position": 0,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Lentils (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d2713ea4-d2e3-41bc-b2e0-a9aeb35cc9cc"
+   },
+   {
+    "id": "66e72d34-9bca-4351-af49-638cf538f68b",
+    "amount": 15,
+    "position": 11,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "8a711861-5aa7-41be-abcd-c1b1c7058ad2",
+    "amount": 400,
+    "position": 2,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "8d08a308-b69c-4568-aef4-40d9342053d6",
+    "amount": 20,
+    "position": 7,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "750fd9f6-efa5-40d5-9543-fca40cc834c2",
+    "amount": 600,
+    "position": 10,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Vegetable broth"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "fbcada4e-cd0f-4a05-a5b2-33ee1014c5c2"
+   },
+   {
+    "id": "43425238-7039-4b3a-9bea-14ed3f2ba958",
+    "amount": 18,
+    "position": 6,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Curry powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6b098228-9c84-4805-8a69-1760d0718acf"
+   },
+   {
+    "id": "b53c0c33-c17d-4228-b19a-1976053edb7f",
+    "amount": 400,
+    "position": 1,
+    "recipe_id": "28ad1554-9f6f-40b4-9375-1351f1b4ef97",
+    "ingredient": {
+     "name": "Canned coconut milk"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "442c6bce-5c30-4292-9732-1aed9310b671"
+   }
+  ]
+ },
+ {
+  "id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Gluten-Free Chicken Veggie Stir-Fry",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight).",
+   "Slice chicken thinly and saut\u00e9 in olive oil 6 minutes.",
+   "Add vegetables, ginger and garlic; cook 5 minutes.",
+   "Stir in tamari and maple syrup for 1 minute. Serve over rice."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "729f21fe-9dd8-4110-a58f-d94e979d248c",
+    "amount": 3,
+    "position": 5,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "0afe63a9-a3cd-42e5-b6a4-26a0931921e3",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "f30790d7-d091-4fd5-9e79-2f0207dc1d6b",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "f21f45a8-53ec-42cc-ba35-0a2cddcc2ab9",
+    "amount": 600,
+    "position": 1,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Frozen stir-fry vegetables"
+    },
+    "display_unit": "g",
+    "ingredient_id": "26a7844d-c219-43e0-be99-d214ef8a0cbf"
+   },
+   {
+    "id": "d44ea657-d0b6-4e0d-8b46-ef90c5fa4ddf",
+    "amount": 500,
+    "position": 0,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Chicken breast"
+    },
+    "display_unit": "g",
+    "ingredient_id": "77b62907-b62c-4674-b2cd-3ee8898ded5e"
+   },
+   {
+    "id": "ba7249ae-b8d8-4200-a460-4c7deb1206a0",
+    "amount": 15,
+    "position": 4,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "c0a82d08-c69c-4bf8-9bc8-1365c33216bf",
+    "amount": 70,
+    "position": 3,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Tamari (gluten-free soy sauce)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "867c40c5-ca8c-498c-9e08-4c11110768b1"
+   },
+   {
+    "id": "31dc785d-8f0d-4ddd-8cf2-858078fcb803",
+    "amount": 20,
+    "position": 7,
+    "recipe_id": "681ef5b5-dce8-48d1-baba-bbab72e77d53",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   }
+  ]
+ },
+ {
+  "id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Loaded Sweet Potatoes with Tempeh & Black Beans",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "photo_path": null,
+  "instructions": [
+   "Bake whole sweet potatoes at 200\u00b0C / 400\u00b0F for 45 minutes until soft.",
+   "Crumble tempeh and brown with onion, cumin and chili powder 8 minutes; add black beans and spinach until hot.",
+   "Split the potatoes and fill. Add salsa and avocado (tossed in lemon juice) when serving."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "38631942-3476-47d4-885f-3a895f3192dc",
+    "amount": 120,
+    "position": 6,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "c1a4928f-5833-44b2-ad23-12480632f1e5",
+    "amount": 80,
+    "position": 5,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "31a6cb09-ff60-47d4-aa8c-ca84f784cb0c",
+    "amount": 1000,
+    "position": 0,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "55ca30bc-f801-4297-852e-aa033dfc8f75",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "bbc8d933-034b-470f-bc14-688db92bb074",
+    "amount": 30,
+    "position": 9,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "cc2a32e7-9a42-4752-bd58-84987aa79117",
+    "amount": 480,
+    "position": 2,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "4089833c-1f81-412a-b3a1-d8d2914e9e4f",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Salsa"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7ddd2e7a-4870-4653-9076-6d2e7579408c"
+   },
+   {
+    "id": "2114bb80-fe3f-41ef-81e7-6992f137e762",
+    "amount": 4,
+    "position": 8,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "bfaf79ce-fd6c-4da0-8968-a107f266e05c",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "2e1f99c5-b03a-4e5b-ac47-c9c63d656e8f",
+    "amount": 300,
+    "position": 1,
+    "recipe_id": "3c1f13e6-f626-484d-b6e6-5a78e4b9b24d",
+    "ingredient": {
+     "name": "Tempeh"
+    },
+    "display_unit": "g",
+    "ingredient_id": "4b04e1ce-aecf-4178-9043-6cf6e1804b8f"
+   }
+  ]
+ },
+ {
+  "id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Sheet-Pan Salmon, Broccoli & Sweet Potato",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 220\u00b0C / 425\u00b0F.",
+   "Cube sweet potato, toss with half the oil, and roast 15 minutes.",
+   "Add broccoli and garlic tossed in oil; nestle the salmon on the tray.",
+   "Roast 12 more minutes; squeeze lemon over everything."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "6f9d491b-9da0-465a-bfca-0fbc255cf8d6",
+    "amount": 600,
+    "position": 2,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Broccoli"
+    },
+    "display_unit": "g",
+    "ingredient_id": "96d063a2-4f73-4d7f-86ec-ddc27d801aef"
+   },
+   {
+    "id": "7146187e-b092-41bc-a35a-2b6e302993b7",
+    "amount": 600,
+    "position": 1,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "d56bf3e8-6fbf-4efc-ba43-bfb77316565b",
+    "amount": 4,
+    "position": 4,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "264824ce-3eaa-48cd-b7a4-1344fdda8ba1",
+    "amount": 30,
+    "position": 5,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "4a8ba5fd-dcac-4d37-8738-e9ff7d33d1ab",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Salmon fillet"
+    },
+    "display_unit": "g",
+    "ingredient_id": "90c53323-b1b3-4537-b123-7846a7e68429"
+   },
+   {
+    "id": "994b867c-292c-4451-a84e-0aa90a0b1f9e",
+    "amount": 45,
+    "position": 3,
+    "recipe_id": "070134ad-0d87-4e47-a486-2d1bfd7d8345",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   }
+  ]
+ },
+ {
+  "id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Shrimp Fried Rice",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight) and cool.",
+   "Scramble eggs in a hot wok with oil and set aside.",
+   "Stir-fry shrimp and garlic 3 minutes, add vegetables and cauliflower rice.",
+   "Add cooked rice, eggs and soy sauce; toss until hot."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "6088457e-43e4-449e-9d41-b571b9bd38fb",
+    "amount": 4,
+    "position": 6,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "21af642e-0d8c-4a78-b642-15a4dc620bb6",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Shrimp"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fb471568-1b55-4fc8-ac61-ee91a29eb0f9"
+   },
+   {
+    "id": "df02922b-6a0d-4ec9-9dc6-9852678787b2",
+    "amount": 4,
+    "position": 7,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "e85a64b8-0b12-43a9-816c-bc0ac447ca72",
+    "amount": 160,
+    "position": 1,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "e14d851c-3a53-4f6e-867b-be1469bc795f",
+    "amount": 30,
+    "position": 5,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "e1eecd5a-609d-4184-8994-b219182739f5",
+    "amount": 45,
+    "position": 4,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Soy sauce"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "d8ec4ae3-4031-4b04-8bc7-62ea3c78ea78"
+   },
+   {
+    "id": "3b1c18be-6c06-488d-a6f1-334abe78f699",
+    "amount": 400,
+    "position": 3,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Frozen stir-fry vegetables"
+    },
+    "display_unit": "g",
+    "ingredient_id": "26a7844d-c219-43e0-be99-d214ef8a0cbf"
+   },
+   {
+    "id": "ea02adc8-2b90-4cbf-917c-1d2bfdbd6e8f",
+    "amount": 600,
+    "position": 2,
+    "recipe_id": "3bb4e669-02f5-4fa3-9cf8-0744af5c3c49",
+    "ingredient": {
+     "name": "Frozen cauliflower rice"
+    },
+    "display_unit": "g",
+    "ingredient_id": "bb7ee164-47d3-4879-b668-ee8b16518e13"
+   }
+  ]
+ },
+ {
+  "id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Shrimp Veggie Rice Noodle Stir-Fry",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 25,
+  "photo_path": null,
+  "instructions": [
+   "Cook the rice noodles per the package and rinse.",
+   "Saut\u00e9 ginger and garlic in olive oil 30 seconds, add shrimp and cook 3 minutes.",
+   "Add vegetables 4 minutes, then noodles and tamari; toss until hot."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "775bed86-de18-4ebe-a927-b407798150d5",
+    "amount": 3,
+    "position": 5,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "50e583d0-bf82-4078-8e98-a13600e434fd",
+    "amount": 30,
+    "position": 6,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "abbc5f1c-2549-4b68-a9ff-b9815e102e41",
+    "amount": 500,
+    "position": 2,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Frozen stir-fry vegetables"
+    },
+    "display_unit": "g",
+    "ingredient_id": "26a7844d-c219-43e0-be99-d214ef8a0cbf"
+   },
+   {
+    "id": "2fea88b4-b6c0-4b6b-bf53-6fb6d981009a",
+    "amount": 500,
+    "position": 0,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Shrimp"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fb471568-1b55-4fc8-ac61-ee91a29eb0f9"
+   },
+   {
+    "id": "d89e3587-741b-4abc-8f23-b46d33c4ee76",
+    "amount": 10,
+    "position": 4,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "df4c3b65-586e-4e3a-b352-2b3eb165c0ca",
+    "amount": 60,
+    "position": 3,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Tamari (gluten-free soy sauce)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "867c40c5-ca8c-498c-9e08-4c11110768b1"
+   },
+   {
+    "id": "a285813f-fce3-4675-81bd-df86c0b59be3",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "2d968635-b66b-408f-92b5-9d97541fd1d9",
+    "ingredient": {
+     "name": "Rice noodles (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "85afc978-9612-4adc-8cb6-dc66d83cb559"
+   }
+  ]
+ },
+ {
+  "id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Teriyaki Tofu Broccoli Bowls",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "photo_path": null,
+  "instructions": [
+   "Cook rice (amount is dry weight).",
+   "Cube tofu and pan-fry in olive oil 10 minutes until golden.",
+   "Add broccoli and sliced carrot with a splash of water; cover 4 minutes.",
+   "Whisk tamari, maple syrup, ginger and garlic; toss through for 2 minutes. Serve over rice."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "b19a6bd9-42dc-4be5-9d08-38988c82926c",
+    "amount": 500,
+    "position": 1,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Broccoli"
+    },
+    "display_unit": "g",
+    "ingredient_id": "96d063a2-4f73-4d7f-86ec-ddc27d801aef"
+   },
+   {
+    "id": "52e68f02-9ae5-4b4c-86ee-700ffa0d85f7",
+    "amount": 150,
+    "position": 8,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "bc025ec9-6de5-428a-8f64-cc69c97298ae",
+    "amount": 4,
+    "position": 6,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "11fbea77-a012-4f54-83ea-67964a9a3ea1",
+    "amount": 240,
+    "position": 2,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "f1af1188-482a-4b33-b674-499cee06f07f",
+    "amount": 30,
+    "position": 7,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "41957772-12e7-4594-bf17-0aa110eb390a",
+    "amount": 15,
+    "position": 5,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Fresh ginger"
+    },
+    "display_unit": "g",
+    "ingredient_id": "da14a200-eb60-43d7-aede-e130998d3911"
+   },
+   {
+    "id": "68050117-d930-480d-a404-ed7e77c4a7e8",
+    "amount": 80,
+    "position": 3,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Tamari (gluten-free soy sauce)"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "867c40c5-ca8c-498c-9e08-4c11110768b1"
+   },
+   {
+    "id": "15add3fc-fb75-4886-9666-5a88bc7ceeb8",
+    "amount": 40,
+    "position": 4,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   },
+   {
+    "id": "3fc203f6-4387-47d8-bfa2-b0fb57edff30",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "6834c8c5-3889-48d1-b4f1-b8c718ffa2c1",
+    "ingredient": {
+     "name": "Firm tofu"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6c8fcc78-430e-4326-ae90-2642f7a8a342"
+   }
+  ]
+ },
+ {
+  "id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Three-Bean Veggie Chili",
+  "category": "dinner",
+  "servings": 6,
+  "prep_minutes": 50,
+  "photo_path": null,
+  "instructions": [
+   "Saut\u00e9 onion, pepper and carrot in olive oil 8 minutes.",
+   "Add spices and cook 1 minute, then add tomatoes and beans with 300 ml water.",
+   "Simmer 30 minutes, adding salt to taste.",
+   "Cook rice (amount is dry weight) and portion the chili over it."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "da755287-e580-4e5e-8adf-e90840edb909",
+    "amount": 300,
+    "position": 4,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "e67de7d4-7796-4899-b614-5b28e0c448ea",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "9199ca47-9af0-4811-9dee-df911381a0a5",
+    "amount": 200,
+    "position": 5,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "0d816b73-b2c6-4af4-bdf1-7ca2dc7c3101",
+    "amount": 240,
+    "position": 9,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "78fc47e8-a15a-4174-a1a0-20131baa18bd",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "90419c95-07dc-421f-aa48-a9b86035a621",
+    "amount": 30,
+    "position": 10,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "0cc5d742-275c-47de-8a31-535976fd4585",
+    "amount": 800,
+    "position": 2,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "afe996ce-077b-43c5-b018-9a874f680c5d",
+    "amount": 15,
+    "position": 6,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "3220ce17-eb10-4b93-b9c4-8594c1e457d1",
+    "amount": 8,
+    "position": 7,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   },
+   {
+    "id": "8e15e021-a6f7-46bf-8883-91df335a9b2d",
+    "amount": 6,
+    "position": 8,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   },
+   {
+    "id": "d9a94254-4435-491f-b06d-641251db9ff9",
+    "amount": 4,
+    "position": 11,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   },
+   {
+    "id": "1e97736f-70f0-48ed-bd43-70b2793ba367",
+    "amount": 480,
+    "position": 0,
+    "recipe_id": "f14faeeb-ac2a-4cc6-a35b-1de4fb7a645a",
+    "ingredient": {
+     "name": "Kidney beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8a06571f-4417-4960-8c68-3f45389a1fa3"
+   }
+  ]
+ },
+ {
+  "id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Turkey Chili over Rice",
+  "category": "dinner",
+  "servings": 6,
+  "prep_minutes": 50,
+  "photo_path": null,
+  "instructions": [
+   "Brown turkey in olive oil with onion and pepper.",
+   "Add spices, tomatoes, beans and broth; simmer 30 minutes.",
+   "Cook rice (amount is dry weight).",
+   "Portion chili over rice in each container."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "345ae1e0-e488-4d3b-9fb8-2199acc2b8e6",
+    "amount": 300,
+    "position": 4,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "1c38f54d-a0a3-4ca6-a607-d7cf90440cd8",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "86e89d5e-92e1-4507-b325-8121390410ed",
+    "amount": 700,
+    "position": 0,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Ground turkey (93% lean)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8b1de5b3-13e0-43af-9710-3dad43220b7b"
+   },
+   {
+    "id": "094dc88f-31fd-4993-8412-08500392bc5f",
+    "amount": 180,
+    "position": 9,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Brown rice (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3d208d35-d6cb-4b8a-ad99-e871b6ae493d"
+   },
+   {
+    "id": "1f9fed06-ed96-42f2-befe-34aacc78a4cd",
+    "amount": 480,
+    "position": 1,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Black beans (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d04720b6-8bf0-4c02-b699-711c29b46b7f"
+   },
+   {
+    "id": "8980829c-2719-40a4-a1fd-79bc242ef09b",
+    "amount": 15,
+    "position": 8,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "54b57e49-feda-490f-869e-dd332c5a4127",
+    "amount": 800,
+    "position": 2,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Canned diced tomatoes"
+    },
+    "display_unit": "g",
+    "ingredient_id": "47d3f7df-36e7-4bb3-b8cb-438254035337"
+   },
+   {
+    "id": "ccb5c1ce-cf85-4eef-bedf-79d0174eb329",
+    "amount": 500,
+    "position": 7,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Chicken broth"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "29106a2e-0f7e-411b-acb9-8db9d9b0bc7e"
+   },
+   {
+    "id": "ff4a2b2e-9ee1-422b-b45e-43eafd927959",
+    "amount": 12,
+    "position": 5,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "aa7a9a13-5388-4205-b2c5-a1b6ab0d018e",
+    "amount": 8,
+    "position": 6,
+    "recipe_id": "ebdea64f-308c-47a9-81a3-c672f54e6584",
+    "ingredient": {
+     "name": "Cumin"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a43c05a6-cea2-4557-835b-0adc0ebcf521"
+   }
+  ]
+ },
+ {
+  "id": "8090dcac-c160-4bc4-900a-478213bbe620",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Turkey Meatballs with Marinara & Pasta",
+  "category": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 200\u00b0C / 400\u00b0F. Mix turkey, egg, parmesan and minced garlic; roll into 20 meatballs.",
+   "Bake 18 minutes.",
+   "Cook pasta (amount is dry weight); saut\u00e9 diced zucchini in olive oil.",
+   "Warm marinara, add meatballs, and serve over pasta and zucchini."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "9d55a44f-3135-4213-a596-dba47f84a1fc",
+    "amount": 300,
+    "position": 5,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Zucchini"
+    },
+    "display_unit": "g",
+    "ingredient_id": "744f62f3-683c-4141-a22d-c64c1595c9f0"
+   },
+   {
+    "id": "0bfb094c-dadd-4268-801f-d967c9937cb6",
+    "amount": 3,
+    "position": 6,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Garlic clove"
+    },
+    "display_unit": "each",
+    "ingredient_id": "d0db8329-2fbf-4b5c-b08c-465db2297e60"
+   },
+   {
+    "id": "912b8e3f-6888-4478-9249-b72154bd5251",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Ground turkey (93% lean)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8b1de5b3-13e0-43af-9710-3dad43220b7b"
+   },
+   {
+    "id": "afe563ae-717a-486d-beb4-9fa07f79d8c6",
+    "amount": 2,
+    "position": 1,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "c4541d79-bc71-465d-bb2e-da923f4c2236",
+    "amount": 40,
+    "position": 2,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Parmesan cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "20b0156a-71b8-4122-bf15-4fb7518ae9ec"
+   },
+   {
+    "id": "424b7f7c-22e6-45cc-a1ca-2f2d671d1838",
+    "amount": 200,
+    "position": 4,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Whole-wheat pasta (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e4b6f2f3-ffd2-4813-ab37-068a96ec7ac1"
+   },
+   {
+    "id": "502258a0-273d-48a1-b1ee-25b4f7e4fa01",
+    "amount": 15,
+    "position": 7,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "22ab440a-886f-4428-94f9-bb556265345d",
+    "amount": 600,
+    "position": 3,
+    "recipe_id": "8090dcac-c160-4bc4-900a-478213bbe620",
+    "ingredient": {
+     "name": "Marinara sauce"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3013ace4-2e67-4411-9cdf-3669ce4bdfd8"
+   }
+  ]
+ },
+ {
+  "id": "fbadfab0-6311-4454-91cc-29025841aacf",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Veggie Marinara Pasta Bake",
+  "category": "dinner",
+  "servings": 6,
+  "prep_minutes": 50,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 190\u00b0C / 375\u00b0F. Cook pasta (dry weight) 2 minutes short of the package time.",
+   "Mix pasta with marinara, diced zucchini, mushrooms, spinach and cottage cheese.",
+   "Spread in a dish, top with parmesan and bake 30 minutes."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "549b174f-103e-4c27-9b3e-f579e8ac8852",
+    "amount": 150,
+    "position": 4,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Spinach"
+    },
+    "display_unit": "g",
+    "ingredient_id": "daec521a-0e37-4cb2-82a1-6004617934c2"
+   },
+   {
+    "id": "eabbb216-7701-4fb4-bfb7-027adf31f0ca",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Zucchini"
+    },
+    "display_unit": "g",
+    "ingredient_id": "744f62f3-683c-4141-a22d-c64c1595c9f0"
+   },
+   {
+    "id": "afbcda8e-e0a1-428f-af4b-915135010fc7",
+    "amount": 600,
+    "position": 1,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Marinara sauce"
+    },
+    "display_unit": "g",
+    "ingredient_id": "3013ace4-2e67-4411-9cdf-3669ce4bdfd8"
+   },
+   {
+    "id": "2f4fa524-e310-431a-9308-db777757b473",
+    "amount": 300,
+    "position": 5,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Cottage cheese (low-fat)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7c0fca7f-00be-4663-884c-c7eb2dd83633"
+   },
+   {
+    "id": "dab7a54d-3a39-4637-8b5e-f75f42cfe270",
+    "amount": 60,
+    "position": 6,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Parmesan cheese"
+    },
+    "display_unit": "g",
+    "ingredient_id": "20b0156a-71b8-4122-bf15-4fb7518ae9ec"
+   },
+   {
+    "id": "f55c2fb9-d3d2-4cf4-b43c-f086d156afa7",
+    "amount": 360,
+    "position": 0,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Whole-wheat pasta (dry)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e4b6f2f3-ffd2-4813-ab37-068a96ec7ac1"
+   },
+   {
+    "id": "85b6a80c-3c32-4d43-8429-11c4dc0325d5",
+    "amount": 250,
+    "position": 3,
+    "recipe_id": "fbadfab0-6311-4454-91cc-29025841aacf",
+    "ingredient": {
+     "name": "Mushrooms"
+    },
+    "display_unit": "g",
+    "ingredient_id": "32a198f9-a486-4402-a42a-cc90a3be041c"
+   }
+  ]
+ },
+ {
+  "id": "871a715e-bb5a-4274-9c1e-089e770f18da",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Apple & Almond Butter Packs",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 5,
+  "photo_path": null,
+  "instructions": [
+   "Slice apples and toss with a little lemon water to prevent browning.",
+   "Pack with a small container of almond butter (25 g each)."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "1c4511b0-59b4-473d-91a3-3324202dbc72",
+    "amount": 4,
+    "position": 0,
+    "recipe_id": "871a715e-bb5a-4274-9c1e-089e770f18da",
+    "ingredient": {
+     "name": "Apple"
+    },
+    "display_unit": "each",
+    "ingredient_id": "9591da07-6f29-499c-88ba-31ccabd8c9a7"
+   },
+   {
+    "id": "35a88d69-a6d7-41c4-94b8-6d1313b04e19",
+    "amount": 100,
+    "position": 1,
+    "recipe_id": "871a715e-bb5a-4274-9c1e-089e770f18da",
+    "ingredient": {
+     "name": "Almond butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "43bbb028-1791-47e2-bcf5-65af0c0d9993"
+   }
+  ]
+ },
+ {
+  "id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Baked Sweet Potato Rounds with Hummus",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 30,
+  "photo_path": null,
+  "instructions": [
+   "Slice sweet potato into 1 cm rounds, toss with olive oil, paprika and salt.",
+   "Roast at 220\u00b0C / 425\u00b0F for 25 minutes, turning once.",
+   "Pack with hummus on the side."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "8ae5ed2c-cee7-4c5c-93dc-78e3b4790e10",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+    "ingredient": {
+     "name": "Sweet potato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ca752043-3ab9-4e4c-9278-ded96fba78d8"
+   },
+   {
+    "id": "aa2bd0fa-f3a8-43b2-935a-f038661c03ea",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+    "ingredient": {
+     "name": "Hummus"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33472688-c65c-4eea-87b2-a77a3783ff55"
+   },
+   {
+    "id": "73eac088-3869-4e7c-9f10-09d100e314e5",
+    "amount": 15,
+    "position": 2,
+    "recipe_id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "3b195f52-6696-43e1-b2a9-8822dfc9f9b2",
+    "amount": 3,
+    "position": 3,
+    "recipe_id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   },
+   {
+    "id": "3eba8f43-8541-4008-bd79-38b30a18f9a7",
+    "amount": 2,
+    "position": 4,
+    "recipe_id": "ecbf0ed3-5dfa-4a75-acc1-1756eaf79e4f",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   }
+  ]
+ },
+ {
+  "id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Cocoa Almond Energy Bites",
+  "category": "snack",
+  "servings": 8,
+  "prep_minutes": 20,
+  "photo_path": null,
+  "instructions": [
+   "Mix everything in a bowl until it holds together.",
+   "Chill 15 minutes, then roll into 16 balls.",
+   "Refrigerate up to 1 week. Per container: 2 bites."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "74e74a66-53b4-403f-8eda-7aaa6864d60a",
+    "amount": 160,
+    "position": 1,
+    "recipe_id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+    "ingredient": {
+     "name": "Almond butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "43bbb028-1791-47e2-bcf5-65af0c0d9993"
+   },
+   {
+    "id": "3b7e2569-1f27-4d71-ba78-07f5f17b1190",
+    "amount": 30,
+    "position": 4,
+    "recipe_id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+    "ingredient": {
+     "name": "Chia seeds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d20a6a96-635e-44d4-8b59-68673df4e677"
+   },
+   {
+    "id": "efbcc4de-c090-4fae-b808-d71ec7cbcadb",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+    "ingredient": {
+     "name": "Gluten-free rolled oats"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e82edb57-b59b-4d83-9dd0-0c2e578c9e02"
+   },
+   {
+    "id": "0988d56d-256a-43da-bd99-17a78707506a",
+    "amount": 20,
+    "position": 3,
+    "recipe_id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+    "ingredient": {
+     "name": "Cocoa powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "19187808-316f-4d6f-9bbf-18d84366d2ae"
+   },
+   {
+    "id": "36f71c26-876b-4a54-8504-ce5bc5a476f9",
+    "amount": 80,
+    "position": 2,
+    "recipe_id": "3be362c2-4402-4f18-80fc-6db40c668b25",
+    "ingredient": {
+     "name": "Maple syrup"
+    },
+    "display_unit": "g",
+    "ingredient_id": "5dc873ca-50a5-47d3-8518-6c423ae0bda9"
+   }
+  ]
+ },
+ {
+  "id": "2890bbc1-69b3-4b1a-985e-ef7bd52a8839",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Cottage Cheese Berry Bowls",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 5,
+  "photo_path": null,
+  "instructions": [
+   "Divide cottage cheese between 4 containers.",
+   "Top with sliced strawberries, chopped walnuts and a drizzle of honey."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "767e4444-af9f-4eb1-bc60-25e60c07d414",
+    "amount": 200,
+    "position": 1,
+    "recipe_id": "2890bbc1-69b3-4b1a-985e-ef7bd52a8839",
+    "ingredient": {
+     "name": "Strawberries"
+    },
+    "display_unit": "g",
+    "ingredient_id": "0012a7df-2ea0-449d-a7c4-411c827fd0b7"
+   },
+   {
+    "id": "e1ca9e55-552b-4a6d-89c9-be035274b875",
+    "amount": 600,
+    "position": 0,
+    "recipe_id": "2890bbc1-69b3-4b1a-985e-ef7bd52a8839",
+    "ingredient": {
+     "name": "Cottage cheese (low-fat)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "7c0fca7f-00be-4663-884c-c7eb2dd83633"
+   },
+   {
+    "id": "82b7c783-8b78-4e7f-8aad-07843cb2a014",
+    "amount": 20,
+    "position": 3,
+    "recipe_id": "2890bbc1-69b3-4b1a-985e-ef7bd52a8839",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "05de0610-62db-495e-8b77-237c485e7f46",
+    "amount": 40,
+    "position": 2,
+    "recipe_id": "2890bbc1-69b3-4b1a-985e-ef7bd52a8839",
+    "ingredient": {
+     "name": "Walnuts"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e88dcf1-11a9-41ba-bd36-034fd2791574"
+   }
+  ]
+ },
+ {
+  "id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Crispy Roasted Chickpeas",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 35,
+  "photo_path": null,
+  "instructions": [
+   "Heat oven to 200\u00b0C / 400\u00b0F. Dry the chickpeas very well.",
+   "Toss with oil and spices; spread on a tray.",
+   "Roast 25\u201330 minutes, shaking halfway, until crunchy. Store loosely covered."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "e6cad566-b851-436e-bdf4-a717db156df5",
+    "amount": 480,
+    "position": 0,
+    "recipe_id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+    "ingredient": {
+     "name": "Chickpeas (canned, drained)"
+    },
+    "display_unit": "g",
+    "ingredient_id": "be90bf20-a83a-46a0-b774-5b62ad1d1306"
+   },
+   {
+    "id": "17e0cafd-e059-4fa7-b5fa-040432d8098e",
+    "amount": 15,
+    "position": 1,
+    "recipe_id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+    "ingredient": {
+     "name": "Olive oil"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "efa7f3ad-c09e-4cf4-bffe-3835bed9d320"
+   },
+   {
+    "id": "dfb85424-b3c2-46ab-b973-7a683b6b3efe",
+    "amount": 4,
+    "position": 2,
+    "recipe_id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+    "ingredient": {
+     "name": "Chili powder"
+    },
+    "display_unit": "g",
+    "ingredient_id": "35090fe5-aef1-4754-8f58-f8eb6f97a82a"
+   },
+   {
+    "id": "2d6b7cb0-7653-4004-9edf-2b8cbefab311",
+    "amount": 4,
+    "position": 3,
+    "recipe_id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+    "ingredient": {
+     "name": "Paprika"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e0ae75f-29e8-4bb6-8e60-5a7f42a42c9a"
+   },
+   {
+    "id": "733187dc-0c46-42f2-8de2-67552ea93cda",
+    "amount": 2,
+    "position": 4,
+    "recipe_id": "1cb83495-2d9c-4c8c-b07b-d0ed79999b6d",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   }
+  ]
+ },
+ {
+  "id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Egg & Veggie Snack Packs",
+  "category": "snack",
+  "servings": 6,
+  "prep_minutes": 20,
+  "photo_path": null,
+  "instructions": [
+   "Boil eggs 10 minutes, cool in ice water, and peel.",
+   "Cut carrot and pepper into sticks and halve the tomatoes.",
+   "Pack 2 eggs with vegetables per container; a pinch of salt on the side."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "239fa410-4e19-41ab-9388-76b50c48dbc2",
+    "amount": 200,
+    "position": 2,
+    "recipe_id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "46cd96b6-0a39-4020-ae63-701971d4d908",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "9868117d-5bbf-4305-8ea5-279a26ad4112",
+    "amount": 300,
+    "position": 1,
+    "recipe_id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "90f94c12-d062-4356-b6d7-dae7f78aa448",
+    "amount": 12,
+    "position": 0,
+    "recipe_id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+    "ingredient": {
+     "name": "Egg"
+    },
+    "display_unit": "each",
+    "ingredient_id": "c54d10cb-dfed-4b94-94b1-b79af0a9c067"
+   },
+   {
+    "id": "a213534d-ec65-461e-893a-3f892b4174e0",
+    "amount": 2,
+    "position": 4,
+    "recipe_id": "39c28286-6aa0-4fd5-a875-0b7a96984068",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   }
+  ]
+ },
+ {
+  "id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Guacamole & Veggie Sticks",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 15,
+  "photo_path": null,
+  "instructions": [
+   "Mash avocado with lemon juice and salt; fold in finely diced tomato and onion.",
+   "Cut carrot, cucumber and pepper into sticks.",
+   "Pack guacamole in small containers beside the vegetables."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "4ba8d2b2-66cf-4782-8c98-a74d90300883",
+    "amount": 200,
+    "position": 7,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "502453c1-06fa-49e3-9363-e68491b00e28",
+    "amount": 40,
+    "position": 2,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Onion"
+    },
+    "display_unit": "g",
+    "ingredient_id": "a56ffe79-9595-478a-8d8c-f763bf6cc6fe"
+   },
+   {
+    "id": "8a837207-be72-4703-ba07-8012a887c74d",
+    "amount": 100,
+    "position": 1,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Tomato"
+    },
+    "display_unit": "g",
+    "ingredient_id": "8c9e43b0-476f-4ad2-9b31-01fffae21253"
+   },
+   {
+    "id": "8c174d61-97ca-4dcd-b266-a0195d80db83",
+    "amount": 300,
+    "position": 5,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "98d040b4-8a3c-4a42-a9c2-83ebc692c94f",
+    "amount": 300,
+    "position": 6,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "6dc10486-d1b1-4e9b-bdf9-83664a1acf21",
+    "amount": 400,
+    "position": 0,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Avocado"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7ddc10d-b057-453b-9e7f-a28a0547e8cc"
+   },
+   {
+    "id": "4f87f2c6-0f1b-4d0b-8e10-3286b84a5564",
+    "amount": 45,
+    "position": 3,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Lemon juice"
+    },
+    "display_unit": "ml",
+    "ingredient_id": "cc410556-d64f-4955-b889-a52ae5dc6ac4"
+   },
+   {
+    "id": "ea4724cc-ab30-4551-9169-a0c2f6714a99",
+    "amount": 2,
+    "position": 4,
+    "recipe_id": "c14c6227-a030-424d-bd49-b1cf56232ed3",
+    "ingredient": {
+     "name": "Salt"
+    },
+    "display_unit": "g",
+    "ingredient_id": "ba609023-6dad-4b29-b714-650499e1a593"
+   }
+  ]
+ },
+ {
+  "id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Hummus & Veggie Snack Boxes",
+  "category": "snack",
+  "servings": 4,
+  "prep_minutes": 15,
+  "photo_path": null,
+  "instructions": [
+   "Cut carrots, cucumber and pepper into sticks.",
+   "Fill each box with hummus, vegetables and a small handful of almonds."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "7f0c37da-da4e-4af1-a471-1a32e05b84a9",
+    "amount": 200,
+    "position": 3,
+    "recipe_id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+    "ingredient": {
+     "name": "Bell pepper"
+    },
+    "display_unit": "g",
+    "ingredient_id": "fc89ec99-d0e5-4f49-8229-d23b102a0c28"
+   },
+   {
+    "id": "93d6e743-9c47-4b5a-9a27-8f224c22f072",
+    "amount": 300,
+    "position": 1,
+    "recipe_id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+    "ingredient": {
+     "name": "Carrot"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d84334a2-1714-4c98-842d-b30f88f366c0"
+   },
+   {
+    "id": "b63abd92-815f-4d8a-8e2e-8327d2eece5d",
+    "amount": 300,
+    "position": 2,
+    "recipe_id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+    "ingredient": {
+     "name": "Cucumber"
+    },
+    "display_unit": "g",
+    "ingredient_id": "735a672b-7c70-4c71-9679-e4c23c574346"
+   },
+   {
+    "id": "dc53e3a6-12b4-4e55-9ab1-87c10e401907",
+    "amount": 240,
+    "position": 0,
+    "recipe_id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+    "ingredient": {
+     "name": "Hummus"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33472688-c65c-4eea-87b2-a77a3783ff55"
+   },
+   {
+    "id": "627dbaf2-f45c-4e54-ad3b-7309a532ddab",
+    "amount": 40,
+    "position": 4,
+    "recipe_id": "1db79a52-406c-4947-b5c4-f35a9389ee1f",
+    "ingredient": {
+     "name": "Almonds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "f3e67f74-1eef-42b9-820a-40aee4074192"
+   }
+  ]
+ },
+ {
+  "id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Peanut Butter Oat Bites",
+  "category": "snack",
+  "servings": 8,
+  "prep_minutes": 20,
+  "photo_path": null,
+  "instructions": [
+   "Mix everything in a bowl until it holds together.",
+   "Chill 15 minutes, then roll into 16 balls.",
+   "Refrigerate up to 1 week. Per container: 2 bites."
+  ],
+  "created_at": "2026-10-04T19:34:33.486197+00:00",
+  "updated_at": "2026-10-04T19:34:33.486197+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "1e731f83-fc0b-4dec-8b4f-863c0abd3619",
+    "amount": 160,
+    "position": 0,
+    "recipe_id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+    "ingredient": {
+     "name": "Rolled oats"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e7d0a8d5-1c9d-4696-b3fe-af7d3c7a3f69"
+   },
+   {
+    "id": "6672356f-ef61-4e63-8b52-d594aa4e5f6e",
+    "amount": 120,
+    "position": 1,
+    "recipe_id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+    "ingredient": {
+     "name": "Peanut butter"
+    },
+    "display_unit": "g",
+    "ingredient_id": "c2617289-971a-4b49-bc04-fd62b8b6b6b2"
+   },
+   {
+    "id": "16bc9cb0-9be3-4836-b061-e8c9e0723d07",
+    "amount": 80,
+    "position": 2,
+    "recipe_id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+    "ingredient": {
+     "name": "Honey"
+    },
+    "display_unit": "g",
+    "ingredient_id": "33192722-46fe-4619-b577-d44aa4b2674a"
+   },
+   {
+    "id": "ed390bbb-0a25-44b3-b5b5-db8b6e92117b",
+    "amount": 30,
+    "position": 3,
+    "recipe_id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+    "ingredient": {
+     "name": "Chia seeds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "d20a6a96-635e-44d4-8b59-68673df4e677"
+   },
+   {
+    "id": "dccd6b2e-1d82-4d33-9a27-4356ae353ea2",
+    "amount": 60,
+    "position": 4,
+    "recipe_id": "00595ecb-78a4-4db6-b81c-3dbbc7eefb16",
+    "ingredient": {
+     "name": "Dark chocolate chips"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6ec5d401-1ad6-4ff8-86e5-2d15df95d97b"
+   }
+  ]
+ },
+ {
+  "id": "830729d2-7a5a-4034-a57a-49d2dab5b417",
+  "owner_id": null,
+  "copied_from": null,
+  "name": "Trail Mix Packs",
+  "category": "snack",
+  "servings": 8,
+  "prep_minutes": 10,
+  "photo_path": null,
+  "instructions": [
+   "Combine everything in a large bowl.",
+   "Divide into 8 small bags or containers (about 50 g each)."
+  ],
+  "created_at": "2026-10-05T04:50:53.688179+00:00",
+  "updated_at": "2026-10-05T04:50:53.688179+00:00",
+  "recipe_ingredients": [
+   {
+    "id": "d825cb19-ef45-4b19-9ab9-47896428027d",
+    "amount": 120,
+    "position": 0,
+    "recipe_id": "830729d2-7a5a-4034-a57a-49d2dab5b417",
+    "ingredient": {
+     "name": "Almonds"
+    },
+    "display_unit": "g",
+    "ingredient_id": "f3e67f74-1eef-42b9-820a-40aee4074192"
+   },
+   {
+    "id": "f65cc5be-7d4f-4abf-ac1a-4cb506f9c91e",
+    "amount": 80,
+    "position": 2,
+    "recipe_id": "830729d2-7a5a-4034-a57a-49d2dab5b417",
+    "ingredient": {
+     "name": "Walnuts"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6e88dcf1-11a9-41ba-bd36-034fd2791574"
+   },
+   {
+    "id": "e920f922-0bec-444a-88e4-f3e1dc7171fd",
+    "amount": 80,
+    "position": 3,
+    "recipe_id": "830729d2-7a5a-4034-a57a-49d2dab5b417",
+    "ingredient": {
+     "name": "Dark chocolate chips"
+    },
+    "display_unit": "g",
+    "ingredient_id": "6ec5d401-1ad6-4ff8-86e5-2d15df95d97b"
+   },
+   {
+    "id": "f26ac294-dac3-4287-8873-c9e4f83178ff",
+    "amount": 120,
+    "position": 1,
+    "recipe_id": "830729d2-7a5a-4034-a57a-49d2dab5b417",
+    "ingredient": {
+     "name": "Cashews"
+    },
+    "display_unit": "g",
+    "ingredient_id": "e783aea7-4e0b-4154-a5dd-be056769619c"
+   }
+  ]
+ }
+]
