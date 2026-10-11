@@ -102,8 +102,8 @@ export function TargetHelper({ onApply }: { onApply: (s: Suggestion) => void }) 
         <fieldset className="helper__fields">
           <legend><h3 ref={heading} tabIndex={-1}>About you</h3></legend>
           <div className="tabs" role="group" aria-label="Units">
-            <button type="button" className="tab" aria-pressed={units === 'us'} aria-selected={units === 'us'} onClick={() => setUnits('us')}>lb · ft/in</button>
-            <button type="button" className="tab" aria-pressed={units === 'metric'} aria-selected={units === 'metric'} onClick={() => setUnits('metric')}>kg · cm</button>
+            <button type="button" className="tab" aria-pressed={units === 'us'} onClick={() => setUnits('us')}>lb · ft/in</button>
+            <button type="button" className="tab" aria-pressed={units === 'metric'} onClick={() => setUnits('metric')}>kg · cm</button>
           </div>
           <div className="form-grid">
             <div className="field">

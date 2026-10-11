@@ -42,7 +42,7 @@ export function RecipeTextImport({ onDraft }: { onDraft: (draft: RecipeDraft) =>
       />
       <div className="stack-sm">
         <span className="label">Picture (optional)</span>
-        {preview && <img className="photo-preview" src={preview} alt="Chosen recipe photo" />}
+        {preview && <img className="photo-preview" src={preview} alt="Preview of your recipe" />}
         <PhotoPicker hasPhoto={!!photo} onFile={(f) => setPhoto(f)} onRemove={() => setPhoto(null)} />
       </div>
       {error && <div className="alert alert-error" role="alert">{error}</div>}

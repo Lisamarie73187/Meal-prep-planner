@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Ingredient } from '../lib/types'
 import { IngredientModal } from './IngredientModal'
@@ -15,6 +15,7 @@ interface Props {
 }
 
 export function IngredientPicker({ ingredients, onPick, onCreated, scope = 'user', exclude, placeholder = 'Search ingredients…' }: Props) {
+  const listId = useId()
   const [q, setQ] = useState('')
   const [open, setOpen] = useState(false)
   const [creating, setCreating] = useState(false)
@@ -39,6 +40,8 @@ export function IngredientPicker({ ingredients, onPick, onCreated, scope = 'user
         aria-label="Ingredient"
         role="combobox"
         aria-expanded={open}
+        aria-controls={listId}
+        aria-autocomplete="list"
         onChange={(e) => { setQ(e.target.value); setOpen(true) }}
         onFocus={() => setOpen(true)}
         onBlur={() => setTimeout(() => setOpen(false), 150)}
@@ -50,7 +53,7 @@ export function IngredientPicker({ ingredients, onPick, onCreated, scope = 'user
         }}
       />
       {open && (matches.length > 0 || (term && !exact)) && (
-        <ul className="ac__list" role="listbox">
+        <ul id={listId} className="ac__list" role="listbox">
           {matches.map((i) => (
             <li key={i.id} className="ac__opt" role="option" aria-selected="false" onMouseDown={() => pick(i)}>
               <span>{i.name}</span>

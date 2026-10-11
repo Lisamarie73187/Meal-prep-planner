@@ -36,8 +36,8 @@ export function AdminIngredients() {
       <div className="row">
         <input className="input input-narrow" style={{ width: 'min(100%, 20rem)' }} type="search" aria-label="Search ingredients" placeholder="Search ingredients…" value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="tabs" role="group" aria-label="Show">
-          <button type="button" className="tab" aria-selected={only === 'all'} aria-pressed={only === 'all'} onClick={() => setOnly('all')}>All ({all.length})</button>
-          <button type="button" className="tab" aria-selected={only === 'zero'} aria-pressed={only === 'zero'} onClick={() => setOnly('zero')}>All zero ({zero.length})</button>
+          <button type="button" className="tab" aria-pressed={only === 'all'} onClick={() => setOnly('all')}>All ({all.length})</button>
+          <button type="button" className="tab" aria-pressed={only === 'zero'} onClick={() => setOnly('zero')}>All zero ({zero.length})</button>
         </div>
       </div>
       <div role="status">{saved && <div className="alert alert-ok">{saved}</div>}</div>

@@ -46,7 +46,7 @@ export function ChipInput({ id, label, values, onChange, placeholder }: Props) {
   }
 
   return (
-    <div className="chips" onClick={() => input.current?.focus()}>
+    <div className="chips" role="presentation" onClick={() => input.current?.focus()}>
       {values.length > 0 && (
         <ul className="chips__list" aria-label={`${label}: ${values.length} added`}>
           {values.map((v) => (
