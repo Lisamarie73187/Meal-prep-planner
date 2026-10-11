@@ -92,7 +92,7 @@ export function PlanReview() {
       <Stepper current={3} planId={id} />
       <h1>Review your plan</h1>
       {editable && lines.length > 0 && <p className="muted">Choose how many portions of each recipe to make. The grocery list and recipes are scaled to these.</p>}
-      {lines.length === 0 && <div className="alert alert-warn">No meals selected. <Link to={`/plan/${id}/choose`}>Choose recipes</Link></div>}
+      {lines.length === 0 && <div className="alert alert-warn">No meals selected. <Link to={`/plan/${id}/pick`}>Choose recipes</Link></div>}
       {lines.map((l) => {
         const item = itemOf(l)
         const recipe = l.recipeId ? recipes.get(l.recipeId) : undefined
@@ -168,7 +168,7 @@ export function PlanReview() {
       <div className="sticky-bar">
         <span />
         <div className="row">
-          <Link className="btn" to={`/plan/${id}/choose`}>← Change recipes</Link>
+          <Link className="btn" to={`/plan/${id}/pick`}>← Change recipes</Link>
           <Link className="btn btn-primary" to={`/plan/${id}/results`}>Generate grocery list →</Link>
         </div>
       </div>

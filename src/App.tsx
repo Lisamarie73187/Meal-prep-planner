@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-dom'
 import { AuthProvider } from './auth/AuthContext'
 import { RequireAdmin, RequireAuth } from './auth/guards'
 import { Layout } from './components/Layout'
@@ -8,7 +8,6 @@ import { HiddenRecipes } from './pages/HiddenRecipes'
 import { Home } from './pages/Home'
 import { Inventory } from './pages/Inventory'
 import { AdminRecipes } from './pages/MyRecipes'
-import { PlanChoose } from './pages/PlanChoose'
 import { PlanGoals } from './pages/PlanGoals'
 import { PlanPick } from './pages/PlanPick'
 import { PlanResults } from './pages/PlanResults'
@@ -24,6 +23,11 @@ import { Recipes } from './pages/Recipes'
 import { RecipeDetail } from './pages/RecipeDetail'
 import { RecipeEdit } from './pages/RecipeEdit'
 import { Targets } from './pages/Targets'
+
+function ChooseRedirect() {
+  const { id } = useParams()
+  return <Navigate to={`/plan/${id}/pick`} replace />
+}
 
 export function App() {
   return (
@@ -50,7 +54,8 @@ export function App() {
             </Route>
             <Route path="plan/:id/goals" element={<PlanGoals />} />
             <Route path="plan/:id/pick/:slot?" element={<PlanPick />} />
-            <Route path="plan/:id/choose" element={<PlanChoose />} />
+            {/* The old browse page is gone; old links land on the pick screens. */}
+            <Route path="plan/:id/choose" element={<ChooseRedirect />} />
             <Route path="plan/:id/review" element={<PlanReview />} />
             <Route path="plan/:id/results" element={<PlanResults />} />
 
