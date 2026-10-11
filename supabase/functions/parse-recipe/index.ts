@@ -4,6 +4,9 @@ import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const MODEL = 'claude-haiku-4-5-20251001'
 const MAX_CHARS = 8000
+// Daily limits per UTC day: each person, and everyone together. Change with `supabase secrets set AI_DAILY_LIMIT_PER_USER=...`.
+const USER_LIMIT = Number(Deno.env.get('AI_DAILY_LIMIT_PER_USER') ?? 30)
+const GLOBAL_LIMIT = Number(Deno.env.get('AI_DAILY_LIMIT_ALL') ?? 300)
 const UNITS = ['g', 'kg', 'oz', 'lb', 'ml', 'l', 'tsp', 'tbsp', 'fl oz', 'cup', 'each', 'can']
 
 const cors = {
@@ -123,6 +126,23 @@ Deno.serve(async (req) => {
   })
   const { data: auth } = await supabase.auth.getUser()
   if (!auth.user) return reply(401, { error: 'Sign in to use this.' })
+  const userId = auth.user.id
+
+  // Only this function (service role) can touch the usage counts; see migration 0010.
+  const admin = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!)
+  /** Uses up one of today's allowance. Returns an error response when it's used up, or when we can't check (fail closed). */
+  const takeUse = async () => {
+    const { data, error } = await admin.rpc('ai_take', { p_user: userId, p_user_limit: USER_LIMIT, p_global_limit: GLOBAL_LIMIT })
+    if (error) {
+      console.error('ai_take failed', error.message)
+      return reply(503, { error: "Couldn't check today's AI limit. Try again in a moment." })
+    }
+    if (data === 'user') return reply(429, { error: `You've used your ${USER_LIMIT} AI requests for today. The count resets every day at midnight UTC.` })
+    if (data === 'global') return reply(429, { error: "The AI has reached its limit for today. Please try again tomorrow." })
+    return null
+  }
+  /** The AI service failed, not the person: give the use back. */
+  const giveBack = () => admin.rpc('ai_refund', { p_user: userId }).then(() => undefined, () => undefined)
 
   const key = Deno.env.get('ANTHROPIC_API_KEY')
   if (!key) return reply(500, { error: 'The recipe reader is not set up yet (missing ANTHROPIC_API_KEY).' })
@@ -134,14 +154,20 @@ Deno.serve(async (req) => {
   if (Array.isArray(payload.ingredients)) {
     const names = payload.ingredients.map((n) => String(n ?? '').trim().slice(0, 60)).filter(Boolean).slice(0, 15)
     if (names.length === 0) return reply(400, { error: 'No ingredients to look up.' })
+    const blocked = await takeUse()
+    if (blocked) return blocked
     const out = await ask(key, SYSTEM_NUTRITION, TOOL_NUTRITION, JSON.stringify(names), 2500)
-    return out.error ?? reply(200, { ingredients: out.input.ingredients })
+    if (out.error) { await giveBack(); return out.error }
+    return reply(200, { ingredients: out.input.ingredients })
   }
 
   // Mode 1: read a pasted recipe.
   const text = String(payload.text ?? '').trim()
   if (!text) return reply(400, { error: 'Paste a recipe first.' })
   if (text.length > MAX_CHARS) return reply(400, { error: `That's too long. Keep it under ${MAX_CHARS} characters.` })
+  const blocked = await takeUse()
+  if (blocked) return blocked
   const out = await ask(key, SYSTEM, TOOL, text, 2500)
-  return out.error ?? reply(200, { recipe: out.input })
+  if (out.error) { await giveBack(); return out.error }
+  return reply(200, { recipe: out.input })
 })

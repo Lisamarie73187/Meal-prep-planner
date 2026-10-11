@@ -64,6 +64,9 @@ yourself.
 - **AI recipe reader:** Edge Function `supabase/functions/parse-recipe` calls Claude. Its key is the Supabase secret
   `ANTHROPIC_API_KEY` (set from `ANTHROPIC_KEY` in `.env.local`). Deploy with
   `npx supabase@latest functions deploy parse-recipe --project-ref lqmzogzebocvvlyuakkh --use-api`.
+- **AI limits:** the function allows 30 AI requests per person and 300 in total per UTC day (secrets `AI_DAILY_LIMIT_PER_USER` and
+  `AI_DAILY_LIMIT_ALL` change them). Counts live in `ai_usage` (migration 0010), reachable only by the function. **Apply migration
+  0010 before deploying the function**, or every AI request fails closed with "Couldn't check today's AI limit".
 - **Recipe photos:** bucket `recipe-photos` is public; the `recommended/` folder is admin-only. Bulk upload is
   `node scripts/upload-recipe-photos.mjs <category> [--upload]` with pictures in `recipe-photos/<category>/` named after
   the recipe (dry run by default). Don't delete storage files when replacing a photo; adjusted copies may share the path.
